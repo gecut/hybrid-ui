@@ -1,0 +1,11 @@
+{
+  "name": "gecut-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "S. MohammadMahdi Zamanian <dev@mm25zamanain.ir> (https://mm25zamanian.ir)",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^20.11.24"
+  }
+}

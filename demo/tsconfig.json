@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.base",
+  "compilerOptions": {
+    "composite": false,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "rootDir": ".",
+    "outDir": ".",
+    "inlineSources": false,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false
+  },
+
+  "include": ["**/*.ts"],
+  "exclude": ["*.d.ts", "node_modules"],
+  "references": []
+}
