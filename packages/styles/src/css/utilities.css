@@ -1,0 +1,14 @@
+@layer utilities {
+  .text-ellipsis {
+    @apply overflow-hidden overflow-ellipsis whitespace-nowrap;
+  }
+
+  .overflow-clip {
+    overflow: hidden;
+    overflow: clip;
+  }
+
+  .focus-ring {
+    @apply outline outline-8 outline-offset-2 outline-[#0000] transition-[outline-color,outline-width] duration-100 focus-visible:duration-300 focus-visible:outline-outline focus-visible:outline-2;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@gecut/styles",
+  "version": "1.2.4",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/hybrid-ui",
+    "directory": "packages/styles"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    "./*.js": {
+      "default": "./*.js",
+      "types": "./*.d.ts"
+    }
+  },
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md,css}"
+  ],
+  "bugs": {
+    "url": "https://github.com/gecut/gecut/issues",
+    "email": "dev@gecut.ir"
+  },
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "url": "https://mm25zamanian.ir",
+    "email": "mm25zamanian@gmail.com"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

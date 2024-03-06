@@ -1,0 +1,37 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './css/base.css';
+@import './css/alpine.css';
+@import './css/form.css';
+@import './css/scrollbar.css';
+@import './css/utilities.css';
+@import './css/cards.css';
+
+gecut-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+main[role='main'] {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.gecut-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--_gap, 8px);
+}
+.gecut-page.scrollabe {
+  overflow-y: auto;
+}

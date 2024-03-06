@@ -1,0 +1,26 @@
+@layer components {
+  .card {
+    @apply rounded-xl px-6 mb-4;
+  }
+
+  .card-elevated {
+    @apply card bg-surfaceContainerLow text-onSurface elevation-1 disabled:opacity-15 disabled:bg-surface disabled:pointer-events-none;
+  }
+  .card-elevated-selectable {
+    @apply card-elevated select-none hover:elevation-2 hover:stateHover-onSurface focus-ring focus:elevation-1 focus:stateActive-onSurface;
+  }
+
+  .card-filled {
+    @apply card bg-surfaceContainerHighest text-onSurface elevation-0 disabled:opacity-15 disabled:bg-surfaceVariant disabled:pointer-events-none;
+  }
+  .card-filled-selectable {
+    @apply card-filled select-none hover:elevation-1 hover:stateHover-onSurface focus-ring focus:elevation-0 focus:stateActive-onSurface;
+  }
+
+  .card-outlined {
+    @apply card bg-surface border text-onSurface border-outlineVariant elevation-0 disabled:opacity-10 disabled:border-outline disabled:pointer-events-none;
+  }
+  .card-outlined-selectable {
+    @apply card-outlined select-none hover:elevation-1 hover:stateHover-onSurface focus-ring focus:elevation-0 focus:stateActive-onSurface;
+  }
+}
