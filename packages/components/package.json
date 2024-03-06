@@ -1,0 +1,58 @@
+{
+  "name": "@gecut/components",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A collection of high-performance and beautiful UI components with Tailwind CSS, optimized for JS usage.",
+  "keywords": [
+    "gecut",
+    "ui",
+    "UI components",
+    "Tailwind CSS",
+    "TypeScript",
+    "beautiful",
+    "typescript",
+    "performance",
+    "optimization",
+    "toolkit",
+    "productivity",
+    "fast",
+    "efficient",
+    "development"
+  ],
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "email": "dev@mm25zamanain.ir",
+    "url": "https://mm25zamanain.ir"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/hybrid-ui",
+    "directory": "packages/components"
+  },
+  "main": "components.js",
+  "types": "components.d.ts",
+  "exports": {
+    ".": {
+      "default": "./components.js",
+      "types": "./components.d.ts"
+    },
+    "./*.js": {
+      "default": "./*.js",
+      "types": "./*.d.ts"
+    }
+  },
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md,css}"
+  ],
+  "dependencies": {
+    "@gecut/lit-helper": "workspace:^",
+    "@gecut/types": "^2.1.1-alpha.0",
+    "@gecut/utilities": "^5.1.1-alpha.0",
+    "@types/node": "^20.11.24",
+    "lit": "^3.1.2"
+  }
+}
