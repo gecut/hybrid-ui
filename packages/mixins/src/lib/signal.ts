@@ -13,7 +13,7 @@ export declare class SignalMixinInterface extends LitElement {
 export type MixinReturn<T> = Constructor<SignalMixinInterface> & T;
 
 export function SignalMixin<T extends Constructor<LitElement>>(
-    superClass: T
+  superClass: T
 ): MixinReturn<T> {
   class SignalMixinClass extends superClass {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -28,8 +28,8 @@ export function SignalMixin<T extends Constructor<LitElement>>(
     }
 
     protected addSignalSubscriber<T, S extends Signal<T>>(
-        signal: S,
-        subscriber: Subscriber<T>
+      signal: S,
+      subscriber: Subscriber<T>
     ): void {
       this.signalSubscribers.push([signal, subscriber]);
     }
