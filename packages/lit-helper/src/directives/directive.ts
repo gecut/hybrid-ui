@@ -9,8 +9,8 @@ export abstract class GecutDirective extends Directive {
     this.log = new GecutLogger(`<${debugName}>`);
 
     this.log.methodArgs?.(
-        'constructor',
-        Object.keys(PartType)[partInfo.type - 1]
+      'constructor',
+      Object.keys(PartType)[partInfo.type - 1]
     );
   }
 

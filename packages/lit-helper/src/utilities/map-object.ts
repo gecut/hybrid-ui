@@ -2,11 +2,11 @@ import type { RenderResult } from '@gecut/types';
 
 // eslint-disable-next-line consistent-return
 export function* mapObject<T>(
-    _this: unknown,
-    items: Record<string, T> | undefined | null,
-    f: (value: T, key: string) => RenderResult,
-    loading?: RenderResult
-): Generator<RenderResult, RenderResult | void, RenderResult> {
+  _this: unknown,
+  items: Record<string, T> | undefined | null,
+  f: (value: T, key: string) => RenderResult,
+  loading?: RenderResult
+): Generator<RenderResult, RenderResult, RenderResult> {
   if (items == null) {
     return loading;
   }
