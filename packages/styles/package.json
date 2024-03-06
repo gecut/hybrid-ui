@@ -10,6 +10,12 @@
   "main": "index.js",
   "types": "index.d.ts",
   "exports": {
+    "./css": {
+      "default": "./src/index.css"
+    },
+    "./*.css": {
+      "default": "./src/*.css"
+    },
     "./*.js": {
       "default": "./*.js",
       "types": "./*.d.ts"
