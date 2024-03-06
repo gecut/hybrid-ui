@@ -10,6 +10,11 @@
   "exclude": [],
   "references": [
     // packages
+    {"path": "./packages/components"},
+    {"path": "./packages/i18n"},
+    {"path": "./packages/lit-helper"},
+    {"path": "./packages/mixins"},
+    {"path": "./packages/styles"},
 
     // demo
     {"path": "./demo"}
