@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import {GecutDirective} from '@gecut/lit-helper/directives/directive.js';
 import {directive, type PartInfo} from 'lit/directive.js';
-import {classMap} from 'lit/directives/class-map.js';
 import {when} from 'lit/directives/when.js';
 import {html, noChange} from 'lit/html.js';
 
