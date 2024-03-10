@@ -80,8 +80,43 @@
     "@typescript-eslint/prefer-string-starts-ends-with": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/member-ordering": [
+      "error",
+      {
+        "default": [
+          "signature",
+          "constructor",
+          "static-field",
+          "public-field",
+          "protected-field",
+          "private-field",
+          "field",
+          "public-method",
+          "static-method",
+          "protected-method",
+          "private-method",
+          "method"
+        ]
+      }
+    ],
     "no-throw-literal": "off",
     "require-jsdoc": "off",
-    "valid-jsdoc": "off"
+    "valid-jsdoc": "off",
+    "class-methods-use-this": [
+      "error",
+      {
+        "exceptMethods": [
+          "connectedCallback",
+          "disconnectedCallback",
+          "performUpdate",
+          "shouldUpdate",
+          "firstUpdated",
+          "update",
+          "updated",
+          "createRenderRoot",
+          "render"
+        ]
+      }
+    ]
   }
 }
