@@ -67,7 +67,7 @@ export class GecutNavigationBarDirective extends GecutDirective {
           @click=${onClick}
           @keyup=${this.onEnterTab(onClick)}
           tabindex="0"
-          class="group flex grow flex-col items-center justify-center justify-start hover:text-onSurface aria-selected:pointer-events-none"
+          class="group flex grow flex-col items-center justify-center hover:text-onSurface aria-selected:pointer-events-none"
         >
           <div
             class="flex relative rounded-xl px-5 py-1 border-2 border-transparent group-hover:stateHover-onSurfaceVariant group-hover:border-surfaceContainerHighest group-active:border-outline group-active:stateActive-onSurfaceVariant group-focus:elevation-0 group-focus:border-outline group-focus:stateActive-onSurfaceVariant group-active:elevation-0 group-aria-selected:bg-secondaryContainer group-aria-selected:text-onSecondaryContainer group-aria-selected:elevation-2 dark:group-aria-selected:elevation-0 dark:group-aria-selected:border-secondary [&>.md-icon]:block [&>.md-icon]:h-6 [&>.md-icon]:w-6"

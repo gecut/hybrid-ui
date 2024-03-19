@@ -38,10 +38,11 @@
     "rl": "run-s pull clean build release",
     "upd": "yarn set version latest; yarn up '*' -i; yarn up '*' -R; yarn dlx @yarnpkg/sdks vscode;",
     "lint": "run-s 'lint:*'",
-    "lint:ts": "eslint --config .eslintrc.json --ignore-path .gitignore --ext .ts '.'",
+    "lint:ts": "eslint --config .eslintrc.json --ignore-path .gitignore --ext .ts --ext .mjs '.'",
     "build": "run-s build:ts build:r",
     "build:ts": "tsc --build",
     "build:r": "lerna run build",
+    "build:css": "tailwindcss -i ./demo/styles.css -o ./demo/__styles.css",
     "format": "run-s format:prettier format:eslint",
     "format:eslint": "yarn run lint:ts --fix",
     "format:prettier": "prettier . --ignore-path .gitignore --write",
@@ -49,6 +50,7 @@
     "serve": "wds",
     "watch": "run-p 'watch:*' serve",
     "watch:ts": "yarn run build:ts --watch --preserveWatchOutput",
+    "watch:css": "yarn run build:css --watch",
     "pull": "git pull",
     "release": "lerna version",
     "publish": "lerna publish from-package"
@@ -70,6 +72,11 @@
     "eslint-plugin-import": "^2.29.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@gecut/components": "workspace:^",
+    "@gecut/styles": "workspace:^"
   }
 }

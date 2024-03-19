@@ -13,5 +13,5 @@
 
   "include": ["**/*.ts"],
   "exclude": ["*.d.ts", "node_modules"],
-  "references": []
+  "references": [{"path": "../packages/components"}, {"path": "../packages/lit-helper"}]
 }

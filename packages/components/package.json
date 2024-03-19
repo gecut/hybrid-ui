@@ -50,6 +50,7 @@
   ],
   "dependencies": {
     "@gecut/lit-helper": "workspace:^",
+    "@gecut/signal": "^2.0.1-alpha.0",
     "@gecut/types": "^2.1.1-alpha.0",
     "@gecut/utilities": "^5.1.1-alpha.0",
     "@types/node": "^20.11.24",

@@ -1,0 +1,34 @@
+@import '../packages/styles/src/index.css';
+@import '../packages/styles/src/palettes/h260.css';
+
+app-index {
+  @apply flex flex-col h-full w-full overflow-hidden relative;
+}
+
+main[role='main'] {
+  position: initial;
+
+  @apply flex flex-col flex-1 overflow-hidden px-1;
+}
+
+.gecut-page {
+  gap: var(--_gap, 8px);
+
+  @apply flex flex-col h-full bg-surface animate-fadeInSlide;
+}
+
+.gecut-modal-page {
+  position: absolute;
+  inset: 0;
+
+  @apply absolute inset-0 z-modal gecut-page;
+}
+
+.scrollable {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+:root {
+  --f: 1rem;
+}
