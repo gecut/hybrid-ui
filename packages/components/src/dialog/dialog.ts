@@ -4,6 +4,7 @@ import {nextAnimationFrame} from '@gecut/utilities/wait/polyfill.js';
 import {untilEvent, untilNextFrame} from '@gecut/utilities/wait/wait.js';
 import {directive, type PartInfo} from 'lit/directive.js';
 import {createRef, ref, type Ref} from 'lit/directives/ref.js';
+import {styleMap} from 'lit/directives/style-map.js';
 import {when} from 'lit/directives/when.js';
 import {html, nothing} from 'lit/html.js';
 
@@ -77,6 +78,9 @@ export class GecutDialogDirective extends GecutDirective {
                  motion-safe:group-[.open.closing]/dialog:animate-zoomFadeOut
                  motion-reduce:group-[.open.opening]/dialog:animate-fadeIn
                  motion-reduce:group-[.open.closing]/dialog:animate-fadeOut"
+          style=${styleMap({
+            maxWidth: content.options?.maxWidth,
+          })}
         >
           <div
             class="bg-surfaceContainerHigh absolute inset-0 z-below
@@ -98,7 +102,9 @@ export class GecutDialogDirective extends GecutDirective {
       <div class="flex flex-col pt-6 px-6">
         ${when(
           hasIcon,
-          () => html`<div class="flex text-secondary justify-center [&+h2]:text-center">${icon(content.icon!)}</div>`,
+          () => html`
+            <div class="flex text-secondary justify-center pb-6 [&+div>h2]:text-center">${icon(content.icon!)}</div>
+          `,
         )}
 
         <div class="flex w-full gap-2 items-center">

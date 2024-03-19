@@ -5,6 +5,8 @@ import type {IconContent} from '../icon/icon.js';
 import type {TopBarContent} from '../top-bar/_type.js';
 import type {RenderResult} from '@gecut/types';
 
+type CssSize = `${number}${string}`;
+
 interface _BasicDialog {
   fullscreen: false;
 
@@ -15,6 +17,10 @@ interface _BasicDialog {
   buttons?: ((Omit<ButtonContent, 'onClick' | 'onDblClick'> & {value: string}) | 'separator')[];
 
   content?: RenderResult | string;
+
+  options?: {
+    maxWidth?: CssSize;
+  };
 }
 
 interface _FullscreenDialog {
