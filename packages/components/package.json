@@ -52,7 +52,7 @@
     "@gecut/lit-helper": "workspace:^",
     "@gecut/types": "^2.1.1-alpha.0",
     "@gecut/utilities": "^5.1.1-alpha.0",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.11.30",
     "lit": "^3.1.2"
   }
 }
