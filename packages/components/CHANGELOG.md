@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-alpha.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.0.1-alpha.0...@gecut/components@2.1.0-alpha.0) (2024-3-20)
+
+### Features
+
+* **components:** create dialog components ([#26](https://github.com/gecut/hybrid-ui/issues/26)) ([db91c35](https://github.com/gecut/hybrid-ui/commit/db91c352417257d8f516e2104209597eeeb26647)) by @MM25Zamanian
+
 ## [2.0.1-alpha.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.0.0...@gecut/components@2.0.1-alpha.0) (2024-3-10)
 
 ### Bug Fixes
