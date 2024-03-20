@@ -1,5 +1,6 @@
 {
   "root": true,
+  "ignorePatterns": ["*.config.*"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/strict",

@@ -7,5 +7,11 @@
   "private": true,
   "devDependencies": {
     "@types/node": "^20.11.30"
+  },
+  "dependencies": {
+    "@gecut/components": "workspace:^",
+    "@gecut/lit-helper": "workspace:^",
+    "@gecut/signal": "^2.0.1-alpha.0",
+    "lit": "^3.1.2"
   }
 }

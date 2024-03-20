@@ -99,11 +99,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gecut/components@workspace:packages/components":
+"@gecut/components@workspace:^, @gecut/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@gecut/components@workspace:packages/components"
   dependencies:
     "@gecut/lit-helper": "workspace:^"
+    "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
     "@gecut/utilities": "npm:^5.1.1-alpha.0"
     "@types/node": "npm:^20.11.30"
@@ -192,7 +193,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gecut/styles@workspace:packages/styles":
+"@gecut/styles@workspace:^, @gecut/styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@gecut/styles@workspace:packages/styles"
   dependencies:
@@ -3595,7 +3596,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gecut-demo@workspace:demo"
   dependencies:
+    "@gecut/components": "workspace:^"
+    "@gecut/lit-helper": "workspace:^"
+    "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@types/node": "npm:^20.11.30"
+    lit: "npm:^3.1.2"
   languageName: unknown
   linkType: soft
 
@@ -3989,6 +3994,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hybrid-ui@workspace:."
   dependencies:
+    "@gecut/components": "workspace:^"
+    "@gecut/styles": "workspace:^"
     "@lerna-lite/changed": "npm:^3.3.1"
     "@lerna-lite/cli": "npm:^3.3.1"
     "@lerna-lite/diff": "npm:^3.3.1"
@@ -4005,6 +4012,7 @@ __metadata:
     eslint-plugin-import: "npm:^2.29.1"
     npm-run-all: "npm:^4.1.5"
     prettier: "npm:^3.2.5"
+    tailwindcss: "npm:^3.4.1"
     typescript: "npm:^5.4.2"
   languageName: unknown
   linkType: soft
