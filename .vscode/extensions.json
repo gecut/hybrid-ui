@@ -8,6 +8,10 @@
     "jgclark.vscode-todo-highlight",
     "streetsidesoftware.code-spell-checker-persian",
     "streetsidesoftware.code-spell-checker",
-    "arcanis.vscode-zipfs"
+    "arcanis.vscode-zipfs",
+    "redhat.vscode-yaml",
+    "bierner.lit-html",
+    "runem.lit-plugin",
+    "bradlc.vscode-tailwindcss"
   ]
 }
