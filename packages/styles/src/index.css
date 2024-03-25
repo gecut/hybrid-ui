@@ -9,7 +9,8 @@
 @import './css/utilities.css';
 @import './css/cards.css';
 
-gecut-root {
+gecut-root,
+.root {
   display: flex;
   flex-direction: column;
   height: 100%;
