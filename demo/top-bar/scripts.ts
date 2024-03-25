@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 import {gecutSmallTopBar} from '@gecut/components';
+import {map} from 'lit/directives/map.js';
+import {range} from 'lit/directives/range.js';
 import {html, render} from 'lit/html.js';
 
 render(
@@ -21,7 +23,12 @@ render(
       title: 'Gecut Top Bar',
     })}
     <main role="main">
-      <h1 class="text-headlineMedium text-primary">h</h1>
+      <div class="gecut-page scrollabe">
+        ${map(
+          range(window.innerHeight / 10),
+          (i) => html`<p class="text-bodyMedium text-onSurfaceVariant">Random Content: ${i}</p>`,
+        )}
+      </div>
     </main>
   `,
   document.body,

@@ -1,0 +1,7 @@
+@import '@gecut/styles/css';
+@import '@gecut/styles/palettes/h260.css';
+
+html,
+body {
+  @apply h-full;
+}

@@ -26,8 +26,10 @@ export default {
 
   content: [
     'index.html',
-    'demo/**/*.html',
-    'demo/**/*.ts',
+    '**/*.html',
+    '**/*.ts',
     path.dirname(require.resolve('@gecut/components')) + '/**/*.js',
   ],
+
+  plugins: [...tailwindConfig.plugins, require('@tailwindcss/aspect-ratio')],
 };

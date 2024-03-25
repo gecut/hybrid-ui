@@ -5,13 +5,22 @@
   "author": "S. MohammadMahdi Zamanian <dev@mm25zamanain.ir> (https://mm25zamanian.ir)",
   "type": "module",
   "private": true,
-  "devDependencies": {
-    "@types/node": "^20.11.30"
+  "scripts": {
+    "serve": "vite --host 0.0.0.0 --port 3031 --open --clearScreen -d",
+    "build": "vite build --clearScreen"
   },
-  "dependencies": {
+  "devDependencies": {
     "@gecut/components": "workspace:^",
     "@gecut/lit-helper": "workspace:^",
     "@gecut/signal": "^2.0.1-alpha.0",
-    "lit": "^3.1.2"
+    "@gecut/styles": "workspace:^",
+    "@gecut/types": "^2.1.1-alpha.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@types/node": "^20.11.30",
+    "autoprefixer": "^10.4.19",
+    "lit": "^3.1.2",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.2.4"
   }
 }
