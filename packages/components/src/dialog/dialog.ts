@@ -73,7 +73,7 @@ export class GecutDialogDirective extends GecutDirective {
         ></div>
 
         <div
-          class="flex flex-col w-max h-max z-modal min-w-72 relative 
+          class="flex flex-col w-max h-max z-modal min-w-72 relative
                  motion-safe:group-[.open.opening]/dialog:animate-zoomFadeIn
                  motion-safe:group-[.open.closing]/dialog:animate-zoomFadeOut
                  motion-reduce:group-[.open.opening]/dialog:animate-fadeIn
@@ -134,7 +134,7 @@ export class GecutDialogDirective extends GecutDirective {
           hasContent,
           () => html`
             ${when(hasDivider, () => divider({}))}
-            <div class="scrollable ${hasDivider ? 'py-2' : ''}">${content.content}</div>
+            <div class="scrollable leading-tight ${hasDivider ? 'py-2' : ''}">${content.content}</div>
             ${when(hasDivider, () => divider({}))}
           `,
         )}
