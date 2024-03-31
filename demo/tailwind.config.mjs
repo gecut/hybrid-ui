@@ -24,12 +24,22 @@ export const systemFont = [
 export default {
   ...tailwindConfig,
 
-  content: [
-    'index.html',
-    '**/*.html',
-    '**/*.ts',
-    path.dirname(require.resolve('@gecut/components')) + '/**/*.js',
-  ],
+  theme: {
+    ...tailwindConfig.theme,
+
+    fontFamily: {
+      ...tailwindConfig.theme.fontFamily,
+
+      roboto: [
+        ['Roboto', ...systemFont],
+        {
+          fontFeatureSettings: '"calt" 1, "tnum" 0',
+        },
+      ],
+    },
+  },
+
+  content: ['index.html', '**/*.html', '**/*.ts', path.dirname(require.resolve('@gecut/components')) + '/**/*.ts'],
 
   plugins: [...tailwindConfig.plugins, require('@tailwindcss/aspect-ratio')],
 };

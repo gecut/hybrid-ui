@@ -23,7 +23,7 @@ render(
       title: 'Gecut Top Bar',
     })}
     <main role="main">
-      <div class="gecut-page scrollabe">
+      <div class="gecut-page scrollable">
         ${map(
           range(window.innerHeight / 10),
           (i) => html`<p class="text-bodyMedium text-onSurfaceVariant">Random Content: ${i}</p>`,

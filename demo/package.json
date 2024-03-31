@@ -6,10 +6,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "serve": "vite --host 0.0.0.0 --port 3031 --open --clearScreen -d",
+    "serve": "vite --host 0.0.0.0 --port 3031 --open --clearScreen",
     "build": "vite build --clearScreen"
   },
   "devDependencies": {
+    "@fontsource/vazirmatn": "^5.0.19",
     "@gecut/components": "workspace:^",
     "@gecut/lit-helper": "workspace:^",
     "@gecut/signal": "^2.0.1-alpha.0",
@@ -21,6 +22,8 @@
     "lit": "^3.1.2",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.2.4"
+    "unplugin-fonts": "^1.1.1",
+    "vite": "^5.2.4",
+    "vite-tsconfig-paths": "^4.3.2"
   }
 }

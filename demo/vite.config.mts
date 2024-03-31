@@ -1,9 +1,11 @@
 import {defineConfig} from 'vite';
+import Unfonts from 'unplugin-fonts/vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-const entrys = ['dialog', 'top-bar'];
+const entrys = ['dialog', 'top-bar', 'button', 'builder'];
 const DIST_PATH = './dist/';
 const pages = entrys.reduce((result, name) => {
-  result[name] = `src/${name}/index.html`;
+  result[name] = `./${name}/index.html`;
 
   return result;
 }, {});
@@ -25,5 +27,26 @@ export default defineConfig(() => {
         input: {main: 'index.html', ...pages},
       },
     },
+
+    plugins: [
+      tsconfigPaths(),
+      Unfonts({
+        // fontsource: {
+        //   families: ['Varela Round'],
+        // },
+        google: {
+          families: [
+            {
+              name: 'Roboto',
+              styles: 'wght@500',
+              defer: true,
+            },
+          ],
+          display: 'swap',
+          injectTo: 'head-prepend',
+          preconnect: true,
+        },
+      }),
+    ],
   };
 });
