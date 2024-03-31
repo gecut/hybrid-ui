@@ -7,6 +7,7 @@
 @import './css/form.css';
 @import './css/scrollbar.css';
 @import './css/utilities.css';
+@import './css/typography.css';
 @import './css/cards.css';
 
 gecut-root,
@@ -33,6 +34,6 @@ main[role='main'] {
   height: 100%;
   gap: var(--_gap, 8px);
 }
-.gecut-page.scrollabe {
+.gecut-page.scrollable {
   overflow-y: auto;
 }

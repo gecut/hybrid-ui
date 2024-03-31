@@ -1,0 +1,37 @@
+@layer utilities {
+  .typography-content h1,
+  h1.typography-children {
+    @apply text-displaySmall font-light mt-4 before:content-['#'];
+  }
+  .typography-content h2,
+  h2.typography-children {
+    @apply text-headlineMedium mt-3 before:content-['##'];
+  }
+  .typography-content h3,
+  h3.typography-children {
+    @apply text-titleLarge mt-2 before:content-['###'];
+  }
+  .typography-content p,
+  p.typography-children {
+    @apply text-onSurfaceVariant text-bodyMedium my-2 text-pretty;
+  }
+  .typography-content ul,
+  ul.typography-children {
+    @apply text-onSurfaceVariant text-bodyMedium my-2 text-pretty;
+  }
+  .typography-content strong,
+  strong.typography-children,
+  .typography-content b,
+  b.typography-children {
+    @apply font-bold text-onSurface;
+  }
+
+  .typography-content h1,
+  h1.typography-children,
+  .typography-content h2,
+  h2.typography-children,
+  .typography-content h3,
+  h3.typography-children {
+    @apply text-onSurface capitalize mb-3 border-b-2 border-outlineVariant before:text-primary before:me-2;
+  }
+}
