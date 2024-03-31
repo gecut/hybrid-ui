@@ -47,7 +47,7 @@
     "format:prettier": "prettier . --ignore-path .gitignore --write",
     "clean": "git clean -d -x -f --exclude=node_modules --exclude='*.env' --exclude=_data --exclude='.pnp*' --exclude=.yarn",
     "serve": "lerna run serve",
-    "watch": "run-p 'watch:*'",
+    "watch": "run-p 'watch:*' serve",
     "watch:ts": "yarn run build:ts --watch --preserveWatchOutput",
     "pull": "git pull",
     "release": "lerna version",
@@ -70,9 +70,5 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "typescript": "^5.4.2"
-  },
-  "dependencies": {
-    "@gecut/components": "workspace:^",
-    "@gecut/styles": "workspace:^"
   }
 }

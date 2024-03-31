@@ -250,6 +250,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/vazirmatn@npm:^5.0.19":
+  version: 5.0.19
+  resolution: "@fontsource/vazirmatn@npm:5.0.19"
+  checksum: 10c0/c5f266351ca737c3c03c94dd4b268acd39343e2c0ee21335ca550297c7ffc24c5f04bea2e713f12981055c3315574afba50cc1cae9799fd3aecadb8663a47882
+  languageName: node
+  linkType: hard
+
 "@gecut/components@workspace:^, @gecut/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@gecut/components@workspace:packages/components"
@@ -1526,7 +1533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.9.0":
+"acorn@npm:^8.11.3, acorn@npm:^8.9.0":
   version: 8.11.3
   resolution: "acorn@npm:8.11.3"
   bin:
@@ -2018,7 +2025,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.5.3":
+"chokidar@npm:^3.5.3, chokidar@npm:^3.6.0":
   version: 3.6.0
   resolution: "chokidar@npm:3.6.0"
   dependencies:
@@ -2407,7 +2414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
+"debug@npm:4, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -3066,7 +3073,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1, fast-glob@npm:^3.3.2":
+"fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1, fast-glob@npm:^3.3.2":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -3323,6 +3330,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gecut-demo@workspace:demo"
   dependencies:
+    "@fontsource/vazirmatn": "npm:^5.0.19"
     "@gecut/components": "workspace:^"
     "@gecut/lit-helper": "workspace:^"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
@@ -3334,7 +3342,9 @@ __metadata:
     lit: "npm:^3.1.2"
     postcss: "npm:^8.4.38"
     tailwindcss: "npm:^3.4.1"
+    unplugin-fonts: "npm:^1.1.1"
     vite: "npm:^5.2.4"
+    vite-tsconfig-paths: "npm:^4.3.2"
   languageName: unknown
   linkType: soft
 
@@ -3522,6 +3532,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globrex@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "globrex@npm:0.1.2"
+  checksum: 10c0/a54c029520cf58bda1d8884f72bd49b4cd74e977883268d931fd83bcbd1a9eb96d57c7dbd4ad80148fb9247467ebfb9b215630b2ed7563b2a8de02e1ff7f89d1
+  languageName: node
+  linkType: hard
+
 "gopd@npm:^1.0.1":
   version: 1.0.1
   resolution: "gopd@npm:1.0.1"
@@ -3686,8 +3703,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hybrid-ui@workspace:."
   dependencies:
-    "@gecut/components": "workspace:^"
-    "@gecut/styles": "workspace:^"
     "@lerna-lite/changed": "npm:^3.3.1"
     "@lerna-lite/cli": "npm:^3.3.1"
     "@lerna-lite/diff": "npm:^3.3.1"
@@ -6608,6 +6623,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tsconfck@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "tsconfck@npm:3.0.3"
+  peerDependencies:
+    typescript: ^5.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  bin:
+    tsconfck: bin/tsconfck.js
+  checksum: 10c0/d45009230c4caa5fc765bdded96f3b8703a7cdd44a1d63024914b0fb1c4dabf9e94d28cc9f9edccaef9baa7b99adc963502d34943d82fcb07b92e1161ee03c56
+  languageName: node
+  linkType: hard
+
 "tsconfig-paths@npm:^3.15.0":
   version: 3.15.0
   resolution: "tsconfig-paths@npm:3.15.0"
@@ -6837,6 +6866,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unplugin-fonts@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "unplugin-fonts@npm:1.1.1"
+  dependencies:
+    fast-glob: "npm:^3.2.12"
+    unplugin: "npm:^1.3.1"
+  peerDependencies:
+    "@nuxt/kit": ^3.0.0
+    vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
+  peerDependenciesMeta:
+    "@nuxt/kit":
+      optional: true
+  checksum: 10c0/8bd2fd6320087f3843eb1d63fd4e6bd4dd516649e3f873af828f814954d797a2b722a0a2e344384eef882b4f060b88c2aae0728c3c561adfd390bf17a07d441c
+  languageName: node
+  linkType: hard
+
+"unplugin@npm:^1.3.1":
+  version: 1.10.0
+  resolution: "unplugin@npm:1.10.0"
+  dependencies:
+    acorn: "npm:^8.11.3"
+    chokidar: "npm:^3.6.0"
+    webpack-sources: "npm:^3.2.3"
+    webpack-virtual-modules: "npm:^0.6.1"
+  checksum: 10c0/cdd877adb964bf9bd293d7702aa0dace5619f6bff572d3a9c551721f975b1323d69ca40fe23dc2e82b9dd956a02d6feb9e8287dfc1d868d5d4ac2eade24ff5ba
+  languageName: node
+  linkType: hard
+
 "upath@npm:^2.0.1":
   version: 2.0.1
   resolution: "upath@npm:2.0.1"
@@ -6902,6 +6959,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vite-tsconfig-paths@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "vite-tsconfig-paths@npm:4.3.2"
+  dependencies:
+    debug: "npm:^4.1.1"
+    globrex: "npm:^0.1.2"
+    tsconfck: "npm:^3.0.3"
+  peerDependencies:
+    vite: "*"
+  peerDependenciesMeta:
+    vite:
+      optional: true
+  checksum: 10c0/f390ac1d1c3992fc5ac50f9274c1090f8b55ab34a89ea88893db9a6924a3b26c9f64bc1163615150ad100749db73b6b2cf1d57f6cd60df6e762ceb5b8ad30024
+  languageName: node
+  linkType: hard
+
 "vite@npm:^5.2.4":
   version: 5.2.4
   resolution: "vite@npm:5.2.4"
@@ -6962,6 +7035,20 @@ __metadata:
   version: 3.3.3
   resolution: "web-streams-polyfill@npm:3.3.3"
   checksum: 10c0/64e855c47f6c8330b5436147db1c75cb7e7474d924166800e8e2aab5eb6c76aac4981a84261dd2982b3e754490900b99791c80ae1407a9fa0dcff74f82ea3a7f
+  languageName: node
+  linkType: hard
+
+"webpack-sources@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "webpack-sources@npm:3.2.3"
+  checksum: 10c0/2ef63d77c4fad39de4a6db17323d75eb92897b32674e97d76f0a1e87c003882fc038571266ad0ef581ac734cbe20952912aaa26155f1905e96ce251adbb1eb4e
+  languageName: node
+  linkType: hard
+
+"webpack-virtual-modules@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "webpack-virtual-modules@npm:0.6.1"
+  checksum: 10c0/696bdc1acf3806374bdeb4b9b9856b79ee70b31e92f325dfab9b8c8c7e14bb6ddffa9f895a214770c4fb8fea45a21f34ca64310f74e877292a90f4a9966c9c2f
   languageName: node
   linkType: hard
 
