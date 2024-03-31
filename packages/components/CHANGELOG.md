@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-alpha.1](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.0-alpha.0...@gecut/components@2.1.0-alpha.1) (2024-3-31)
+
+### Bug Fixes
+
+* **components/dialog:** content style issue ([a73f96d](https://github.com/gecut/hybrid-ui/commit/a73f96d472fdc72a5c5be5b87cc12e02553728d3)) by @MM25Zamanian
+
+### Features
+
+* **components/button:** loading ([b19eaba](https://github.com/gecut/hybrid-ui/commit/b19eabad22a07e53a9e69836f839afdce2f2ed22)) by @MM25Zamanian
+
 # [2.1.0-alpha.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.0.1-alpha.0...@gecut/components@2.1.0-alpha.0) (2024-3-20)
 
 ### Features

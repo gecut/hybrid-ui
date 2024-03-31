@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.1.0...@gecut/styles@2.2.0) (2024-3-31)
+
+### Bug Fixes
+
+* **styles:** global css ([78738e5](https://github.com/gecut/hybrid-ui/commit/78738e596ab6b08aa8f4983aaeb5ed573104e979)) by @MM25Zamanian
+
+### Features
+
+* **styles:** typography ([7177225](https://github.com/gecut/hybrid-ui/commit/7177225d9c8b60b43d6ceea644aa0c9dd1082899)) by @MM25Zamanian
+
 # [2.1.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.0.0...@gecut/styles@2.1.0) (2024-3-20)
 
 ### Features
