@@ -73,7 +73,10 @@ render(
             class="flex items-center justify-around gap-4 text-bodyMedium text-onSurface text-pretty capitalize mb-6"
           >
             ${gecutButton({
-              onClick: () => helper.open(),
+              onClick: () =>
+                helper.open({
+                  headline: 'headline' in helper.content ? helper.content.headline + '*' : '',
+                }),
               type: 'filled',
               label: 'headline' in helper.content ? helper.content.headline : 'Open',
             })}

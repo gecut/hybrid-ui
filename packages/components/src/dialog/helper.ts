@@ -12,7 +12,7 @@ export class DialogHelper {
     this.content = content;
 
     this.html = html`${gecutContext<'open' | 'close'>()(this.controller, (status) => {
-      const dialogContent: DialogContent = {...content, controller: this.controller, provider: this.provider};
+      const dialogContent: DialogContent = {...this.content, controller: this.controller, provider: this.provider};
 
       return gecutDialog(dialogContent, status === 'open');
     })}`;
@@ -25,7 +25,9 @@ export class DialogHelper {
   html: RenderResult;
   content: DialogHelperContent;
 
-  open() {
+  open(content: Partial<DialogHelperContent> = {}) {
+    this.content = {...this.content, ...content} as DialogHelperContent;
+
     this.controller.setValue('open');
   }
 
