@@ -17,6 +17,7 @@ export type ButtonContent = {
 
   disabled?: boolean;
   loading?: boolean;
+  loader?: IconContent;
   icon?: IconContent;
   trailingIcon?: IconContent;
 
@@ -38,7 +39,7 @@ export class GecutButtonDirective extends GecutDirective {
   }
 
   private static baseStyleClass =
-    'relative  rounded-full h-10 px-6 cursor-pointer focus-ring disabled:cursor-default disabled:pointer-events-none [&[loading]]:cursor-default [&[loading]]:pointer-events-none';
+    'relative group rounded-full h-10 px-6 cursor-pointer focus-ring disabled:cursor-default disabled:pointer-events-none [&[loading]]:cursor-default [&[loading]]:pointer-events-none';
   private static uiTypeStylesClasses = {
     elevated:
       'text-primary bg-surfaceContainerLow elevation-1 hover:elevation-2 hover:stateHover-primary focus:elevation-1 active:stateActive-primary disabled:opacity-60',
@@ -95,13 +96,19 @@ export class GecutButtonDirective extends GecutDirective {
   }
   protected static renderContent(content: ButtonContent): unknown {
     return html`
-      <div class="absolute inset-0 flex justify-center items-center ${content.loading ? 'opacity-100' : 'opacity-0'}">
-        ${icon({
-          svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="0" fill="currentColor"><animate id="svgSpinnersPulse20" fill="freeze" attributeName="r" begin="0;svgSpinnersPulse21.begin+0.6s" calcMode="spline" dur="1.2s" keySplines=".52,.6,.25,.99" values="0;11"/><animate fill="freeze" attributeName="opacity" begin="0;svgSpinnersPulse21.begin+0.6s" calcMode="spline" dur="1.2s" keySplines=".52,.6,.25,.99" values="1;0"/></circle><circle cx="12" cy="12" r="0" fill="currentColor"><animate id="svgSpinnersPulse21" fill="freeze" attributeName="r" begin="svgSpinnersPulse20.begin+0.6s" calcMode="spline" dur="1.2s" keySplines=".52,.6,.25,.99" values="0;11"/><animate fill="freeze" attributeName="opacity" begin="svgSpinnersPulse20.begin+0.6s" calcMode="spline" dur="1.2s" keySplines=".52,.6,.25,.99" values="1;0"/></circle></svg>',
-        })}
+      <div
+        class="absolute inset-0 flex justify-center items-center transition-opacity duration-300 opacity-0 group-[[loading]]:opacity-100"
+      >
+        ${icon(
+          content.loader ?? {
+            svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke="currentColor"><circle cx="12" cy="12" r="9.5" fill="none" stroke-linecap="round" stroke-width="2.5"><animate attributeName="stroke-dasharray" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0 150;42 150;42 150;42 150"/><animate attributeName="stroke-dashoffset" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0;-16;-59;-59"/></circle><animateTransform attributeName="transform" dur="2s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></g></svg>',
+          },
+        )}
       </div>
 
-      <div class="flex items-center justify-center gap-2 ${content.loading ? 'opacity-0' : 'opacity-100'}">
+      <div
+        class="flex items-center justify-center gap-2 transition-opacity duration-300 opacity-100 group-[[loading]]:opacity-0"
+      >
         ${when(content.icon?.svg, () => icon({svg: content.icon?.svg as string}))}
 
         <span class="text-labelLarge">${content.label}</span>
