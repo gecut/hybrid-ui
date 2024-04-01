@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-alpha.2](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.0-alpha.1...@gecut/components@2.1.0-alpha.2) (2024-4-1)
+
+### Features
+
+* **components/button:** loader icon ([9626862](https://github.com/gecut/hybrid-ui/commit/962686228324711d5a8e0b6e672e6290bba68184)) by @MM25Zamanian
+* **components/dialog/helper:** add content to open method ([37ef94a](https://github.com/gecut/hybrid-ui/commit/37ef94a34a1c99a88636126c9d420a79a943f69d)) by @MM25Zamanian
+
 # [2.1.0-alpha.1](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.0-alpha.0...@gecut/components@2.1.0-alpha.1) (2024-3-31)
 
 ### Bug Fixes
