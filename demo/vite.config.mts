@@ -2,7 +2,7 @@ import {defineConfig} from 'vite';
 import Unfonts from 'unplugin-fonts/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-const entrys = ['dialog', 'top-bar'];
+const entrys = ['dialog', 'top-bar', 'button'];
 const DIST_PATH = './dist/';
 const pages = entrys.reduce((result, name) => {
   result[name] = `./${name}/index.html`;

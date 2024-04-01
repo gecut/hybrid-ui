@@ -13,6 +13,11 @@ interface Demo {
 const container = document.getElementById('container');
 const demos: Demo[] = [
   {
+    title: 'Commons Buttons',
+    href: '/button/',
+    align: 'center',
+  },
+  {
     title: 'Dialog',
     href: '/dialog/',
     align: 'center',
