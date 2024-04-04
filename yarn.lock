@@ -265,7 +265,7 @@ __metadata:
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
     "@gecut/utilities": "npm:^5.1.1-alpha.0"
-    "@types/node": "npm:^20.11.30"
+    "@types/node": "npm:^20.12.4"
     lit: "npm:^3.1.2"
   languageName: unknown
   linkType: soft
@@ -1319,12 +1319,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.30":
-  version: 20.11.30
-  resolution: "@types/node@npm:20.11.30"
+"@types/node@npm:^20.12.4":
+  version: 20.12.4
+  resolution: "@types/node@npm:20.12.4"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/867cfaf969c6d8850d8d7304e7ab739898a50ecb1395b61ff2335644f5f48d7a46fbc4a14cee967aed65ec134b61a746edae70d1f32f11321ccf29165e3bc4e6
+  checksum: 10c0/9b142fcd839a48c348d6b9acfc753dfa4b3fb1f3e23ed67e8952bee9b2dfdaffdddfbcf0e4701557b88631591a5f9968433910027532ef847759f8682e27ffe7
   languageName: node
   linkType: hard
 
@@ -3337,7 +3337,7 @@ __metadata:
     "@gecut/styles": "workspace:^"
     "@gecut/types": "npm:^2.1.1-alpha.0"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
-    "@types/node": "npm:^20.11.30"
+    "@types/node": "npm:^20.12.4"
     autoprefixer: "npm:^10.4.19"
     lit: "npm:^3.1.2"
     postcss: "npm:^8.4.38"
@@ -3710,7 +3710,7 @@ __metadata:
     "@lerna-lite/publish": "npm:^3.3.1"
     "@lerna-lite/run": "npm:^3.3.1"
     "@lerna-lite/version": "npm:^3.3.1"
-    "@types/node": "npm:^20.11.30"
+    "@types/node": "npm:^20.12.4"
     "@typescript-eslint/eslint-plugin": "npm:^7.3.1"
     "@typescript-eslint/parser": "npm:^7.3.1"
     eslint: "npm:^8.57.0"
