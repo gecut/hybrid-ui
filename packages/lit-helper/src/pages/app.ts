@@ -1,8 +1,8 @@
-import { scheduleSignalElement } from '@gecut/mixins';
-import { css, html } from 'lit';
+import {scheduleSignalElement} from '@gecut/mixins';
+import {css, html} from 'lit';
 
-import type { RenderResult } from '@gecut/types';
-import type { PropertyValues } from 'lit';
+import type {RenderResult} from '@gecut/types';
+import type {PropertyValues} from 'lit';
 
 export abstract class GecutApp extends scheduleSignalElement {
   static override styles = [
@@ -28,7 +28,7 @@ export abstract class GecutApp extends scheduleSignalElement {
         overflow: hidden;
         position: relative;
       }
-    `
+    `,
   ];
 
   override render(): RenderResult {
@@ -37,14 +37,10 @@ export abstract class GecutApp extends scheduleSignalElement {
     return html``;
   }
 
-  protected override firstUpdated(
-    changedProperties: PropertyValues<this>
-  ): void {
+  protected override firstUpdated(changedProperties: PropertyValues<this>): void {
     super.firstUpdated(changedProperties);
 
-    window.addEventListener('vaadin-router-location-changed', () =>
-      this.requestUpdate()
-    );
+    window.addEventListener('vaadin-router-location-changed', () => this.requestUpdate());
   }
 
   protected override createRenderRoot() {

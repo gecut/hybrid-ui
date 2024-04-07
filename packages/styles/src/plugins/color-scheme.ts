@@ -1,6 +1,6 @@
 import plugin from 'tailwindcss/plugin.js';
 
-import type { Config } from 'tailwindcss';
+import type {Config} from 'tailwindcss';
 
 export const _colorSchemeLight = {
   '--sys-color-primary': 'var(--ref-palette-primary40)',
@@ -46,7 +46,7 @@ export const _colorSchemeLight = {
 
   '--sys-color-surface-tint': 'var(--sys-color-primary)',
   '--sys-color-shadow': 'var(--ref-palette-neutral0)',
-  '--sys-color-scrim': 'var(--ref-palette-neutral0)'
+  '--sys-color-scrim': 'var(--ref-palette-neutral0)',
 } as const;
 
 export const _colorSchemeDark = {
@@ -93,7 +93,7 @@ export const _colorSchemeDark = {
 
   '--sys-color-surface-tint': 'var(--sys-color-primary)',
   '--sys-color-shadow': 'var(--ref-palette-neutral0)',
-  '--sys-color-scrim': 'var(--ref-palette-neutral0)'
+  '--sys-color-scrim': 'var(--ref-palette-neutral0)',
 } as const;
 
 export const _colorTheme = {
@@ -154,20 +154,20 @@ export const _colorTheme = {
    */
   surfaceTint: 'rgba(var(--sys-color-surface-tint), <alpha-value>)',
   shadow: 'rgba(var(--sys-color-shadow), <alpha-value>)',
-  scrim: 'rgba(var(--sys-color-scrim), <alpha-value>)'
+  scrim: 'rgba(var(--sys-color-scrim), <alpha-value>)',
 } as const;
 
 export const colorTheme: Config['theme'] = {
-  colors: _colorTheme
+  colors: _colorTheme,
 };
 
-export const colorPlugin = plugin(({ addUtilities }) => {
+export const colorPlugin = plugin(({addUtilities}) => {
   addUtilities({
     '.color-scheme-light': _colorSchemeLight,
     '.color-scheme-dark': _colorSchemeDark,
     '.color-scheme-auto': {
       ..._colorSchemeLight,
-      '@media (prefers-color-scheme: dark)': _colorSchemeDark
-    }
+      '@media (prefers-color-scheme: dark)': _colorSchemeDark,
+    },
   });
 });

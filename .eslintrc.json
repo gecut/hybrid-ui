@@ -40,6 +40,13 @@
     "new-cap": ["error", {"capIsNewExceptionPattern": "Mixin$"}],
     "brace-style": ["error", "stroustrup", {"allowSingleLine": true}],
     "indent": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "fixStyle": "separate-type-imports",
+        "prefer": "type-imports"
+      }
+    ],
     "@typescript-eslint/indent": [
       "error",
       2,

@@ -1,16 +1,14 @@
-import { GecutLogger } from '@gecut/logger';
-import { LitElement } from 'lit';
+import {GecutLogger} from '@gecut/logger';
+import {LitElement} from 'lit';
 
-import type { Constructor } from '@gecut/types';
-import type { PropertyValues, PropertyDeclaration } from 'lit';
+import type {Constructor} from '@gecut/types';
+import type {PropertyValues, PropertyDeclaration} from 'lit';
 
 export declare class LoggerMixinInterface extends LitElement {
   protected log: GecutLogger;
 }
 
-export function LoggerMixin<T extends Constructor<LitElement>>(
-  superClass: T
-): Constructor<LoggerMixinInterface> & T {
+export function LoggerMixin<T extends Constructor<LitElement>>(superClass: T): Constructor<LoggerMixinInterface> & T {
   class LoggerMixinClass extends superClass {
     protected log = new GecutLogger(`<${this.tagName.toLowerCase()}>`);
 
@@ -29,7 +27,7 @@ export function LoggerMixin<T extends Constructor<LitElement>>(
     override dispatchEvent(event: Event): boolean {
       this.log.methodArgs?.('dispatchEvent', {
         type: event.type,
-        detail: (event as Event & { detail?: unknown }).detail
+        detail: (event as Event & {detail?: unknown}).detail,
       });
       return super.dispatchEvent(event);
     }
@@ -42,13 +40,13 @@ export function LoggerMixin<T extends Constructor<LitElement>>(
     override requestUpdate(
       name?: PropertyKey | undefined,
       oldValue?: unknown,
-      options?: PropertyDeclaration<unknown, unknown> | undefined
+      options?: PropertyDeclaration<unknown, unknown> | undefined,
     ): void {
       this?.log?.methodArgs?.('requestUpdate', {
         name,
         newValue: this[name as keyof LoggerMixinClass],
         oldValue,
-        options
+        options,
       });
 
       super.requestUpdate(name, oldValue, options);
@@ -56,20 +54,18 @@ export function LoggerMixin<T extends Constructor<LitElement>>(
 
     protected override update(changedProperties: PropertyValues): void {
       this.log.method?.('update');
-      this.log.time?.(
-        this._$firstUpdated ? 'update-time' : 'first-update-time'
-      );
+      this.log.time?.(this._$firstUpdated ? 'update-time' : 'first-update-time');
       super.update(changedProperties);
     }
 
     protected override firstUpdated(changedProperties: PropertyValues): void {
-      this.log.methodArgs?.('firstUpdated', { changedProperties });
+      this.log.methodArgs?.('firstUpdated', {changedProperties});
       this.log.timeEnd?.('first-update-time');
       super.firstUpdated(changedProperties);
     }
 
     protected override updated(changedProperties: PropertyValues): void {
-      this.log.methodArgs?.('updated', { changedProperties });
+      this.log.methodArgs?.('updated', {changedProperties});
 
       if (this._$firstUpdated) {
         this.log.timeEnd?.('update-time');
@@ -87,6 +83,5 @@ export function LoggerMixin<T extends Constructor<LitElement>>(
     }
   }
 
-  return LoggerMixinClass as unknown as Constructor<LoggerMixinInterface> &
-  T;
+  return LoggerMixinClass as unknown as Constructor<LoggerMixinInterface> & T;
 }

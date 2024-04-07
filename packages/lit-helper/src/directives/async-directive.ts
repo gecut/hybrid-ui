@@ -1,17 +1,14 @@
-import { GecutLogger } from '@gecut/logger';
-import { AsyncDirective, PartType } from 'lit-html/async-directive.js';
+import {GecutLogger} from '@gecut/logger';
+import {AsyncDirective, PartType} from 'lit-html/async-directive.js';
 
-import type { Part, PartInfo } from 'lit-html/directive.js';
+import type {Part, PartInfo} from 'lit-html/directive.js';
 
 export abstract class GecutAsyncDirective extends AsyncDirective {
   constructor(partInfo: PartInfo, debugName: string) {
     super(partInfo);
     this.log = new GecutLogger(`<${debugName}>`);
 
-    this.log.methodArgs?.(
-      'constructor',
-      Object.keys(PartType)[partInfo.type - 1]
-    );
+    this.log.methodArgs?.('constructor', Object.keys(PartType)[partInfo.type - 1]);
   }
 
   protected log;

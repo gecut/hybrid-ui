@@ -1,8 +1,8 @@
-import {ContextSignal} from '@gecut/signal';
 
 import type {ButtonContent} from '../button/button.js';
 import type {IconContent} from '../icon/icon.js';
 import type {TopBarContent} from '../top-bar/_type.js';
+import type {ContextSignal} from '@gecut/signal';
 import type {RenderResult} from '@gecut/types';
 
 type CssSize = `${number}${string}`;

@@ -1,13 +1,7 @@
-import { GecutLogger } from '@gecut/logger';
-import { ContextSignal } from '@gecut/signal';
+import {GecutLogger} from '@gecut/logger';
+import {ContextSignal} from '@gecut/signal';
 
-import type {
-  DateTimeRelativeKey,
-  I18nInterface,
-  I18nOptions,
-  LanguageNameType,
-  LocaleType
-} from './types.js';
+import type {DateTimeRelativeKey, I18nInterface, I18nOptions, LanguageNameType, LocaleType} from './types.js';
 
 export class GecutI18N implements I18nInterface {
   constructor(options: I18nOptions) {
@@ -31,9 +25,7 @@ export class GecutI18N implements I18nInterface {
   }
 
   get locale(): LocaleType {
-    return this.locales.find(
-      (resource) => resource.name === this.language
-    ) as LocaleType;
+    return this.locales.find((resource) => resource.name === this.language) as LocaleType;
   }
 
   setLocale(name: LanguageNameType): void {
@@ -54,7 +46,7 @@ export class GecutI18N implements I18nInterface {
   }
 
   msg(source: string, variables: Record<`{${number}}`, string> = {}): string {
-    this.log.methodArgs?.('msg', { source });
+    this.log.methodArgs?.('msg', {source});
 
     let target = source;
 
@@ -76,28 +68,28 @@ export class GecutI18N implements I18nInterface {
   n(_number: string | number, options?: Intl.NumberFormatOptions): string {
     return Number(_number).toLocaleString(this.locale.name, {
       ...this.locale.formatters.number,
-      ...(options ?? {})
+      ...(options ?? {}),
     });
   }
 
   d(_date: string | Date, options?: Intl.DateTimeFormatOptions): string {
     return new Date(_date).toLocaleString(this.locale.name, {
       ...this.locale.formatters.date,
-      ...(options ?? {})
+      ...(options ?? {}),
     });
   }
 
   t(_time: string | Date, options?: Intl.DateTimeFormatOptions): string {
     return new Date(_time).toLocaleString(this.locale.name, {
       ...this.locale.formatters.time,
-      ...(options ?? {})
+      ...(options ?? {}),
     });
   }
 
   dt(_dateTime: string | Date, options?: Intl.DateTimeFormatOptions): string {
     return new Date(_dateTime).toLocaleString(this.locale.name, {
       ...this.locale.formatters.dateTime,
-      ...(options ?? {})
+      ...(options ?? {}),
     });
   }
 
@@ -115,7 +107,7 @@ export class GecutI18N implements I18nInterface {
       days: DAY,
       hours: HOUR,
       minutes: MINUTE,
-      seconds: SECOND
+      seconds: SECOND,
     };
 
     const origin = new Date(_origin);
@@ -127,22 +119,16 @@ export class GecutI18N implements I18nInterface {
       if (elapsed > amount) {
         const count = Math.floor(elapsed / amount);
 
-        const resourceKey = GecutI18N.getResourcesKeyForRelativeTime(
-          count,
-          unit as DateTimeRelativeKey
-        );
+        const resourceKey = GecutI18N.getResourcesKeyForRelativeTime(count, unit as DateTimeRelativeKey);
 
-        return this.msg(resourceKey, { '{0}': Math.abs(count).toString() });
+        return this.msg(resourceKey, {'{0}': Math.abs(count).toString()});
       }
     }
 
     return this.msg('just_now');
   }
 
-  private static getResourcesKeyForRelativeTime(
-    count: number,
-    unit: DateTimeRelativeKey
-  ): string {
+  private static getResourcesKeyForRelativeTime(count: number, unit: DateTimeRelativeKey): string {
     if (count === 1) {
       return `one_${unit}`;
     }

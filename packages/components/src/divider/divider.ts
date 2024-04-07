@@ -1,22 +1,39 @@
-import { html } from 'lit/html.js';
+import {classMap} from 'lit/directives/class-map.js';
+import {styleMap} from 'lit/directives/style-map.js';
+import {html} from 'lit/html.js';
 
 export interface DividerContent {
-  inset?: boolean;
-  insetStart?: boolean;
-  insetEnd?: boolean;
+  inset?: boolean | string;
+  insetStart?: boolean | string;
+  insetEnd?: boolean | string;
 
-  gapTop?: boolean;
-  gapBottom?: boolean;
+  gap?: boolean | string;
+  gapTop?: boolean | string;
+  gapBottom?: boolean | string;
 }
 
 export const divider = (content: DividerContent) => {
-  const inset = content.inset ? 'mx-4' : '';
-  const insetStart = content.insetStart ? 'ms-4' : '';
-  const insetEnd = content.insetEnd ? 'me-4' : '';
-  const gapTop = content.gapTop ? 'mt-2' : '';
-  const gapBottom = content.gapBottom ? 'mb-2' : '';
+  if (content.inset) {
+    content.insetStart ??= content.inset;
+    content.insetEnd ??= content.inset;
+  }
+  if (content.gap) {
+    content.gapTop ??= content.gap;
+    content.gapBottom ??= content.gap;
+  }
 
   return html`<hr
-    class="border-0 border-t border-outlineVariant ${inset} ${insetStart} ${insetEnd} ${gapTop} ${gapBottom}"
+    class="border-0 border-t border-outlineVariant ${classMap({
+      'mt-2': content.gapTop === true,
+      'mb-2': content.gapBottom === true,
+      'ms-4': content.insetStart === true,
+      'me-4': content.insetEnd === true,
+    })}"
+    style=${styleMap({
+      marginTop: typeof content.gapTop === 'string' ? content.gapTop : undefined,
+      marginBottom: typeof content.gapBottom === 'string' ? content.gapBottom : undefined,
+      marginInlineStart: typeof content.insetStart === 'string' ? content.insetStart : undefined,
+      marginInlineEnd: typeof content.insetEnd === 'string' ? content.insetEnd : undefined,
+    })}
   />`;
 };

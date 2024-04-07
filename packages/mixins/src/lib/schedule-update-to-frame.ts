@@ -1,16 +1,14 @@
-import {
-  cancelNextAnimationFrame,
-  nextAnimationFrame
-} from '@gecut/utilities/wait/polyfill.js';
+import {cancelNextAnimationFrame, nextAnimationFrame} from '@gecut/utilities/wait/polyfill.js';
 
-import type { SignalMixinInterface } from './signal.js';
-import type { Constructor } from '@gecut/types';
+import {SignalMixinInterface} from './signal.js';
+
+import type {Constructor} from '@gecut/types';
 
 export declare class ScheduleUpdateToFrameMixinInterface extends SignalMixinInterface {}
 
-export function ScheduleUpdateToFrameMixin<
-  T extends Constructor<SignalMixinInterface>,
->(superClass: T): Constructor<ScheduleUpdateToFrameMixinInterface> & T {
+export function ScheduleUpdateToFrameMixin<T extends Constructor<SignalMixinInterface>>(
+  superClass: T,
+): Constructor<ScheduleUpdateToFrameMixinInterface> & T {
   class ScheduleUpdateToFrameMixinClass extends superClass {
     private scheduleUpdateDebounce?: number;
 
@@ -25,6 +23,5 @@ export function ScheduleUpdateToFrameMixin<
       super.scheduleUpdate();
     }
   }
-  return ScheduleUpdateToFrameMixinClass as unknown as Constructor<ScheduleUpdateToFrameMixinInterface> &
-  T;
+  return ScheduleUpdateToFrameMixinClass as unknown as Constructor<ScheduleUpdateToFrameMixinInterface> & T;
 }

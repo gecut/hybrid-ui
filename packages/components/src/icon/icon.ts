@@ -1,10 +1,10 @@
-import { GecutAsyncDirective } from '@gecut/lit-helper/directives/async-directive.js';
-import { directive } from 'lit/directive.js';
-import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-import { html, nothing } from 'lit/html.js';
+import {GecutAsyncDirective} from '@gecut/lit-helper/directives/async-directive.js';
+import {directive} from 'lit/directive.js';
+import {unsafeSVG} from 'lit/directives/unsafe-svg.js';
+import {html, nothing} from 'lit/html.js';
 
-import type { MaybePromise } from '@gecut/types';
-import type { PartInfo } from 'lit/directive.js';
+import type {MaybePromise} from '@gecut/types';
+import type {PartInfo} from 'lit/directive.js';
 
 export type SvgContent = MaybePromise<string>;
 
@@ -28,15 +28,12 @@ export class IconDirective extends GecutAsyncDirective {
       return this._renderSvg();
     }
     else {
-      return this._renderSvg(
-        content.svg,
-        content.flipIconInRtl ? 'rtl:-scale-x-100' : ''
-      );
+      return this._renderSvg(content.svg, content.flipIconInRtl ? 'rtl:-scale-x-100' : '');
     }
   }
 
   protected _renderSvg(svg?: string, customClass = ''): unknown {
-    this.log.methodArgs?.('_renderSvg', { svg, customClass });
+    this.log.methodArgs?.('_renderSvg', {svg, customClass});
 
     return html`
       <div

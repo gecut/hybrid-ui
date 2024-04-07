@@ -1,15 +1,19 @@
 /* eslint-disable max-len */
 import {GecutDirective} from '@gecut/lit-helper/directives/directive.js';
 import {directive, type PartInfo} from 'lit/directive.js';
+import {classMap} from 'lit/directives/class-map.js';
 import {ifDefined} from 'lit/directives/if-defined.js';
 import {when} from 'lit/directives/when.js';
-import {html, noChange} from 'lit/html.js';
+import {html, noChange, nothing} from 'lit/html.js';
+import {literal, html as staticHtml} from 'lit/static-html.js';
 
 import {icon} from '../icon/icon.js';
 
 import type {IconContent} from '../icon/icon.js';
+import type {ClassInfo} from 'lit/directives/class-map.js';
+import type {StaticValue} from 'lit/static-html.js';
 
-export type ButtonContent = {
+export interface ButtonContent {
   /**
    * @default elevated
    */
@@ -21,101 +25,126 @@ export type ButtonContent = {
   icon?: IconContent;
   trailingIcon?: IconContent;
 
+  href?: string;
+  target?: '_blank' | '_parent' | '_self' | '_top';
+
+  onClick?: (event: MouseEvent) => void;
+  onDblClick?: (event: MouseEvent) => void;
+
   label?: string;
-} & (
-  | {href?: string; target?: '_blank' | '_parent' | '_self' | '_top'}
-  | {
-    onClick: (event: MouseEvent) => void;
-  }
-  | {
-    onDblClick: (event: MouseEvent) => void;
-  }
-  | Record<string, never>
-);
+}
 
 export class GecutButtonDirective extends GecutDirective {
   constructor(partInfo: PartInfo) {
     super(partInfo, 'gecut-button');
   }
 
-  private static baseStyleClass =
-    'relative group rounded-full h-10 px-6 cursor-pointer focus-ring disabled:cursor-default disabled:pointer-events-none [&[loading]]:cursor-default [&[loading]]:pointer-events-none';
-  private static uiTypeStylesClasses = {
-    elevated:
-      'text-primary bg-surfaceContainerLow elevation-1 hover:elevation-2 hover:stateHover-primary focus:elevation-1 active:stateActive-primary disabled:opacity-60',
-    filled:
-      'text-onPrimary bg-primary elevation-0 hover:elevation-2 hover:stateHover-onPrimary focus:elevation-1 active:stateActive-onPrimary disabled:opacity-40',
-    filledTonal:
-      'text-onSecondaryContainer bg-secondaryContainer elevation-0 hover:elevation-2 hover:stateHover-onSecondaryContainer focus:elevation-1 active:stateActive-onSecondaryContainer disabled:opacity-60',
-    outlined:
-      'text-primary bg-transparent border border-outline hover:stateHover-primary active:stateActive-primary disabled:opacity-60',
-    text: 'text-primary bg-transparent hover:stateHover-primary active:stateActive-primary disabled:opacity-60',
-  };
+  protected content?: ButtonContent;
+  protected type: 'link' | 'button' = 'button';
+
+  protected $rootClassName =
+    'relative group rounded-full h-10 px-6 cursor-pointer focus-ring disabled:cursor-default disabled:pointer-events-none';
+  protected $loaderClassName =
+    'absolute inset-0 flex justify-center items-center transition-opacity duration-300 opacity-0 group-[[loading]]:opacity-100 [&[loading]]:cursor-default [&[loading]]:pointer-events-none';
+  protected $bodyClassName =
+    'flex items-center justify-center h-full w-full gap-2 transition-opacity duration-300 opacity-100 group-[[loading]]:opacity-0';
 
   render(content?: ButtonContent): unknown {
     this.log.methodArgs?.('render', content);
 
     if (content === undefined) return noChange;
 
-    if (GecutButtonDirective.isLink(content)) {
-      return GecutButtonDirective.renderLink(content);
+    this.content = content;
+
+    if (this.content.href) this.type = 'link';
+
+    return this.renderButton();
+  }
+
+  protected renderButton() {
+    if (!this.content) return nothing;
+
+    this.log.method?.('renderItem');
+
+    let tag: StaticValue;
+
+    switch (this.type) {
+      case 'link':
+        tag = literal`a`;
+        break;
+      case 'button':
+        tag = literal`button`;
+        break;
     }
 
-    return GecutButtonDirective.renderButton(content);
-  }
-
-  protected static isLink(content: ButtonContent) {
-    return 'href' in content;
-  }
-
-  protected static renderButton(content: ButtonContent): unknown {
-    const onClick = 'onClick' in content ? (event: MouseEvent) => content.onClick(event) : undefined;
-    const onDblClick = 'onDblClick' in content ? (event: MouseEvent) => content.onDblClick(event) : undefined;
-
-    return html`
-      <button
-        class="${this.uiTypeStylesClasses[content.type]} ${this.baseStyleClass}"
-        ?disabled=${content.disabled ?? false}
-        ?loading=${content.loading ?? false}
-        @click=${onClick}
-        @dblclick=${onDblClick}
-      >
-        ${this.renderContent(content)}
-      </button>
+    return staticHtml`
+      <${tag}
+        class=${classMap({[this.$rootClassName]: true, ...this.getRenderClasses()})}
+        role="button"
+        href=${ifDefined(this.content.href)}
+        target=${ifDefined(this.content.target)}
+        tabindex="${this.content.disabled ? -1 : 0}"
+        ?disabled=${this.content.disabled ?? false}
+        ?loading=${this.content.loading ?? false}
+        @click=${this.content.onClick}
+        @dblclick=${this.content.onDblClick}
+      >${this.renderLoader()}${this.renderBody()}</${tag}>
     `;
   }
-  protected static renderLink(content: ButtonContent): unknown {
-    return html`<a
-      href=${ifDefined('href' in content ? content.href : '#')}
-      class="${this.uiTypeStylesClasses[content.type]}  ${this.baseStyleClass}"
-      ?disabled=${content.disabled ?? false}
-      ?loading=${content.loading ?? false}
-    >
-      ${this.renderContent(content)}
-    </a>`;
-  }
-  protected static renderContent(content: ButtonContent): unknown {
+  protected renderBody(): unknown {
+    if (!this.content) return nothing;
+
+    this.log.method?.('renderContent');
+
     return html`
-      <div
-        class="absolute inset-0 flex justify-center items-center transition-opacity duration-300 opacity-0 group-[[loading]]:opacity-100"
-      >
+      <div class=${this.$loaderClassName}>
         ${icon(
-          content.loader ?? {
+          this.content.loader ?? {
             svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke="currentColor"><circle cx="12" cy="12" r="9.5" fill="none" stroke-linecap="round" stroke-width="2.5"><animate attributeName="stroke-dasharray" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0 150;42 150;42 150;42 150"/><animate attributeName="stroke-dashoffset" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0;-16;-59;-59"/></circle><animateTransform attributeName="transform" dur="2s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></g></svg>',
           },
         )}
       </div>
 
-      <div
-        class="flex items-center justify-center gap-2 transition-opacity duration-300 opacity-100 group-[[loading]]:opacity-0"
-      >
-        ${when(content.icon?.svg, () => icon({svg: content.icon?.svg as string}))}
+      <div class=${this.$bodyClassName}>
+        ${when(this.content.icon?.svg, () => icon({svg: this.content?.icon?.svg as string}))}
 
-        <span class="text-labelLarge">${content.label}</span>
+        <span class="text-labelLarge">${this.content.label}</span>
 
-        ${when(content.trailingIcon?.svg, () => icon({svg: content.trailingIcon?.svg as string}))}
+        ${when(this.content.trailingIcon?.svg, () => icon({svg: this.content?.trailingIcon?.svg as string}))}
       </div>
     `;
+  }
+  protected renderLoader(): unknown {
+    if (!this.content) return nothing;
+
+    this.log.method?.('renderLoader');
+
+    return html`
+      <div class=${this.$loaderClassName}>
+        ${icon(
+          this.content.loader ?? {
+            svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke="currentColor"><circle cx="12" cy="12" r="9.5" fill="none" stroke-linecap="round" stroke-width="2.5"><animate attributeName="stroke-dasharray" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0 150;42 150;42 150;42 150"/><animate attributeName="stroke-dashoffset" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0;-16;-59;-59"/></circle><animateTransform attributeName="transform" dur="2s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></g></svg>',
+          },
+        )}
+      </div>
+    `;
+  }
+
+  protected override getRenderClasses(): ClassInfo {
+    return {
+      ...super.getRenderClasses(),
+
+      'text-primary bg-surfaceContainerLow elevation-1 hover:elevation-2 hover:stateHover-primary focus:elevation-1 active:stateActive-primary disabled:opacity-60':
+        this.content?.type === 'elevated',
+      'text-onPrimary bg-primary elevation-0 hover:elevation-2 hover:stateHover-onPrimary focus:elevation-1 active:stateActive-onPrimary disabled:opacity-40':
+        this.content?.type === 'filled',
+      'text-onSecondaryContainer bg-secondaryContainer elevation-0 hover:elevation-2 hover:stateHover-onSecondaryContainer focus:elevation-1 active:stateActive-onSecondaryContainer disabled:opacity-60':
+        this.content?.type === 'filledTonal',
+      'text-primary bg-transparent border border-outline hover:stateHover-primary active:stateActive-primary disabled:opacity-60':
+        this.content?.type === 'outlined',
+      'text-primary bg-transparent hover:stateHover-primary active:stateActive-primary disabled:opacity-60':
+        this.content?.type === 'text',
+    };
   }
 }
 

@@ -1,4 +1,4 @@
-import type { LiteralUnion } from 'type-fest';
+import type {LiteralUnion} from 'type-fest';
 
 export type LanguageNameType = `${Lowercase<string>}-${Uppercase<string>}`;
 
@@ -17,18 +17,9 @@ export interface LocaleType {
   translations: Record<LiteralUnion<BaseTranslationsKeys, string>, string>;
 }
 
-type __DateTimeRelativeKey =
-  | 'year'
-  | 'month'
-  | 'day'
-  | 'hour'
-  | 'minute'
-  | 'second';
+type __DateTimeRelativeKey = 'year' | 'month' | 'day' | 'hour' | 'minute' | 'second';
 
-export type BaseTranslationsKeys =
-  | `one_${__DateTimeRelativeKey}s`
-  | `other_${__DateTimeRelativeKey}s`
-  | 'just_now';
+export type BaseTranslationsKeys = `one_${__DateTimeRelativeKey}s` | `other_${__DateTimeRelativeKey}s` | 'just_now';
 
 export type DateTimeRelativeKey = `${__DateTimeRelativeKey}s`;
 
