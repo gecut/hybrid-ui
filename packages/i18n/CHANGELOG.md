@@ -11,4 +11,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **i18n:** new packages ([8b91de8](https://github.com/gecut/hybrid-ui/commit/8b91de8636a6b51bfec084ab7b8edf1e61e77378)) by @MM25Zamanian
+- **i18n:** new packages ([8b91de8](https://github.com/gecut/hybrid-ui/commit/8b91de8636a6b51bfec084ab7b8edf1e61e77378)) by @MM25Zamanian

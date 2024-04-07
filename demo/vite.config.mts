@@ -2,7 +2,7 @@ import {defineConfig} from 'vite';
 import Unfonts from 'unplugin-fonts/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-const entrys = ['dialog', 'top-bar', 'button'];
+const entrys = ['dialog', 'top-bar', 'button', 'lists'];
 const DIST_PATH = './dist/';
 const pages = entrys.reduce((result, name) => {
   result[name] = `./${name}/index.html`;
@@ -38,7 +38,7 @@ export default defineConfig(() => {
           families: [
             {
               name: 'Roboto',
-              styles: 'wght@500',
+              styles: 'wght@400',
               defer: true,
             },
           ],

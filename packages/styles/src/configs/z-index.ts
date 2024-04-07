@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type {Config} from 'tailwindcss';
 
 export const zIndexTheme: Config['theme'] = {
   zIndex: {
@@ -14,6 +14,6 @@ export const zIndexTheme: Config['theme'] = {
     popover: '600',
     snackbar: '700',
     tooltip: '800',
-    topness: '900'
-  }
+    topness: '900',
+  },
 };

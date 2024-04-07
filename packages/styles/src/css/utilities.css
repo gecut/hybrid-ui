@@ -9,6 +9,9 @@
   }
 
   .focus-ring {
-    @apply outline outline-8 outline-offset-2 outline-[#0000] transition-[outline-color,outline-width] duration-100 focus-visible:duration-300 focus-visible:outline-outline focus-visible:outline-2;
+    @apply outline outline-8 outline-offset-2 outline-[#0000] transition-[outline-color,outline-width] duration-100 focus-visible:duration-300 focus-visible:outline-outlineVariant focus-visible:outline-2;
+  }
+  .focus-ring-inner {
+    @apply outline outline-2 -outline-offset-8 outline-[#0000] transition-[outline-color,outline-offset] duration-75 focus-visible:duration-300 focus-visible:outline-outlineVariant focus-visible:-outline-offset-2;
   }
 }

@@ -27,6 +27,11 @@ const demos: Demo[] = [
     href: '/top-bar/',
     align: 'top',
   },
+  {
+    title: 'Lists',
+    href: '/lists/',
+    align: 'top',
+  },
 ];
 
 if (container)

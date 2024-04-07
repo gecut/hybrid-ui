@@ -4,6 +4,8 @@ export * from './dialog/helper.js';
 export * from './divider/divider.js';
 export * from './icon/icon.js';
 export * from './icon-button/icon-button.js';
+export * from './list/list.js';
+export * from './list/item.js';
 export * from './navigation-bar/navigation-bar.js';
 export * from './navigation-drawer/navigation-drawer.js';
 export * from './top-bar/center-top-bar.js';

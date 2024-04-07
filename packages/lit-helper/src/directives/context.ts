@@ -1,9 +1,9 @@
-import { noChange } from 'lit/html.js';
-import { directive, type PartInfo } from 'lit-html/directive.js';
+import {noChange} from 'lit/html.js';
+import {directive, type PartInfo} from 'lit-html/directive.js';
 
-import { GecutAsyncDirective } from './async-directive.js';
+import {GecutAsyncDirective} from './async-directive.js';
 
-import type { ContextSignal } from '@gecut/signal';
+import type {ContextSignal} from '@gecut/signal';
 
 class GecutContextDirective<T> extends GecutAsyncDirective {
   constructor(partInfo: PartInfo) {
@@ -15,11 +15,8 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
   protected _$signal?: ContextSignal<T>;
   protected _$render?: (data: T) => unknown;
 
-  render(
-    signalContext: ContextSignal<T>,
-    render: (data: T) => unknown
-  ): unknown {
-    this.log.methodArgs?.('render', { signalContext, render });
+  render(signalContext: ContextSignal<T>, render: (data: T) => unknown): unknown {
+    this.log.methodArgs?.('render', {signalContext, render});
 
     this._$render = render;
     if (this._$signal !== signalContext) {
@@ -42,7 +39,7 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
       (v) => {
         this.setValue(this._$render!(v));
       },
-      { receivePrevious: true }
+      {receivePrevious: true},
     ).unsubscribe;
   }
 
