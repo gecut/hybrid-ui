@@ -3,9 +3,15 @@ import {classMap} from 'lit/directives/class-map.js';
 import {map} from 'lit/directives/map.js';
 import {html, render} from 'lit/html.js';
 
+import button from '../public/previews/button.png';
+import dialog from '../public/previews/dialog.png';
+import lists from '../public/previews/lists.png';
+import topBar from '../public/previews/top-bar.png';
+
 interface Demo {
   title: string;
   href: string;
+  imageSource: string;
 
   align?: 'center' | 'bottom' | 'top';
 }
@@ -15,21 +21,23 @@ const demos: Demo[] = [
   {
     title: 'Commons Buttons',
     href: '/button/',
-    align: 'center',
+    imageSource: button,
   },
   {
     title: 'Dialog',
     href: '/dialog/',
-    align: 'center',
+    imageSource: dialog,
   },
   {
     title: 'Top App Bar',
     href: '/top-bar/',
+    imageSource: topBar,
     align: 'top',
   },
   {
     title: 'Lists',
     href: '/lists/',
+    imageSource: lists,
     align: 'top',
   },
 ];
@@ -45,7 +53,7 @@ if (container)
         >
           <div class="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-md relative">
             <img
-              src="${demo.href}preview.png"
+              src=${demo.imageSource}
               class="h-full w-full object-cover invert dark:invert-0 ${classMap({
                 'object-center': demo.align === 'center' || !demo.align,
                 'object-top': demo.align === 'top',

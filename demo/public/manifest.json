@@ -1,0 +1,14 @@
+{
+  "name": "Hybrid UI",
+  "description": "Hybrid UI is a cutting-edge web front-end framework that empowers developers to create high-performance, memory-safe, and visually stunning applications. It provides a comprehensive set of tools and features to streamline development and deliver exceptional user experiences.",
+  "start_url": "/",
+  "lang": "en-US",
+  "display": "standalone",
+  "icons": [
+    {"src": "/favicon.ico", "type": "image/x-icon", "sizes": "16x16 32x32"},
+    {"src": "/icon-192.png", "type": "image/png", "sizes": "192x192"},
+    {"src": "/icon-512.png", "type": "image/png", "sizes": "512x512"},
+    {"src": "/icon-192-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable"},
+    {"src": "/icon-512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable"}
+  ]
+}

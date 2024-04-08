@@ -31,9 +31,6 @@ export default defineConfig(() => {
     plugins: [
       tsconfigPaths(),
       Unfonts({
-        // fontsource: {
-        //   families: ['Varela Round'],
-        // },
         google: {
           families: [
             {

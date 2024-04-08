@@ -4,7 +4,7 @@ import {map} from 'lit/directives/map.js';
 import {range} from 'lit/directives/range.js';
 import {html, render} from 'lit/html.js';
 
-import placeHolderImage from '../assets/placeholder.webp';
+import placeHolderImage from '../public/placeholder.webp';
 
 render(
   html`

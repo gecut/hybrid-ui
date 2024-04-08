@@ -1,0 +1,7 @@
+.git*
+.github
+.vscode
+deploy
+dist
+Dockerfile
+README.md
