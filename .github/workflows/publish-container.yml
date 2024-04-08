@@ -11,7 +11,7 @@ on:
       - main
 
 env:
-  USER: alwatr
+  USER: gecut
 
 jobs:
   build:
