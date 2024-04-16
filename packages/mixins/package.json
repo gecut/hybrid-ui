@@ -63,6 +63,6 @@
     "@gecut/signal": "^2.0.1-alpha.0",
     "@gecut/types": "^2.1.1-alpha.0",
     "@gecut/utilities": "^5.1.1-alpha.0",
-    "lit": "^3.1.2"
+    "lit": "^3.1.3"
   }
 }

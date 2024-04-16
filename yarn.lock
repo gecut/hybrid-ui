@@ -266,7 +266,7 @@ __metadata:
     "@gecut/types": "npm:^2.1.1-alpha.0"
     "@gecut/utilities": "npm:^5.1.1-alpha.0"
     "@types/node": "npm:^20.11.30"
-    lit: "npm:^3.1.2"
+    lit: "npm:^3.1.3"
   languageName: unknown
   linkType: soft
 
@@ -305,7 +305,7 @@ __metadata:
     "@gecut/utilities": "npm:^5.1.1-alpha.0"
     "@material/web": "npm:^1.3.0"
     "@vaadin/router": "npm:^1.7.5"
-    lit: "npm:^3.1.2"
+    lit: "npm:^3.1.3"
     lit-html: "npm:^3.1.2"
     tslib: "npm:^2.6.2"
     type-fest: "npm:^4.13.0"
@@ -338,7 +338,7 @@ __metadata:
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
     "@gecut/utilities": "npm:^5.1.1-alpha.0"
-    lit: "npm:^3.1.2"
+    lit: "npm:^3.1.3"
   languageName: unknown
   linkType: soft
 
@@ -3339,7 +3339,7 @@ __metadata:
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@types/node": "npm:^20.11.30"
     autoprefixer: "npm:^10.4.19"
-    lit: "npm:^3.1.2"
+    lit: "npm:^3.1.3"
     postcss: "npm:^8.4.38"
     tailwindcss: "npm:^3.4.1"
     unplugin-fonts: "npm:^1.1.1"
@@ -4433,7 +4433,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit@npm:^2.7.4 || ^3.0.0, lit@npm:^3.1.0, lit@npm:^3.1.2":
+"lit@npm:^2.7.4 || ^3.0.0, lit@npm:^3.1.0":
   version: 3.1.2
   resolution: "lit@npm:3.1.2"
   dependencies:
@@ -4441,6 +4441,17 @@ __metadata:
     lit-element: "npm:^4.0.4"
     lit-html: "npm:^3.1.2"
   checksum: 10c0/47f10dbc6716974de6d6d6b75db278ac28869839c099e77f8f8494b25b1d3913f2c62126a52372a8b0c5e4a1d0d2301637d98d9ff1e583ee7d961998686810c9
+  languageName: node
+  linkType: hard
+
+"lit@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "lit@npm:3.1.3"
+  dependencies:
+    "@lit/reactive-element": "npm:^2.0.4"
+    lit-element: "npm:^4.0.4"
+    lit-html: "npm:^3.1.2"
+  checksum: 10c0/bd29503bed86e07d94ff3445da4ac11b883bd94d50a2c8a089e990cbd3ce91c06f0e177cce38fbc75ddb35eb6e44f2ee5a1f7b8613478d522eff11438ebb858f
   languageName: node
   linkType: hard
 
