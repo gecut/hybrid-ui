@@ -4,7 +4,9 @@ import {map} from 'lit/directives/map.js';
 import {html, render} from 'lit/html.js';
 
 import button from '../public/previews/button.png';
+import cards from '../public/previews/cards.png';
 import dialog from '../public/previews/dialog.png';
+import iconButton from '../public/previews/icon-button.png';
 import lists from '../public/previews/lists.png';
 import topBar from '../public/previews/top-bar.png';
 
@@ -40,6 +42,18 @@ const demos: Demo[] = [
     imageSource: lists,
     align: 'top',
   },
+  {
+    title: 'Cards',
+    href: '/cards/',
+    imageSource: cards,
+    align: 'top',
+  },
+  {
+    title: 'Icon Button',
+    href: '/icon-button/',
+    imageSource: iconButton,
+    align: 'top',
+  },
 ];
 
 if (container)
@@ -49,7 +63,7 @@ if (container)
       (demo) => html`
         <a
           href=${demo.href}
-          class="flex flex-col p-4 !m-0 group card-elevated dark:card-filled-selectable w-full hover:elevation-5 transition-shadow duration-500 dark:!shadow-none"
+          class="flex flex-col p-4 !m-0 group gecut-card-elevated dark:gecut-card-filled-selectable w-full hover:elevation-5 transition-shadow duration-500 dark:!shadow-none"
         >
           <div class="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-md relative">
             <img

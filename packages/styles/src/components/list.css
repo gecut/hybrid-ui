@@ -1,0 +1,46 @@
+@layer components {
+  .gecut-list {
+    &.card {
+      & .gecut-list-body::-webkit-scrollbar-track {
+        @apply my-3;
+      }
+
+      & .gecut-list-item {
+        @apply rounded-md;
+      }
+      & .gecut-list-item:first-child {
+        @apply !rounded-t-2xl;
+      }
+      & .gecut-list-item:last-child {
+        @apply !rounded-b-2xl;
+      }
+
+      &.top-fade::before,
+      &.bottom-fade::after {
+        @apply flex absolute content-[''] w-full h-0 shadow-[0_0_24px_8px_rgba(0,0,0,0.8)] z-above shrink-0;
+      }
+      &.top-fade::before {
+        @apply top-0;
+      }
+      &.bottom-fade::after {
+        @apply bottom-0;
+      }
+
+      @apply p-0 m-0;
+    }
+
+    &.scrollable {
+      .gecut-list-body {
+        @apply overflow-y-auto scroll-smooth shrink;
+      }
+
+      @apply shrink;
+    }
+
+    & &-body {
+      @apply flex flex-col;
+    }
+
+    @apply relative flex flex-col shrink-0 overflow-hidden;
+  }
+}

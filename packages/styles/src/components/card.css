@@ -1,0 +1,29 @@
+@layer components {
+  .gecut-card {
+    &-elevated {
+      &-selectable {
+        @apply gecut-card-elevated select-none hover:elevation-2 state-onSurface focus-ring focus:elevation-1;
+      }
+
+      @apply gecut-card bg-surfaceContainerLow text-onSurface elevation-1 disabled:opacity-15 disabled:bg-surface disabled:pointer-events-none;
+    }
+
+    &-filled {
+      &-selectable {
+        @apply gecut-card-filled select-none hover:elevation-1 state-onSurface focus-ring focus:elevation-0;
+      }
+
+      @apply gecut-card bg-surfaceContainerHighest text-onSurface elevation-0 disabled:opacity-15 disabled:bg-surfaceVariant disabled:pointer-events-none;
+    }
+
+    &-outlined {
+      &-selectable {
+        @apply gecut-card-outlined select-none hover:elevation-1 state-onSurface focus-ring focus:elevation-0;
+      }
+
+      @apply gecut-card bg-surface border text-onSurface border-outlineVariant elevation-0 disabled:opacity-10 disabled:border-outline disabled:pointer-events-none;
+    }
+
+    @apply rounded-xl px-6 mb-4;
+  }
+}

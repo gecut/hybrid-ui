@@ -11,7 +11,7 @@ import {html, nothing} from 'lit/html.js';
 import {gecutButton} from '../button/button.js';
 import {divider} from '../divider/divider.js';
 import {icon} from '../icon/icon.js';
-import {iconButton} from '../icon-button/icon-button.js';
+import {gecutIconButton} from '../icon-button/icon-button.js';
 
 import type {BasicDialog, DialogContent, DialogSignals} from './_type';
 
@@ -109,8 +109,10 @@ export class GecutDialogDirective extends GecutDirective {
 
         <div class="flex w-full gap-2 items-center">
           ${when(!hasIcon && !hasButtons, () =>
-            iconButton({
-              onClick: this.close(content, 'cancel').bind(this),
+            gecutIconButton({
+              events: {
+                click: this.close(content, 'cancel').bind(this),
+              },
               // eslint-disable-next-line max-len
               svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144m224 0L144 368"/></svg>',
             }),
@@ -150,7 +152,9 @@ export class GecutDialogDirective extends GecutDirective {
                 return gecutButton({
                   ...buttonContent,
 
-                  onClick: this.close(content, buttonContent.value),
+                  events: {
+                    click: this.close(content, buttonContent.value),
+                  },
                 });
               })}
             </div>

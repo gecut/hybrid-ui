@@ -1,0 +1,76 @@
+@layer components {
+  .gecut-icon-button {
+    &.filled {
+      @apply text-onPrimary bg-primary state-onPrimary disabled:opacity-15;
+    }
+    &.filled-tonal {
+      @apply text-onSecondaryContainer bg-secondaryContainer state-onSecondaryContainer disabled:opacity-25;
+    }
+    &.outlined {
+      @apply text-primary bg-transparent border border-outline state-primary disabled:opacity-45;
+    }
+    &.normal {
+      @apply text-primary bg-transparent state-primary disabled:opacity-60;
+    }
+
+    &.toggle {
+      &:has(:checked) {
+        &.outlined {
+          @apply text-inverseOnSurface bg-inverseSurface state-inverseOnSurface border-inverseSurface;
+        }
+
+        .gecut-icon-button-unselected-icon {
+          @apply opacity-0;
+        }
+        .gecut-icon-button-selected-icon {
+          @apply opacity-100;
+        }
+      }
+      &:not(:has(:checked)) {
+        &.filled {
+          @apply text-primary bg-surfaceVariant state-primary;
+        }
+        &.filled-tonal {
+          @apply bg-surfaceContainerHighest state-onSurfaceVariant;
+        }
+        &.outlined {
+          @apply text-onSurfaceVariant state-onSurfaceVariant;
+        }
+        &.normal {
+          @apply text-onSurfaceVariant state-onSurfaceVariant;
+        }
+      }
+
+      @apply transition-colors duration-300;
+    }
+
+    & &-loader {
+      @apply absolute inset-0 z-[2] flex justify-center items-center transition-opacity duration-300 opacity-0;
+    }
+
+    & &-icon {
+      @apply transition-opacity duration-300;
+    }
+
+    & &-unselected-icon {
+      @apply opacity-100;
+    }
+    & &-selected-icon {
+      @apply absolute inset-0 z-[3] flex justify-center items-center opacity-0;
+    }
+
+    &[loading] {
+      .gecut-icon-button-loader {
+        @apply opacity-100;
+      }
+
+      .gecut-icon-button-icon {
+        @apply opacity-0;
+      }
+
+      @apply cursor-default pointer-events-none;
+    }
+
+    @apply relative shrink-0 focus-ring m-1 flex h-10 w-10 items-center justify-center rounded-full cursor-pointer disabled:cursor-default disabled:pointer-events-none;
+  }
+}

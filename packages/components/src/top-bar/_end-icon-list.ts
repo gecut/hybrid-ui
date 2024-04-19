@@ -1,14 +1,14 @@
-import {gecutButton, type ButtonContent} from '../button/button.js';
-import {iconButton} from '../icon-button/icon-button.js';
+import {gecutButton} from '../button/button.js';
+import {gecutIconButton} from '../icon-button/icon-button.js';
 
-import type {IconButtonContent} from '../icon-button/icon-button.js';
+import type {EndIconType} from './_type.js';
 
-export const endIconListTemplate = (_list?: (IconButtonContent | ButtonContent)[]) => {
+export const endIconListTemplate = (_list?: EndIconType[]) => {
   return _list?.map((content) => {
-    if ('type' in content) {
-      return gecutButton(content);
+    if (content.element === 'icon-button') {
+      return gecutIconButton(content);
     }
 
-    return iconButton(content);
+    return gecutButton(content);
   });
 };

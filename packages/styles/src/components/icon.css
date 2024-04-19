@@ -1,0 +1,5 @@
+@layer {
+  .gecut-icon {
+    @apply box-content text-[24px] h-[1em] w-[1em] align-middle [contain:size_layout_paint_style] [&>svg]:block [&>svg]:h-full [&>svg]:w-full;
+  }
+}
