@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.0-alpha.4...@gecut/components@2.1.0) (2024-4-19)
+
+**Note:** Version bump only for package @gecut/components
+
 # [2.1.0-alpha.4](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.0-alpha.3...@gecut/components@2.1.0-alpha.4) (2024-4-19)
 
 ### Features
