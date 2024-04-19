@@ -1,10 +1,12 @@
 import {GecutAsyncDirective} from '@gecut/lit-helper/directives/async-directive.js';
 import {directive} from 'lit/directive.js';
+import { classMap} from 'lit/directives/class-map.js';
 import {unsafeSVG} from 'lit/directives/unsafe-svg.js';
 import {html, nothing} from 'lit/html.js';
 
 import type {MaybePromise} from '@gecut/types';
 import type {PartInfo} from 'lit/directive.js';
+import type {ClassInfo} from 'lit/directives/class-map.js';
 
 export type SvgContent = MaybePromise<string>;
 
@@ -18,31 +20,38 @@ export class IconDirective extends GecutAsyncDirective {
     super(partInfo, 'gecut-icon');
   }
 
+  protected content?: IconContent;
+
   render(content: IconContent): unknown {
     this.log.methodArgs?.('render', content);
 
-    if (content.svg instanceof Promise) {
-      content.svg.then((_svg) => {
+    this.content = content;
+
+    if (this.content.svg instanceof Promise) {
+      this.content.svg.then((_svg) => {
+        console.log(_svg);
         this.setValue(this._renderSvg(_svg));
       });
-      return this._renderSvg();
+      // eslint-disable-next-line max-len
+      return this._renderSvg('<svg viewBox="0 0 24 24"><g stroke="currentColor"><circle cx="12" cy="12" r="9.5" fill="none" stroke-linecap="round" stroke-width="2.5"><animate attributeName="stroke-dasharray" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0 150;42 150;42 150;42 150"/><animate attributeName="stroke-dashoffset" calcMode="spline" dur="1.5s" keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1" repeatCount="indefinite" values="0;-16;-59;-59"/></circle><animateTransform attributeName="transform" dur="2s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></g></svg>');
     }
     else {
-      return this._renderSvg(content.svg, content.flipIconInRtl ? 'rtl:-scale-x-100' : '');
+      return this._renderSvg(this.content.svg);
     }
   }
 
-  protected _renderSvg(svg?: string, customClass = ''): unknown {
-    this.log.methodArgs?.('_renderSvg', {svg, customClass});
+  protected _renderSvg(svg?: string): unknown {
+    this.log.methodArgs?.('_renderSvg', {svg});
 
-    return html`
-      <div
-        class="${customClass} box-content text-[24px] h-[1em] w-[1em] align-middle
-               [contain:size_layout_paint_style] [&>svg]:block [&>svg]:h-full [&>svg]:w-full"
-      >
-        ${svg ? unsafeSVG(svg) : nothing}
-      </div>
-    `;
+    return html`<div class="${classMap(this.getRenderClasses())}">${svg ? unsafeSVG(svg) : nothing}</div>`;
+  }
+
+  protected override getRenderClasses(): ClassInfo {
+    return {
+      ...super.getRenderClasses(),
+
+      'rtl:-scale-x-100': this.content?.flipIconInRtl ?? false,
+    };
   }
 }
 
