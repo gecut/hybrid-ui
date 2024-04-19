@@ -2,15 +2,18 @@ import {GecutLogger} from '@gecut/logger';
 import {AsyncDirective, PartType} from 'lit-html/async-directive.js';
 
 import type {Part, PartInfo} from 'lit-html/directive.js';
+import type {ClassInfo} from 'lit-html/directives/class-map.js';
 
 export abstract class GecutAsyncDirective extends AsyncDirective {
-  constructor(partInfo: PartInfo, debugName: string) {
+  constructor(partInfo: PartInfo, name: string) {
     super(partInfo);
-    this.log = new GecutLogger(`<${debugName}>`);
+    this.name = name;
+    this.log = new GecutLogger(`<${this.name}>`);
 
     this.log.methodArgs?.('constructor', Object.keys(PartType)[partInfo.type - 1]);
   }
 
+  protected name;
   protected log;
 
   override setValue(value: unknown): void {
@@ -31,5 +34,11 @@ export abstract class GecutAsyncDirective extends AsyncDirective {
   protected override disconnected(): void {
     this.log.method?.('disconnected');
     super.disconnected();
+  }
+
+  protected getRenderClasses(): ClassInfo {
+    return {
+      [this.name]: true,
+    };
   }
 }
