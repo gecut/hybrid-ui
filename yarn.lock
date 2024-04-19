@@ -1281,6 +1281,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/nesting@npm:^0.0.0-insiders.565cd3e":
+  version: 0.0.0-insiders.565cd3e
+  resolution: "@tailwindcss/nesting@npm:0.0.0-insiders.565cd3e"
+  dependencies:
+    postcss-nested: "npm:^5.0.5"
+  peerDependencies:
+    postcss: ^8.2.15
+  checksum: 10c0/e5803411019a79e852db60ec41ea7bad992c70840fefd64e0b6161198d66e35bef055048f4603ac35363e732adbeb9569a43de1ad8fbc3a8453c5a4bbe417e30
+  languageName: node
+  linkType: hard
+
 "@tufjs/canonical-json@npm:2.0.0":
   version: 2.0.0
   resolution: "@tufjs/canonical-json@npm:2.0.0"
@@ -3337,10 +3348,12 @@ __metadata:
     "@gecut/styles": "workspace:^"
     "@gecut/types": "npm:^2.1.1-alpha.0"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
+    "@tailwindcss/nesting": "npm:^0.0.0-insiders.565cd3e"
     "@types/node": "npm:^20.11.30"
     autoprefixer: "npm:^10.4.19"
     lit: "npm:^3.1.2"
     postcss: "npm:^8.4.38"
+    postcss-import: "npm:^16.1.0"
     tailwindcss: "npm:^3.4.1"
     unplugin-fonts: "npm:^1.1.1"
     vite: "npm:^5.2.4"
@@ -5554,6 +5567,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-import@npm:^16.1.0":
+  version: 16.1.0
+  resolution: "postcss-import@npm:16.1.0"
+  dependencies:
+    postcss-value-parser: "npm:^4.0.0"
+    read-cache: "npm:^1.0.0"
+    resolve: "npm:^1.1.7"
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: 10c0/60e6499354079a3f46242b861412a40c54be7ab99f4ad55096a07ffe5e57fcc01c2c626b5d1fbc7a18cd23adc82b320c205059d0c7ab09e91baba8dc45c88e29
+  languageName: node
+  linkType: hard
+
 "postcss-js@npm:^4.0.1":
   version: 4.0.1
   resolution: "postcss-js@npm:4.0.1"
@@ -5583,6 +5609,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-nested@npm:^5.0.5":
+  version: 5.0.6
+  resolution: "postcss-nested@npm:5.0.6"
+  dependencies:
+    postcss-selector-parser: "npm:^6.0.6"
+  peerDependencies:
+    postcss: ^8.2.14
+  checksum: 10c0/cff4f05b06ec752a90a36b329b4c1b620352458b3d8e02e2fc7efdfb5073945242573ec42c0dd2b7c4beccba21233e5f089903c3e5e8aea2bbceca09c406fb8f
+  languageName: node
+  linkType: hard
+
 "postcss-nested@npm:^6.0.1":
   version: 6.0.1
   resolution: "postcss-nested@npm:6.0.1"
@@ -5601,6 +5638,16 @@ __metadata:
     cssesc: "npm:^3.0.0"
     util-deprecate: "npm:^1.0.2"
   checksum: 10c0/48b425d6cef497bcf6b7d136f6fd95cfca43026955e07ec9290d3c15457de3a862dbf251dd36f42c07a0d5b5ab6f31e41acefeff02528995a989b955505e440b
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^6.0.6":
+  version: 6.0.16
+  resolution: "postcss-selector-parser@npm:6.0.16"
+  dependencies:
+    cssesc: "npm:^3.0.0"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 10c0/0e11657cb3181aaf9ff67c2e59427c4df496b4a1b6a17063fae579813f80af79d444bf38f82eeb8b15b4679653fd3089e66ef0283f9aab01874d885e6cf1d2cf
   languageName: node
   linkType: hard
 

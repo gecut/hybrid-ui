@@ -59,14 +59,16 @@ render(
                   svg: buttonsContents[type].iconSVG!,
                 }
               : undefined,
-            onClick: (event) => {
-              const target = event.currentTarget as HTMLButtonElement;
+            events: {
+              click: (event) => {
+                const target = event.currentTarget as HTMLButtonElement;
 
-              target.setAttribute('loading', '');
+                target.setAttribute('loading', '');
 
-              setTimeout(() => {
-                target.removeAttribute('loading');
-              }, 5120);
+                setTimeout(() => {
+                  target.removeAttribute('loading');
+                }, 5120);
+              },
             },
             label: buttonsContents[type].name,
 
