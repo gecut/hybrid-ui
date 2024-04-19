@@ -130,6 +130,6 @@ jobs:
 
     steps:
     - name: darkube-cli deploy
-      run: darkube deploy --token ${{secrets.DEPLOY_TOKEN_HABIBIU_PWA}}
-        --app-id ${{secrets.APP_ID_HABIBIU_PWA}} --image-tag latest
+      run: darkube deploy --token ${{secrets.DEPLOY_TOKEN_HYBRID_UI_DEMO_APP_GECUT_DEMO_HAMRAVESH_C14}}
+        --app-id ${{secrets.APP_ID_HYBRID_UI_DEMO_APP_GECUT_DEMO_HAMRAVESH_C14}} --image-tag latest
         --job-id ${GITHUB_RUN_ID}
