@@ -12,18 +12,18 @@ export type MixinReturn<T> = Constructor<SignalMixinInterface> & T;
 export function SignalMixin<T extends Constructor<LitElement>>(superClass: T): MixinReturn<T> {
   class SignalMixinClass extends superClass {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    private signalSubscribers: [Signal<any>, Subscriber<any>][] = [];
+    private signalSubscribers: ReturnType<Signal<any>['subscribe']>[] = [];
 
     override disconnectedCallback(): void {
       super.disconnectedCallback();
 
-      for (const [signal, subscriber] of this.signalSubscribers) {
-        signal.unsubscribe(subscriber);
+      for (const signalReturn of this.signalSubscribers) {
+        signalReturn.unsubscribe();
       }
     }
 
-    protected addSignalSubscriber<T, S extends Signal<T>>(signal: S, subscriber: Subscriber<T>): void {
-      this.signalSubscribers.push([signal, subscriber]);
+    protected addSignalSubscriber<T, S extends Signal<T>>(signalReturn: ReturnType<S['subscribe']>): void {
+      this.signalSubscribers.push(signalReturn);
     }
   }
 

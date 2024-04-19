@@ -1,7 +1,7 @@
 import {cancelNextAnimationFrame, nextAnimationFrame} from '@gecut/utilities/wait/polyfill.js';
 
-import {SignalMixinInterface} from './signal.js';
-
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type {SignalMixinInterface} from './signal.js';
 import type {Constructor} from '@gecut/types';
 
 export declare class ScheduleUpdateToFrameMixinInterface extends SignalMixinInterface {}
