@@ -88,6 +88,7 @@ jobs:
             type=semver,enable=true,pattern={{major}}.{{minor}}
             type=semver,enable=true,pattern={{version}}
             type=ref,enable=true,event=branch
+            type=raw,enable={{is_default_branch}},value=latest
           labels: |
             org.opencontainers.image.title="gecut/${{matrix.name}}"
             org.opencontainers.image.vendor="Gecut"
@@ -112,3 +113,23 @@ jobs:
       #   env:
       #     COSIGN_EXPERIMENTAL: 'true'
       #   run: echo "${{steps.meta.outputs.tags}}" | xargs -I {} cosign sign --yes {}@${{steps.build_and_push.outputs.digest}}
+
+  deploy:
+    name: Deploy Container On Darkbue
+    container: hamravesh/darkube-cli:v1.1
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: hybrid-ui-demo-app
+            path: ./demo/
+            context: .
+
+    steps:
+    - name: darkube-cli deploy
+      run: darkube deploy --token ${{secrets.DEPLOY_TOKEN_HABIBIU_PWA}}
+        --app-id ${{secrets.APP_ID_HABIBIU_PWA}} --image-tag latest
+        --job-id ${GITHUB_RUN_ID}
