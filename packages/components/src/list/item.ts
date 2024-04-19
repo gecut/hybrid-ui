@@ -2,16 +2,19 @@
 import {GecutDirective} from '@gecut/lit-helper/directives/directive.js';
 import {numberUtils} from '@gecut/utilities/data-types/number.js';
 import {directive, type PartInfo} from 'lit/directive.js';
-import {classMap} from 'lit/directives/class-map.js';
+import { classMap} from 'lit/directives/class-map.js';
 import {ifDefined} from 'lit/directives/if-defined.js';
 import {when} from 'lit/directives/when.js';
 import {html, noChange, nothing} from 'lit/html.js';
 import {literal, html as staticHtml} from 'lit/static-html.js';
 
-import {divider, icon, iconButton} from '../components';
+import {divider, icon, gecutIconButton} from '../components';
+import {gecutEFO} from '../internal/events-handler';
 
 import type {IconButtonContent, IconContent} from '../components';
+import type {EventsObject} from '../internal/events-handler';
 import type {RenderResult} from '@gecut/types';
+import type {ClassInfo} from 'lit/directives/class-map.js';
 import type {TemplateResult} from 'lit/html.js';
 import type {StaticValue} from 'lit/static-html.js';
 
@@ -23,18 +26,18 @@ export interface ItemImageSlotContent {
 export type HtmlString = string | TemplateResult;
 export type ItemSlutContent =
   | {
-    type: 'avatar:character';
+    element: 'avatar:character';
     character: string;
   }
   | (ItemImageSlotContent & {
-    type: 'avatar:image';
+    element: 'avatar:image';
   })
   | (ItemImageSlotContent & {
-    type: 'image';
+    element: 'image';
   })
-  | {type: 'template'; template: TemplateResult}
-  | (IconContent & {type: 'icon'})
-  | (IconButtonContent & {type: 'icon-button'});
+  | {element: 'template'; template: TemplateResult}
+  | (IconContent & {element: 'icon'})
+  | (IconButtonContent & {element: 'icon-button'});
 
 export interface ItemContent {
   headline: HtmlString;
@@ -47,8 +50,7 @@ export interface ItemContent {
   href?: string;
   target?: '_blank' | '_parent' | '_self' | '_top';
 
-  onClick?: (event: MouseEvent) => void;
-  onDblClick?: (event: MouseEvent) => void;
+  events?: EventsObject;
 
   disabled?: boolean;
   divider?: boolean;
@@ -59,14 +61,11 @@ export interface ItemContent {
 
 export class GecutItemDirective extends GecutDirective {
   constructor(partInfo: PartInfo) {
-    super(partInfo, 'gecut-button');
+    super(partInfo, 'gecut-list-item');
   }
 
   protected content?: ItemContent;
   protected type: 'link' | 'text' | 'button' = 'text';
-
-  protected $rootClassName =
-    'relative flex flex-col list-none group w-full bg-surface text-onSurface overflow-hidden [&[interactive]]:focus-ring-inner rounded-lg disabled:cursor-default disabled:pointer-events-none select-none [&[interactive]]:hover:stateHover-onSurface [&[interactive]]:active:stateActive-onSurface';
 
   render(content?: ItemContent): unknown {
     this.log.methodArgs?.('render', content);
@@ -75,7 +74,7 @@ export class GecutItemDirective extends GecutDirective {
 
     this.content = content;
 
-    if (content.onClick || content.onDblClick) this.type = 'button';
+    if (content.events) this.type = 'button';
     if (content.href) this.type = 'link';
 
     return this.renderItem();
@@ -104,18 +103,13 @@ export class GecutItemDirective extends GecutDirective {
 
     return staticHtml`
       <${tag}
-        class=${classMap({[this.$rootClassName]: true, ...this.getRenderClasses()})}
+        class=${classMap(this.getRenderClasses())}
         tabindex="${this.content.disabled || !isInteractive ? -1 : 0}"
         role="listitem"
         href=${ifDefined(this.content.href)}
         target=${ifDefined(this.content.target)}
         ?disabled=${this.content.disabled}
-        ?sttl=${this.content.supportingTextTwoLine}
-        ?interactive=${isInteractive}
-        ?multiline=${this.content.headline && this.content.supportingText}
-        ?divider=${this.content.divider}
-        @click=${this.content.onClick}
-        @dblclick=${this.content.onDblClick}
+        ${gecutEFO(this.content.events)}
       >${this.renderBody()}</${tag}>
     `;
   }
@@ -123,25 +117,19 @@ export class GecutItemDirective extends GecutDirective {
     if (!this.content) return nothing;
 
     return html`
-      <div class="flex gap-4 py-3 px-4">
-        <div class="empty:hidden flex items-center group-[[sttl]]:items-start shrink-0">
-          ${this.renderSlot('leading')}
+      <div class="gecut-list-item-body">
+        <div class="gecut-list-item-leading">${this.renderSlot('leading')}</div>
+
+        <div class="gecut-list-item-content">
+          <p class="gecut-list-item-headline">${this.content.headline}</p>
+          <p class="gecut-list-item-supporting-text">${this.content.supportingText}</p>
         </div>
 
-        <div class="flex flex-col min-h-8 grow justify-center group-[[multiline]]:min-h-12">
-          <p class="text-onSurface text-bodyLarge text-start line-clamp-1">${this.content.headline}</p>
-          <p class="text-onSurfaceVariant text-bodyMedium line-clamp-1 text-start group-[[sttl]]:line-clamp-2">
-            ${this.content.supportingText}
-          </p>
-        </div>
-
-        <div class="empty:hidden flex justify-center items-center shrink-0 gap-4">
+        <div class="gecut-list-item-trailing">
           ${when(
             this.content.trailingSupportingText,
             () => html`
-              <p class="text-onSurfaceVariant text-labelSmall">
-                ${this.renderItemTrailingSupportingText()}
-              </p>
+              <p class="gecut-list-item-trailing-supporting-text">${this.renderItemTrailingSupportingText()}</p>
             `,
           )}
           ${this.renderSlot('trailing')}
@@ -161,18 +149,14 @@ export class GecutItemDirective extends GecutDirective {
 
     if (!this.content || !content) return nothing;
 
-    switch (content.type) {
+    switch (content.element) {
       case 'avatar:character':
-        return html`
-          <div
-            class="bg-tertiaryContainer text-onTertiaryContainer uppercase size-10 flex items-center justify-center text-bodyLarge rounded-full"
-          >
-            ${content.character}
-          </div>
-        `;
+        return html`<div class="gecut-list-item-slot-avatar-character">${content.character}</div>`;
       case 'avatar:image':
         return nothing;
       case 'image': {
+        // TODO: Write a Image LazyLoad Component
+
         const image = new Image();
         const lazyLoadImage = new Image();
 
@@ -192,12 +176,12 @@ export class GecutItemDirective extends GecutDirective {
 
         lazyLoadImage.src = content.source;
 
-        return html`${image}`;
+        return html`<div class="gecut-list-item-slot-thumbnail">${image}</div>`;
       }
       case 'icon':
         return icon(content);
       case 'icon-button':
-        return iconButton(content);
+        return gecutIconButton(content);
       case 'template':
         return content.template;
     }
@@ -219,6 +203,19 @@ export class GecutItemDirective extends GecutDirective {
         return value.toLocaleString() + valuePrefix;
       }
     }
+  }
+
+  protected override getRenderClasses(): ClassInfo {
+    if (!this.content) return super.getRenderClasses();
+
+    return {
+      ...super.getRenderClasses(),
+
+      'supporting-text-two-line': this.content.supportingTextTwoLine ?? false,
+      interactive: this.type !== 'text',
+      multiline: (!!this.content.headline && !!this.content.supportingText) ?? false,
+      divider: this.content.divider ?? false,
+    };
   }
 }
 
