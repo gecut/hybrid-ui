@@ -289,7 +289,7 @@ __metadata:
     "@gecut/logger": "npm:^1.3.1-alpha.0"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
-    type-fest: "npm:^4.13.0"
+    type-fest: "npm:^4.18.0"
   languageName: unknown
   linkType: soft
 
@@ -308,7 +308,7 @@ __metadata:
     lit: "npm:^3.1.3"
     lit-html: "npm:^3.1.2"
     tslib: "npm:^2.6.2"
-    type-fest: "npm:^4.13.0"
+    type-fest: "npm:^4.18.0"
   languageName: unknown
   linkType: soft
 
@@ -6762,10 +6762,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.13.0":
-  version: 4.13.0
-  resolution: "type-fest@npm:4.13.0"
-  checksum: 10c0/9259549d37dec14ac0f759af42fb6305f08ba46f74bf066caec6b925a674c0021e3921586d41ce0c60d5e1721348d0ff86fff5f9fb5fa12176dd5f2572822c51
+"type-fest@npm:^4.18.0":
+  version: 4.18.0
+  resolution: "type-fest@npm:4.18.0"
+  checksum: 10c0/d16d9be71ceeb5341cfa7e21d9081e843e74791fb60b5e2555caa26c259c9bcbffd965e1a1c8e571856efddb317b4b1802f73938723f399f1070e9db5b182f4e
   languageName: node
   linkType: hard
 
