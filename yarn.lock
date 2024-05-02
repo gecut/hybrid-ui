@@ -3356,7 +3356,7 @@ __metadata:
     postcss-import: "npm:^16.1.0"
     tailwindcss: "npm:^3.4.1"
     unplugin-fonts: "npm:^1.1.1"
-    vite: "npm:^5.2.4"
+    vite: "npm:^5.2.11"
     vite-tsconfig-paths: "npm:^4.3.2"
   languageName: unknown
   linkType: soft
@@ -5680,7 +5680,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.36, postcss@npm:^8.4.38":
+"postcss@npm:^8.4.38":
   version: 8.4.38
   resolution: "postcss@npm:8.4.38"
   dependencies:
@@ -7033,13 +7033,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.2.4":
-  version: 5.2.4
-  resolution: "vite@npm:5.2.4"
+"vite@npm:^5.2.11":
+  version: 5.2.11
+  resolution: "vite@npm:5.2.11"
   dependencies:
     esbuild: "npm:^0.20.1"
     fsevents: "npm:~2.3.3"
-    postcss: "npm:^8.4.36"
+    postcss: "npm:^8.4.38"
     rollup: "npm:^4.13.0"
   peerDependencies:
     "@types/node": ^18.0.0 || >=20.0.0
@@ -7069,7 +7069,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/a8a57da83b5a46d9fc135fc4c51d08e1e60cdc4263ce6e7b23d60501c70605dd541726c331ab4d837ad774cdbf0b78bac088da770287620f81ad8b4d7b39dd74
+  checksum: 10c0/664b8d68e4f5152ae16bd2041af1bbaf11c43630ac461835bc31ff7d019913b33e465386e09f66dc1037d7aeefbb06939e0173787c063319bc2bd30c3b9ad8e4
   languageName: node
   linkType: hard
 
