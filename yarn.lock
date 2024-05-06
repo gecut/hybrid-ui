@@ -286,7 +286,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gecut/i18n@workspace:packages/i18n"
   dependencies:
-    "@gecut/logger": "npm:^1.3.1-alpha.0"
+    "@gecut/logger": "npm:^1.4.0"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
     type-fest: "npm:^4.13.0"
@@ -298,7 +298,7 @@ __metadata:
   resolution: "@gecut/lit-helper@workspace:packages/lit-helper"
   dependencies:
     "@gecut/data-manager": "npm:^1.2.3"
-    "@gecut/logger": "npm:^1.3.1-alpha.0"
+    "@gecut/logger": "npm:^1.4.0"
     "@gecut/mixins": "workspace:^"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
@@ -330,11 +330,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gecut/logger@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@gecut/logger@npm:1.4.0"
+  dependencies:
+    "@gecut/utilities": "npm:^5.2.0"
+  checksum: 10c0/ab74171655d8dcc2530fb5f37e568e4cf0d73f4147a79f64e93887bb14927a1c4014aa189bf832c3ea0834b71d9006bfd7131102567a91a98daed33091793b4c
+  languageName: node
+  linkType: hard
+
 "@gecut/mixins@workspace:^, @gecut/mixins@workspace:packages/mixins":
   version: 0.0.0-use.local
   resolution: "@gecut/mixins@workspace:packages/mixins"
   dependencies:
-    "@gecut/logger": "npm:^1.3.1-alpha.0"
+    "@gecut/logger": "npm:^1.4.0"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
     "@gecut/utilities": "npm:^5.1.1-alpha.0"
@@ -376,6 +385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gecut/types@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@gecut/types@npm:2.2.0"
+  checksum: 10c0/52b61eaaafb220976892ef47743cf601538b5fc811005993ab10c5a20307d4cbed3241117fa82840e6eaecb96351ae17331d13900ea5a48d4161f9323ff2d9c7
+  languageName: node
+  linkType: hard
+
 "@gecut/utilities@npm:1.2.3":
   version: 1.2.3
   resolution: "@gecut/utilities@npm:1.2.3"
@@ -391,6 +407,15 @@ __metadata:
   dependencies:
     "@gecut/types": "npm:^2.1.1-alpha.0"
   checksum: 10c0/4a19ec19fe49d3392751b089dc7287a0e3ad732abdd4891d24e5e8e69512fa9045681675a2955e712da645e350bb0954bc5768f8082ca9279fbdbe4f39d9d44f
+  languageName: node
+  linkType: hard
+
+"@gecut/utilities@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@gecut/utilities@npm:5.2.0"
+  dependencies:
+    "@gecut/types": "npm:^2.2.0"
+  checksum: 10c0/60fb00c56ade57a41778e6a1289e8436ea33d3308400fc913222d05d2c7d2d0f34e0f348346039fd4c1c5ecf0115347d6581a4000eef4736d392f32d5b63dc64
   languageName: node
   linkType: hard
 
