@@ -264,7 +264,7 @@ __metadata:
     "@gecut/lit-helper": "workspace:^"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
-    "@gecut/utilities": "npm:^5.1.1-alpha.0"
+    "@gecut/utilities": "npm:^5.2.0"
     "@types/node": "npm:^20.11.30"
     lit: "npm:^3.1.3"
   languageName: unknown
@@ -302,7 +302,7 @@ __metadata:
     "@gecut/mixins": "workspace:^"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
-    "@gecut/utilities": "npm:^5.1.1-alpha.0"
+    "@gecut/utilities": "npm:^5.2.0"
     "@material/web": "npm:^1.4.1"
     "@vaadin/router": "npm:^1.7.5"
     lit: "npm:^3.1.3"
@@ -337,7 +337,7 @@ __metadata:
     "@gecut/logger": "npm:^1.3.1-alpha.0"
     "@gecut/signal": "npm:^2.0.1-alpha.0"
     "@gecut/types": "npm:^2.1.1-alpha.0"
-    "@gecut/utilities": "npm:^5.1.1-alpha.0"
+    "@gecut/utilities": "npm:^5.2.0"
     lit: "npm:^3.1.3"
   languageName: unknown
   linkType: soft
@@ -376,6 +376,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gecut/types@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@gecut/types@npm:2.2.0"
+  checksum: 10c0/52b61eaaafb220976892ef47743cf601538b5fc811005993ab10c5a20307d4cbed3241117fa82840e6eaecb96351ae17331d13900ea5a48d4161f9323ff2d9c7
+  languageName: node
+  linkType: hard
+
 "@gecut/utilities@npm:1.2.3":
   version: 1.2.3
   resolution: "@gecut/utilities@npm:1.2.3"
@@ -391,6 +398,15 @@ __metadata:
   dependencies:
     "@gecut/types": "npm:^2.1.1-alpha.0"
   checksum: 10c0/4a19ec19fe49d3392751b089dc7287a0e3ad732abdd4891d24e5e8e69512fa9045681675a2955e712da645e350bb0954bc5768f8082ca9279fbdbe4f39d9d44f
+  languageName: node
+  linkType: hard
+
+"@gecut/utilities@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@gecut/utilities@npm:5.2.0"
+  dependencies:
+    "@gecut/types": "npm:^2.2.0"
+  checksum: 10c0/60fb00c56ade57a41778e6a1289e8436ea33d3308400fc913222d05d2c7d2d0f34e0f348346039fd4c1c5ecf0115347d6581a4000eef4736d392f32d5b63dc64
   languageName: node
   linkType: hard
 

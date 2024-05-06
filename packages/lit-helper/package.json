@@ -41,7 +41,7 @@
     "@gecut/mixins": "workspace:^",
     "@gecut/signal": "^2.0.1-alpha.0",
     "@gecut/types": "^2.1.1-alpha.0",
-    "@gecut/utilities": "^5.1.1-alpha.0",
+    "@gecut/utilities": "^5.2.0",
     "@material/web": "^1.4.1",
     "@vaadin/router": "^1.7.5",
     "lit": "^3.1.3",
