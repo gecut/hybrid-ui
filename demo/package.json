@@ -10,7 +10,7 @@
     "build": "vite build --clearScreen"
   },
   "devDependencies": {
-    "@fontsource/vazirmatn": "^5.0.19",
+    "@fontsource/vazirmatn": "^5.0.20",
     "@gecut/components": "workspace:^",
     "@gecut/lit-helper": "workspace:^",
     "@gecut/signal": "^2.1.1",

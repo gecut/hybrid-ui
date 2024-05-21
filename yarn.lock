@@ -250,10 +250,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/vazirmatn@npm:^5.0.19":
-  version: 5.0.19
-  resolution: "@fontsource/vazirmatn@npm:5.0.19"
-  checksum: 10c0/c5f266351ca737c3c03c94dd4b268acd39343e2c0ee21335ca550297c7ffc24c5f04bea2e713f12981055c3315574afba50cc1cae9799fd3aecadb8663a47882
+"@fontsource/vazirmatn@npm:^5.0.20":
+  version: 5.0.20
+  resolution: "@fontsource/vazirmatn@npm:5.0.20"
+  checksum: 10c0/197af5b7310075ec2658ceb4f9679a78e84eab2d4a6bb6a3b79aac7a2e736ad7851f56724d06d9f3457db782eb9450343580e662411727f6f190c569c7331de5
   languageName: node
   linkType: hard
 
@@ -3341,7 +3341,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gecut-demo@workspace:demo"
   dependencies:
-    "@fontsource/vazirmatn": "npm:^5.0.19"
+    "@fontsource/vazirmatn": "npm:^5.0.20"
     "@gecut/components": "workspace:^"
     "@gecut/lit-helper": "workspace:^"
     "@gecut/signal": "npm:^2.1.1"
