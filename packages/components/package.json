@@ -53,7 +53,7 @@
     "@gecut/signal": "^2.1.1",
     "@gecut/types": "^2.2.0",
     "@gecut/utilities": "^5.2.1",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.12.12",
     "lit": "^3.1.3"
   }
 }
