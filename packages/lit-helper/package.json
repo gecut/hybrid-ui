@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@gecut/data-manager": "^1.2.3",
-    "@gecut/logger": "^1.4.1",
+    "@gecut/logger": "^1.4.2",
     "@gecut/mixins": "workspace:^",
     "@gecut/signal": "^2.1.1",
     "@gecut/types": "^2.2.0",

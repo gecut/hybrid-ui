@@ -286,7 +286,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gecut/i18n@workspace:packages/i18n"
   dependencies:
-    "@gecut/logger": "npm:^1.4.1"
+    "@gecut/logger": "npm:^1.4.2"
     "@gecut/signal": "npm:^2.1.1"
     "@gecut/types": "npm:^2.2.0"
     type-fest: "npm:^4.13.0"
@@ -298,7 +298,7 @@ __metadata:
   resolution: "@gecut/lit-helper@workspace:packages/lit-helper"
   dependencies:
     "@gecut/data-manager": "npm:^1.2.3"
-    "@gecut/logger": "npm:^1.4.1"
+    "@gecut/logger": "npm:^1.4.2"
     "@gecut/mixins": "workspace:^"
     "@gecut/signal": "npm:^2.1.1"
     "@gecut/types": "npm:^2.2.0"
@@ -330,11 +330,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gecut/logger@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "@gecut/logger@npm:1.4.2"
+  dependencies:
+    "@gecut/utilities": "npm:^5.2.1"
+  checksum: 10c0/c8ced904afb50b1612b2e79691da29de1d417941db8b763e6e48ce0c08bd58aa8021ea62d633a4d6246b1a45cfc7c8edca3ed28e27f253f7a2b2100bdda6cd01
+  languageName: node
+  linkType: hard
+
 "@gecut/mixins@workspace:^, @gecut/mixins@workspace:packages/mixins":
   version: 0.0.0-use.local
   resolution: "@gecut/mixins@workspace:packages/mixins"
   dependencies:
-    "@gecut/logger": "npm:^1.4.1"
+    "@gecut/logger": "npm:^1.4.2"
     "@gecut/signal": "npm:^2.1.1"
     "@gecut/types": "npm:^2.2.0"
     "@gecut/utilities": "npm:^5.2.1"
