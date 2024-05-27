@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@gecut/logger": "^1.4.1",
-    "@gecut/signal": "^2.1.1",
+    "@gecut/signal": "^2.1.2",
     "@gecut/types": "^2.2.0",
     "type-fest": "^4.13.0"
   }
