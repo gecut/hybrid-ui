@@ -82,7 +82,7 @@ render(
                   }),
               },
             })}
-            ${gecutContext<string>()(helper.provider, (value) => html`${value}`)}
+            ${gecutContext<string>(helper.provider, (value) => html`${value}`)}
           </div>
         `,
       )}
