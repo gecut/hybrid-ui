@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.1...@gecut/components@2.2.0) (2024-05-30)
+
+### Features
+
+* **components/button:** `efo` logger ([6286f11](https://github.com/gecut/hybrid-ui/commit/6286f110e41d8817e9430ed2a8bba08686dd7bed)) by @MM25Zamanian
+* **components/icon-button:** `efo` logger ([94025e3](https://github.com/gecut/hybrid-ui/commit/94025e399ead9314c1cd2249f4427c56cf1e1872)) by @MM25Zamanian
+* **components/item:** `efo` logger ([8509b3a](https://github.com/gecut/hybrid-ui/commit/8509b3a878a2f431cac2a57bce9b8d496661f57d)) by @MM25Zamanian
+
 ## [2.1.1](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.0...@gecut/components@2.1.1) (2024-5-21)
 
 **Note:** Version bump only for package @gecut/components
