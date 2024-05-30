@@ -22,8 +22,7 @@
   },
   "markdownlint.ignore": ["**/CHANGELOG.md"],
   "cSpell.language": "en,fa,fa-IR",
-  "cSpell.words": ["Alwatr"],
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "cSpell.words": ["Alwatr", "Gecut"],
   "git.autoStash": true,
   "git.branchProtection": ["main", "next"],
   "githubPullRequests.ignoredPullRequestBranches": ["main", "next"],
@@ -33,5 +32,6 @@
   },
   "eslint.nodePath": ".yarn/sdks",
   "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
