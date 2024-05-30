@@ -11,7 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **mixins:** export as type ([e92241c](https://github.com/gecut/hybrid-ui/commit/e92241c6466a13898b1ab7daa9ebfc4f2650bc69)) by @MM25Zamanian
+- **mixins:** export as type ([e92241c](https://github.com/gecut/hybrid-ui/commit/e92241c6466a13898b1ab7daa9ebfc4f2650bc69)) by @MM25Zamanian
 
 ## [2.0.2](https://github.com/gecut/hybrid-ui/compare/@gecut/mixins@2.0.1...@gecut/mixins@2.0.2) (2024-4-19)
 

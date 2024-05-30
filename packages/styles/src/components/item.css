@@ -3,15 +3,18 @@
     &.interactive {
       @apply focus-ring-inner state-onSurface;
     }
+
     &.multiline {
       .gecut-list-item-content {
         @apply min-h-12;
       }
     }
+
     &.supporting-text-two-line {
       .gecut-list-item-leading {
         @apply items-start;
       }
+
       .gecut-list-item-supporting-text {
         @apply line-clamp-2;
       }
@@ -24,9 +27,11 @@
     & &-leading {
       @apply empty:hidden flex items-center shrink-0;
     }
+
     & &-content {
       @apply flex flex-col min-h-8 grow justify-center;
     }
+
     & &-trailing {
       @apply empty:hidden flex justify-center items-center shrink-0 gap-4;
     }
@@ -34,6 +39,7 @@
     & &-headline {
       @apply text-onSurface text-bodyLarge text-start line-clamp-1;
     }
+
     & &-supporting-text {
       @apply text-onSurfaceVariant text-bodyMedium line-clamp-1 text-start;
     }
@@ -45,6 +51,7 @@
     & &-slot-avatar-character {
       @apply bg-tertiaryContainer text-onTertiaryContainer uppercase size-10 flex items-center justify-center text-bodyLarge rounded-full;
     }
+
     & &-slot-thumbnail {
       img {
         @apply w-full h-full object-cover;

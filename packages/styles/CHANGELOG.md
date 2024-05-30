@@ -7,13 +7,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **styles/components:** button styles ([d2ac2b5](https://github.com/gecut/hybrid-ui/commit/d2ac2b5d97ee1b123c7d3d8c20bfd2d3cfb7a430)) by @MM25Zamanian
-* **styles/components:** card styles ([f6d7a08](https://github.com/gecut/hybrid-ui/commit/f6d7a08359f60d1b897bcacef730091f69eddeea)) by @MM25Zamanian
-* **styles/components:** icon button styles ([ef99cec](https://github.com/gecut/hybrid-ui/commit/ef99cecb76c2fc86cdf9de5f26569cbece8a0222)) by @MM25Zamanian
-* **styles/components:** icon styles ([e7a3e37](https://github.com/gecut/hybrid-ui/commit/e7a3e370f746e1eb412181511ac409b2d537eef2)) by @MM25Zamanian
-* **styles/components:** item styles ([9c1ff1c](https://github.com/gecut/hybrid-ui/commit/9c1ff1c2d2c0a73efb16202c4ced78e6b6807be3)) by @MM25Zamanian
-* **styles/components:** list styles ([3c6bb1f](https://github.com/gecut/hybrid-ui/commit/3c6bb1fd85f7bce8584cb9b450ae51f957a79dc8)) by @MM25Zamanian
-* **styles/utilities:** `focus-ring` color ([a56a1dd](https://github.com/gecut/hybrid-ui/commit/a56a1ddf827256d2dbe6b9fc204416c925267845)) by @MM25Zamanian
+- **styles/components:** button styles ([d2ac2b5](https://github.com/gecut/hybrid-ui/commit/d2ac2b5d97ee1b123c7d3d8c20bfd2d3cfb7a430)) by @MM25Zamanian
+- **styles/components:** card styles ([f6d7a08](https://github.com/gecut/hybrid-ui/commit/f6d7a08359f60d1b897bcacef730091f69eddeea)) by @MM25Zamanian
+- **styles/components:** icon button styles ([ef99cec](https://github.com/gecut/hybrid-ui/commit/ef99cecb76c2fc86cdf9de5f26569cbece8a0222)) by @MM25Zamanian
+- **styles/components:** icon styles ([e7a3e37](https://github.com/gecut/hybrid-ui/commit/e7a3e370f746e1eb412181511ac409b2d537eef2)) by @MM25Zamanian
+- **styles/components:** item styles ([9c1ff1c](https://github.com/gecut/hybrid-ui/commit/9c1ff1c2d2c0a73efb16202c4ced78e6b6807be3)) by @MM25Zamanian
+- **styles/components:** list styles ([3c6bb1f](https://github.com/gecut/hybrid-ui/commit/3c6bb1fd85f7bce8584cb9b450ae51f957a79dc8)) by @MM25Zamanian
+- **styles/utilities:** `focus-ring` color ([a56a1dd](https://github.com/gecut/hybrid-ui/commit/a56a1ddf827256d2dbe6b9fc204416c925267845)) by @MM25Zamanian
 
 ## [2.2.1](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.2.0...@gecut/styles@2.2.1) (2024-4-8)
 

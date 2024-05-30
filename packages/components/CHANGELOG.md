@@ -15,13 +15,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **components:** button component ([5f0e6c5](https://github.com/gecut/hybrid-ui/commit/5f0e6c5c86369587e1992ad36da8637c32850567)) by @MM25Zamanian
-* **components:** dialog component ([d3e7557](https://github.com/gecut/hybrid-ui/commit/d3e755766e8dc0e42abe9fcbabeb58e6da0678b7)) by @MM25Zamanian
-* **components:** events handler directive ([6a4754d](https://github.com/gecut/hybrid-ui/commit/6a4754d0636807cfa53284eff771542f1f43ee2d)) by @MM25Zamanian
-* **components:** icon button component ([ba8c36e](https://github.com/gecut/hybrid-ui/commit/ba8c36ee6bc3645b4220cdbd0df03d142f62a725)) by @MM25Zamanian
-* **components:** icon component ([a480109](https://github.com/gecut/hybrid-ui/commit/a4801094fca3d14cbedbd77cd505307978a8c9bc)) by @MM25Zamanian
-* **components:** list item component ([3018547](https://github.com/gecut/hybrid-ui/commit/301854706219ff148228a058993bf3bf9c70ebc3)) by @MM25Zamanian
-* **components:** top bar component ([4fb2e54](https://github.com/gecut/hybrid-ui/commit/4fb2e5434fcfd2d6044f080881766ed8d25603b3)) by @MM25Zamanian
+- **components:** button component ([5f0e6c5](https://github.com/gecut/hybrid-ui/commit/5f0e6c5c86369587e1992ad36da8637c32850567)) by @MM25Zamanian
+- **components:** dialog component ([d3e7557](https://github.com/gecut/hybrid-ui/commit/d3e755766e8dc0e42abe9fcbabeb58e6da0678b7)) by @MM25Zamanian
+- **components:** events handler directive ([6a4754d](https://github.com/gecut/hybrid-ui/commit/6a4754d0636807cfa53284eff771542f1f43ee2d)) by @MM25Zamanian
+- **components:** icon button component ([ba8c36e](https://github.com/gecut/hybrid-ui/commit/ba8c36ee6bc3645b4220cdbd0df03d142f62a725)) by @MM25Zamanian
+- **components:** icon component ([a480109](https://github.com/gecut/hybrid-ui/commit/a4801094fca3d14cbedbd77cd505307978a8c9bc)) by @MM25Zamanian
+- **components:** list item component ([3018547](https://github.com/gecut/hybrid-ui/commit/301854706219ff148228a058993bf3bf9c70ebc3)) by @MM25Zamanian
+- **components:** top bar component ([4fb2e54](https://github.com/gecut/hybrid-ui/commit/4fb2e5434fcfd2d6044f080881766ed8d25603b3)) by @MM25Zamanian
 
 # [2.1.0-alpha.3](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.0-alpha.2...@gecut/components@2.1.0-alpha.3) (2024-4-8)
 

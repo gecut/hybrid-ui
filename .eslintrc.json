@@ -1,6 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": ["*.config.*"],
+  "ignorePatterns": ["*.config.*", ".yarn/*"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/strict",

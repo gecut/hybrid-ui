@@ -1,14 +1,21 @@
 @layer components {
   .gecut-icon-button {
+    & * {
+      @apply select-none pointer-events-none;
+    }
+
     &.filled {
       @apply text-onPrimary bg-primary state-onPrimary disabled:opacity-15;
     }
+
     &.filled-tonal {
       @apply text-onSecondaryContainer bg-secondaryContainer state-onSecondaryContainer disabled:opacity-25;
     }
+
     &.outlined {
       @apply text-primary bg-transparent border border-outline state-primary disabled:opacity-45;
     }
+
     &.normal {
       @apply text-primary bg-transparent state-primary disabled:opacity-60;
     }
@@ -22,20 +29,25 @@
         .gecut-icon-button-unselected-icon {
           @apply opacity-0;
         }
+
         .gecut-icon-button-selected-icon {
           @apply opacity-100;
         }
       }
+
       &:not(:has(:checked)) {
         &.filled {
           @apply text-primary bg-surfaceVariant state-primary;
         }
+
         &.filled-tonal {
           @apply bg-surfaceContainerHighest state-onSurfaceVariant;
         }
+
         &.outlined {
           @apply text-onSurfaceVariant state-onSurfaceVariant;
         }
+
         &.normal {
           @apply text-onSurfaceVariant state-onSurfaceVariant;
         }
@@ -55,6 +67,7 @@
     & &-unselected-icon {
       @apply opacity-100;
     }
+
     & &-selected-icon {
       @apply absolute inset-0 z-[3] flex justify-center items-center opacity-0;
     }

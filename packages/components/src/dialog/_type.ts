@@ -1,4 +1,3 @@
-
 import type {ButtonContent} from '../button/button.js';
 import type {IconContent} from '../icon/icon.js';
 import type {TopBarContent} from '../top-bar/_type.js';

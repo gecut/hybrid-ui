@@ -1,17 +1,25 @@
 @layer components {
   .gecut-button {
+    & * {
+      @apply select-none pointer-events-none;
+    }
+
     &.elevated {
       @apply text-primary bg-surfaceContainerLow elevation-1 state-primary hover:elevation-2 focus:elevation-1 disabled:opacity-35;
     }
+
     &.filled {
       @apply text-onPrimary bg-primary elevation-0 state-onPrimary hover:elevation-2 focus:elevation-1 disabled:opacity-15;
     }
+
     &.filled-tonal {
       @apply text-onSecondaryContainer bg-secondaryContainer elevation-0 state-onSecondaryContainer hover:elevation-2 focus:elevation-1 disabled:opacity-25;
     }
+
     &.outlined {
       @apply text-primary bg-transparent border border-outline state-primary disabled:opacity-60;
     }
+
     &.text {
       @apply text-primary bg-transparent state-primary disabled:opacity-60;
     }
@@ -28,6 +36,7 @@
       .gecut-button-loader {
         @apply opacity-100;
       }
+
       .gecut-button-body {
         @apply opacity-0;
       }

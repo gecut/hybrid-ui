@@ -2,7 +2,7 @@
 import {GecutDirective} from '@gecut/lit-helper/directives/directive.js';
 import {numberUtils} from '@gecut/utilities/data-types/number.js';
 import {directive, type PartInfo} from 'lit/directive.js';
-import { classMap} from 'lit/directives/class-map.js';
+import {classMap} from 'lit/directives/class-map.js';
 import {ifDefined} from 'lit/directives/if-defined.js';
 import {when} from 'lit/directives/when.js';
 import {html, noChange, nothing} from 'lit/html.js';
