@@ -1,13 +1,19 @@
 import {GecutDirective} from '@gecut/lit-helper/directives/directive.js';
+import debounce from '@gecut/utilities/debounce.js';
 import {nothing} from 'lit';
 import {directive} from 'lit/directive.js';
 
+import type {GecutLogger} from '@gecut/logger';
 import type {ElementPart, PartInfo} from 'lit/directive.js';
 
-export type EventsObject<T = HTMLElementEventMap> = Partial<{
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [P in keyof T]: (evt: T[P]) => any | [(evt: T[P]) => any, boolean | EventListenerOptions];
+export type OptionsEventsObject = Record<string, boolean | EventListenerOptions>;
+export type FunctionOptionsEventsObject<T = HTMLElementEventMap> = Partial<{
+  [P in keyof T]: [(evt: T[P]) => unknown, boolean | EventListenerOptions];
 }>;
+export type FunctionEventsObject<T = HTMLElementEventMap> = Partial<{
+  [P in keyof T]: (evt: T[P]) => unknown;
+}>;
+export type EventsObject<T = HTMLElementEventMap> = FunctionEventsObject<T> | FunctionOptionsEventsObject<T>;
 
 export class EventsFromObjectDirective extends GecutDirective {
   constructor(partInfo: PartInfo) {
@@ -15,41 +21,53 @@ export class EventsFromObjectDirective extends GecutDirective {
   }
 
   protected element?: HTMLElement;
-  protected events: EventsObject = {};
+  protected eventsFunctions: FunctionEventsObject = {};
+  protected eventsOptions: OptionsEventsObject = {};
+  protected rendered = false;
 
-  override update(part: ElementPart, [events]: Parameters<this['render']>) {
+  override update(part: ElementPart, [events, logger]: Parameters<this['render']>) {
     super.update(part, [events]);
+
+    if (this.rendered) return nothing;
+
+    if (logger && this.log.domain != logger.domain) {
+      this.log = logger;
+    }
 
     this.element = part.element as HTMLElement;
 
     if (events) {
-      this.events = events;
-    }
-
-    const removeOrAddEventListener = (funcName: 'removeEventListener' | 'addEventListener') => {
-      for (const [name, callbackOrCallbackAndOptions] of Object.entries(this.events)) {
+      for (const [name, callbackOrCallbackAndOptions] of Object.entries(events)) {
         if (Array.isArray(callbackOrCallbackAndOptions)) {
-          this.element?.[funcName](
-            name,
-            this.debouncedEventHandler(name, callbackOrCallbackAndOptions[0]),
-            callbackOrCallbackAndOptions[1],
+          this.eventsFunctions[name as keyof EventsObject] = debounce(
+            this.debouncedEventHandler(name, callbackOrCallbackAndOptions[0]).bind(this),
+            16.6666,
           );
+
+          this.eventsOptions[name as keyof EventsObject] = callbackOrCallbackAndOptions[1];
         }
         else {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          this.element?.[funcName](name, this.debouncedEventHandler<any>(name, callbackOrCallbackAndOptions));
+          this.eventsFunctions[name as keyof EventsObject] ??= debounce(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            this.debouncedEventHandler<any>(name, callbackOrCallbackAndOptions).bind(this),
+            16.6666,
+          );
         }
       }
-    };
 
-    removeOrAddEventListener('removeEventListener');
-    removeOrAddEventListener('addEventListener');
+      for (const [name, func] of Object.entries(this.eventsFunctions)) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        this.element.addEventListener(name as keyof EventsObject, func as any, this.eventsOptions[name] ?? {});
+      }
+    }
+
+    this.rendered = true;
 
     return nothing;
   }
 
-  render(events: EventsObject = {}): unknown {
-    this.log.methodArgs?.('render', events);
+  render(events: EventsObject = {}, logger?: GecutLogger): unknown {
+    this.log.methodArgs?.('render', {events, customLogger: !!logger});
 
     return nothing;
   }
@@ -59,6 +77,7 @@ export class EventsFromObjectDirective extends GecutDirective {
       this.log.methodArgs?.(name, {
         tag: this.element?.tagName.toLowerCase(),
         element: this.element,
+        event,
       });
 
       func(event as T);
