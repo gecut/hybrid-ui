@@ -175,7 +175,7 @@ export class IconButtonDirective extends GecutDirective {
             }
           }
         }}
-        ${gecutEFO(this.content.events)}
+        ${gecutEFO(this.content.events, this.log.sub('efo'))}
       >${this.renderCheckbox()}${this.renderLoader()}${this.renderIcon()}</${tag}>
     `;
   }
