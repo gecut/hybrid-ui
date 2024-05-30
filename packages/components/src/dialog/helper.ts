@@ -11,7 +11,7 @@ export class DialogHelper {
   constructor(content: DialogHelperContent) {
     this.content = content;
 
-    this.html = html`${gecutContext<'open' | 'close'>()(this.controller, (status) => {
+    this.html = html`${gecutContext<'open' | 'close'>(this.controller, (status) => {
       const dialogContent: DialogContent = {...this.content, controller: this.controller, provider: this.provider};
 
       return gecutDialog(dialogContent, status === 'open');
