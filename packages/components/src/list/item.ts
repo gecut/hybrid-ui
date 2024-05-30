@@ -109,7 +109,7 @@ export class GecutItemDirective extends GecutDirective {
         href=${ifDefined(this.content.href)}
         target=${ifDefined(this.content.target)}
         ?disabled=${this.content.disabled}
-        ${gecutEFO(this.content.events)}
+        ${gecutEFO(this.content.events, this.log.sub('efo'))}
       >${this.renderBody()}</${tag}>
     `;
   }
