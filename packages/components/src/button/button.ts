@@ -79,7 +79,7 @@ export class GecutButtonDirective extends GecutDirective {
         tabindex="${this.content.disabled ? -1 : 0}"
         ?disabled=${this.content.disabled ?? false}
         ?loading=${this.content.loading ?? false}
-        ${gecutEFO(this.content.events)}
+        ${gecutEFO(this.content.events, this.log.sub('efo'))}
         >${this.renderLoader()}${this.renderBody()}</${tag}>
     `;
   }
