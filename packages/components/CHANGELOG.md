@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.2.0...@gecut/components@2.3.0) (2024-05-30)
+
+### Features
+
+* **components/dialog/helper:** gecut context ([5efffca](https://github.com/gecut/hybrid-ui/commit/5efffca360db4ea13022936f3399f0bb5c3ae208)) by @MM25Zamanian
+
 # [2.2.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.1.1...@gecut/components@2.2.0) (2024-05-30)
 
 ### Features
