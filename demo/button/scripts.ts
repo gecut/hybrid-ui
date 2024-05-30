@@ -61,12 +61,12 @@ render(
               : undefined,
             events: {
               click: (event) => {
-                const target = event.currentTarget as HTMLButtonElement;
+                const target = (event.currentTarget || event.target) as HTMLButtonElement | null;
 
-                target.setAttribute('loading', '');
+                target?.setAttribute('loading', '');
 
                 setTimeout(() => {
-                  target.removeAttribute('loading');
+                  target?.removeAttribute('loading');
                 }, 5120);
               },
             },

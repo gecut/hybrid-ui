@@ -67,7 +67,7 @@ render(
                   click: (event) => {
                     console.log(event);
 
-                    const target = event.currentTarget as HTMLButtonElement;
+                    const target = (event.currentTarget || event.target) as HTMLButtonElement;
 
                     target.setAttribute('loading', '');
 

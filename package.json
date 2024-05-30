@@ -1,7 +1,7 @@
 {
   "name": "hybrid-ui",
   "description": "Hybrid UI is a cutting-edge web front-end framework that empowers developers to create high-performance, memory-safe, and visually stunning applications. It provides a comprehensive set of tools and features to streamline development and deliver exceptional user experiences.",
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.2.2",
   "author": "S. MohammadMahdi Zamanian <dev@mm25zamanain.ir> (https://mm25zamanian.ir)",
   "license": "MIT",
   "type": "module",
@@ -45,7 +45,7 @@
     "build:lerna": "lerna run build",
     "format": "run-s format:prettier format:eslint",
     "format:eslint": "yarn run lint:ts --fix",
-    "format:prettier": "prettier . --ignore-path .gitignore --write",
+    "format:prettier": "prettier . --ignore-path .prettierignore --write",
     "clean": "git clean -d -x -f --exclude=node_modules --exclude='*.env' --exclude=_data --exclude='.pnp*' --exclude=.yarn",
     "serve": "lerna run serve",
     "watch": "run-p 'watch:*' serve",
@@ -70,6 +70,6 @@
     "eslint-plugin-import": "^2.29.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.4"
+    "typescript": "5.2.2"
   }
 }

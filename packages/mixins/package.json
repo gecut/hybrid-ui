@@ -55,12 +55,9 @@
     "url": "https://github.com/gecut/hybrid-ui",
     "directory": "packages/mixins"
   },
-  "engines": {
-    "node": ">=20.0.0"
-  },
   "dependencies": {
-    "@gecut/logger": "^1.4.1",
-    "@gecut/signal": "^2.1.1",
+    "@gecut/logger": "^1.4.2",
+    "@gecut/signal": "^2.1.2",
     "@gecut/types": "^2.2.0",
     "@gecut/utilities": "^5.2.1",
     "lit": "^3.1.3"
