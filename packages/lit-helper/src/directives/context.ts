@@ -55,4 +55,7 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
   }
 }
 
-export const gecutContext = <T>() => directive(GecutContextDirective<T>);
+export const gecutContext = directive(GecutContextDirective) as <T>(
+  signalContext: ContextSignal<T>,
+  render: (data: T) => unknown,
+) => unknown;
