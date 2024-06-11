@@ -13,7 +13,7 @@
     "@fontsource/vazirmatn": "^5.0.19",
     "@gecut/components": "workspace:^",
     "@gecut/lit-helper": "workspace:^",
-    "@gecut/signal": "^2.2.0",
+    "@gecut/signal": "^2.2.1",
     "@gecut/styles": "workspace:^",
     "@gecut/types": "^2.2.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
