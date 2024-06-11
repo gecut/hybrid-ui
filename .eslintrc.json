@@ -73,6 +73,7 @@
       }
     ],
     "operator-linebreak": ["error", "after", {"overrides": {"?": "before", ":": "before"}}],
+    "import/no-unresolved": "off",
     "import/order": [
       "error",
       {
