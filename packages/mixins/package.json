@@ -2,7 +2,7 @@
   "type": "module",
   "name": "@gecut/mixins",
   "description": "A tiny, TypeScript-powered package of hyper-fast LitElement mixins. Enhance your web components with swift, type-safe functionality that’s easy to integrate.",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "license": "MIT",
   "keywords": [
     "TypeScript",
