@@ -42,7 +42,7 @@ export class GecutI18N implements I18nInterface {
       html.dir = this.locale.dir;
     }
 
-    this.context.setValue(this.locale);
+    this.context.value = this.locale;
   }
 
   msg(source: string, variables: Record<`{${number}}`, string> = {}): string {

@@ -167,8 +167,8 @@ export class GecutDialogDirective extends GecutDirective {
     return () => {
       this.log.methodArgs?.('close', {value});
 
-      content.controller.setValue('close');
-      content.provider.setValue(value);
+      content.controller.value = 'close';
+      content.provider.value = value;
     };
   }
 }

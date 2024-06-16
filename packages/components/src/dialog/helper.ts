@@ -17,7 +17,7 @@ export class DialogHelper {
       return gecutDialog(dialogContent, status === 'open');
     })}`;
 
-    this.controller.setValue('close');
+    this.controller.value = 'close';
   }
 
   controller = new ContextSignal<'open' | 'close'>('dialog-controller');
@@ -28,7 +28,7 @@ export class DialogHelper {
   open(content: Partial<DialogHelperContent> = {}) {
     this.content = {...this.content, ...content} as DialogHelperContent;
 
-    this.controller.setValue('open');
+    this.controller.value = 'open';
   }
 
   onAfterClose() {

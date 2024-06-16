@@ -32,8 +32,8 @@
     "url": "https://github.com/gecut/hybrid-ui/issues"
   },
   "dependencies": {
-    "@gecut/logger": "^1.4.3",
-    "@gecut/signal": "^2.2.1",
+    "@gecut/logger": "^1.4.4",
+    "@gecut/signal": "^2.2.2",
     "@gecut/types": "^2.2.1",
     "type-fest": "^4.13.0"
   }

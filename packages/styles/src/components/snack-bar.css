@@ -1,0 +1,35 @@
+@layer components {
+  .gecut-snack-bar {
+    &.open {
+      @apply flex animate-fadeInSlide;
+    }
+    &.close {
+      @apply flex animate-fadeOutSlide;
+    }
+
+    &.longer-action {
+      .gecut-button.text {
+        @apply self-end;
+      }
+      .gecut-icon-button.normal {
+        @apply hidden;
+      }
+
+      @apply flex-col items-baseline pb-1;
+    }
+
+    &-message {
+      @apply text-inverseOnSurface text-bodyMedium grow my-3.5;
+    }
+
+    .gecut-button.text {
+      @apply text-inversePrimary text-labelLarge px-4;
+    }
+
+    .gecut-icon-button.normal {
+      @apply text-inverseOnSurface m-0;
+    }
+
+    @apply hidden items-center bg-inverseSurface elevation-3 rounded min-h-12 ps-4 pe-1;
+  }
+}
