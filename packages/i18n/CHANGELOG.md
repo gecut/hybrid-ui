@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/gecut/hybrid-ui/compare/@gecut/i18n@2.0.6...@gecut/i18n@2.1.0) (2024-06-22)
+
+### Features
+
+* new component ([1109973](https://github.com/gecut/hybrid-ui/commit/1109973af2c60a59fda7560166f2644fc2c3e593)) by @MM25Zamanian
+
 ## [2.0.6](https://github.com/gecut/hybrid-ui/compare/@gecut/i18n@2.0.5...@gecut/i18n@2.0.6) (2024-06-11)
 
 **Note:** Version bump only for package @gecut/i18n
