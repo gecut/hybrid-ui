@@ -92,6 +92,24 @@ export const animationTheme: Config['theme'] = {
         opacity: '0',
       },
     },
+
+    // # Components
+    snackBarIn: {
+      from: {
+        opacity: '0',
+      },
+      to: {
+        opacity: '1',
+      },
+    },
+    snackBarOut: {
+      from: {
+        opacity: '1',
+      },
+      to: {
+        opacity: '0',
+      },
+    },
   },
   animation: {
     appear: 'appear 500ms ease-out both',
@@ -103,5 +121,8 @@ export const animationTheme: Config['theme'] = {
     zoomSlideOut: 'zoomSlideOut 500ms ease both',
     zoomFadeOut: 'zoomFadeOut 500ms ease both',
     fadeOut: 'fadeOut 500ms linear both',
+
+    snackBarIn: 'snackBarIn 150ms ease-in both',
+    snackBarOut: 'snackBarOut 300ms ease-out both',
   },
 };
