@@ -38,6 +38,6 @@
     "email": "mm25zamanian@gmail.com"
   },
   "dependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.4"
   }
 }
