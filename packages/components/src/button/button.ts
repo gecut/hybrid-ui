@@ -90,11 +90,11 @@ export class GecutButtonDirective extends GecutDirective {
 
     return html`
       <div class="gecut-button-body">
-        ${when(this.content.icon?.svg, () => icon({svg: this.content?.icon?.svg as string}))}
+        ${when(this.content.icon?.svg, () => icon(this.content!.icon!))}
 
         <span class="text-labelLarge">${this.content.label}</span>
 
-        ${when(this.content.trailingIcon?.svg, () => icon({svg: this.content?.trailingIcon?.svg as string}))}
+        ${when(this.content.trailingIcon?.svg, () => icon(this.content!.trailingIcon!))}
       </div>
     `;
   }
