@@ -1,5 +1,8 @@
 import plugin from 'tailwindcss/plugin.js';
 
+import {darkColorTheme} from './dark.color-scheme';
+import {lightColorTheme} from './light.color-scheme';
+
 import type {Config} from 'tailwindcss';
 
 export const _colorSchemeLight = {
@@ -158,7 +161,7 @@ export const _colorTheme = {
 } as const;
 
 export const colorTheme: Config['theme'] = {
-  colors: _colorTheme,
+  colors: {..._colorTheme, ...darkColorTheme, ...lightColorTheme},
 };
 
 export const colorPlugin = plugin(({addUtilities}) => {
