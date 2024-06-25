@@ -1,0 +1,24 @@
+@layer utilities {
+  .gecut-layout {
+    body {
+      main {
+        &.has-top-bar {
+          @apply pt-16;
+        }
+        &.has-navigation-bar {
+          @apply pt-20;
+        }
+
+        .gecut-page {
+          @apply w-full min-h-full;
+        }
+
+        @apply w-full;
+      }
+
+      @apply overflow-x-hidden overflow-y-auto w-full h-full;
+    }
+
+    @apply h-full;
+  }
+}
