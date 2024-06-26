@@ -15,7 +15,7 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
   protected _$signal?: ContextSignal<T>;
   protected _$render?: (data: T) => unknown;
 
-  render(signalContext: ContextSignal<T>, render: (data: T) => unknown): unknown {
+  render(signalContext: ContextSignal<T>, render: (data: T) => unknown = (data) => String(data)): unknown {
     this.log.methodArgs?.('render', {signalContext, render});
 
     this._$render = render;
@@ -57,5 +57,5 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
 
 export const gecutContext = directive(GecutContextDirective) as <T>(
   signalContext: ContextSignal<T>,
-  render: (data: T) => unknown,
+  render?: (data: T) => unknown,
 ) => unknown;
