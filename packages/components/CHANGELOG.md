@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.4.1...@gecut/components@2.5.0) (2024-06-26)
+
+### Bug Fixes
+
+* **components/top-bar:** fix imports ([ba150c3](https://github.com/gecut/hybrid-ui/commit/ba150c3a62d7630157b6c3120c4d8cdfc59460f8)) by @MM25Zamanian
+
+### Features
+
+* **components/top-bar:** context for title ([12d0639](https://github.com/gecut/hybrid-ui/commit/12d0639bdcfd228e126efa84a8915d25f1e0ae86)) by @MM25Zamanian
+
 ## [2.4.1](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.4.0...@gecut/components@2.4.1) (2024-06-26)
 
 ### Bug Fixes
