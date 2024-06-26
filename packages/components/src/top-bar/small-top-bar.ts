@@ -1,3 +1,4 @@
+import {gecutContext} from '@gecut/lit-helper/directives/context.js';
 import {html, nothing} from 'lit/html.js';
 
 import {endIconListTemplate} from './_end-icon-list.js';
