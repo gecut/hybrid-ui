@@ -24,6 +24,9 @@
     "email": "dev@mm25zamanain.ir",
     "url": "https://mm25zamanain.ir"
   },
+  "lerna": {
+    "message": "chore(components): publish v%s"
+  },
   "license": "MIT",
   "publishConfig": {
     "access": "public"

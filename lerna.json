@@ -11,7 +11,7 @@
       "changelogPreset": "conventional-changelog-angular",
       "changelogIncludeCommitsClientLogin": " by @%l",
       "ignoreChanges": ["*.md"],
-      "message": "release: %s",
+      "message": "chore(release): publish %s",
       "private": false,
       "forceGitTag": true,
       "signGitTag": true,
