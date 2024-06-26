@@ -1,0 +1,37 @@
+@layer components {
+  .gecut-top-bar {
+    &-box {
+      & > div {
+        @apply flex items-center justify-center;
+      }
+
+      @apply max-w-screen-sm mx-auto flex px-1 py-2 w-full h-full *:h-auto relative;
+    }
+
+    &-title {
+      h1 {
+        @apply w-full;
+      }
+
+      @apply text-titleLarge text-primary grow px-2;
+    }
+
+    &.center {
+      .gecut-top-bar-title > h1 {
+        @apply text-center;
+      }
+    }
+
+    &.small {
+      .gecut-top-bar-title > h1 {
+        @apply text-start;
+      }
+    }
+
+    .gecut-button {
+      @apply px-4;
+    }
+
+    @apply fixed top-0 inset-x-0 bg-surfaceContainer translucent flex flex-col;
+  }
+}

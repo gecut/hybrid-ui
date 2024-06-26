@@ -1,4 +1,3 @@
-import {classMap} from 'lit/directives/class-map.js';
 import {html, nothing} from 'lit/html.js';
 
 import {endIconListTemplate} from './_end-icon-list.js';
@@ -6,16 +5,16 @@ import {gecutIconButton} from '../icon-button/icon-button.js';
 
 import type {TopBarContent} from './_type.js';
 
-export const gecutCenterTopBar = (content: TopBarContent, scroll = false) =>
-  html`<header
-    class="z-sticky flex h-16 shrink-0 grow-0 select-none items-center
-           bg-surface [&.scroll]:bg-surfaceContainer ${classMap({scroll})}"
-  >
-    ${content.startIcon ? gecutIconButton(content.startIcon) : nothing}
+export const gecutCenterTopBar = (content: TopBarContent) => html`
+  <header class="gecut-top-bar center">
+    <div class="gecut-top-bar-box">
+      <div>${content.startIcon ? gecutIconButton(content.startIcon) : nothing}</div>
 
-    <div class="lead grow overflow-clip whitespace-nowrap px-1 text-center text-titleLarge text-onSurface">
-      ${content.title}
+      <div class="gecut-top-bar-title">
+        <h1>${content.title}</h1>
+      </div>
+
+      <div>${endIconListTemplate(content.endIconList)}</div>
     </div>
-
-    ${endIconListTemplate(content.endIconList)}
-  </header>`;
+  </header>
+`;
