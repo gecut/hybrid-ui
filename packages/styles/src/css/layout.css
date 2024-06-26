@@ -1,5 +1,36 @@
 @layer utilities {
   .gecut-layout {
+    * {
+      @apply select-none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a,
+    i,
+    b,
+    strong,
+    em,
+    code,
+    kbd,
+    var,
+    cite,
+    dfn,
+    abbr,
+    address,
+    q,
+    blockquote,
+    ins,
+    del {
+      @apply select-auto;
+    }
+
     body {
       main {
         &.has-top-bar {

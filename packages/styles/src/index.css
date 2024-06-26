@@ -6,27 +6,8 @@
 @import './css/alpine.css';
 @import './css/form.css';
 @import './css/scrollbar.css';
+@import './css/layout.css';
 @import './css/utilities.css';
 @import './css/typography.css';
 
 @import './components/components.css';
-
-@layer base {
-  gecut-root,
-  .root {
-    @apply flex flex-col h-full w-full overflow-hidden relative;
-  }
-
-  main[role='main'] {
-    @apply flex flex-col flex-1 overflow-hidden relative;
-  }
-
-  .gecut-page,
-  .page {
-    &.scrollable {
-      @apply overflow-x-auto;
-    }
-
-    @apply flex flex-col h-full gap-2;
-  }
-}
