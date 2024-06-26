@@ -1,6 +1,6 @@
 {
   "name": "@gecut/components",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "type": "module",
   "description": "A collection of high-performance and beautiful UI components with Tailwind CSS, optimized for JS usage.",
   "keywords": [

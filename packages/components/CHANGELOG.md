@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.4.0...@gecut/components@2.4.1) (2024-06-26)
+
+### Bug Fixes
+
+* **components/button:** icons ([88f973c](https://github.com/gecut/hybrid-ui/commit/88f973c6762f47cefea289d545ce00db2b12f890)) by @MM25Zamanian
+
 # [2.4.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.3.2...@gecut/components@2.4.0) (2024-06-22)
 
 ### Features

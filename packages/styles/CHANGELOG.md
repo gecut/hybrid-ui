@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.4.0...@gecut/styles@2.5.0) (2024-06-26)
+
+### Bug Fixes
+
+* **styles/base:** add `html` & `body` base ([ba4a46c](https://github.com/gecut/hybrid-ui/commit/ba4a46c539fd78c764d3a0275f60d1e2c7eb79a6)) by @MM25Zamanian
+* **styles:** gecut layout ([17728d2](https://github.com/gecut/hybrid-ui/commit/17728d2fdbf8c6f37ba2df0890fd2fe1d487974d)) by @MM25Zamanian
+
+### Features
+
+* **styles/color-scheme:** add static ref colors ([86e6a6e](https://github.com/gecut/hybrid-ui/commit/86e6a6e839fe9f231b616eeb108597df92657431)) by @MM25Zamanian
+* **styles/layout:** new utility ([f1643c1](https://github.com/gecut/hybrid-ui/commit/f1643c1b369c239394e72f2ba913c7fdcf514f47)) by @MM25Zamanian
+
 # [2.4.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.3.1...@gecut/styles@2.4.0) (2024-06-22)
 
 ### Features
