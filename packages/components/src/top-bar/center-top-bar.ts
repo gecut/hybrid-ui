@@ -1,3 +1,4 @@
+import {gecutContext} from '@gecut/lit-helper/directives/context.js';
 import {html, nothing} from 'lit/html.js';
 
 import {endIconListTemplate} from './_end-icon-list.js';
@@ -11,7 +12,7 @@ export const gecutCenterTopBar = (content: TopBarContent) => html`
       <div>${content.startIcon ? gecutIconButton(content.startIcon) : nothing}</div>
 
       <div class="gecut-top-bar-title">
-        <h1>${content.title}</h1>
+        <h1>${typeof content.title === 'string' ? content.title : gecutContext(content.title)}</h1>
       </div>
 
       <div>${endIconListTemplate(content.endIconList)}</div>
