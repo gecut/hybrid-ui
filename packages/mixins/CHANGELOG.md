@@ -7,7 +7,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* new component ([1109973](https://github.com/gecut/hybrid-ui/commit/1109973af2c60a59fda7560166f2644fc2c3e593)) by @MM25Zamanian
+- new component ([1109973](https://github.com/gecut/hybrid-ui/commit/1109973af2c60a59fda7560166f2644fc2c3e593)) by @MM25Zamanian
 
 ## [2.1.4](https://github.com/gecut/hybrid-ui/compare/@gecut/mixins@2.1.3...@gecut/mixins@2.1.4) (2024-06-11)
 
