@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.2.1...@gecut/lit-helper@2.3.0) (2024-06-29)
+
+### Features
+
+* **lit/helper/context:** loading ([96c468a](https://github.com/gecut/hybrid-ui/commit/96c468a9402fcbb326219108d7506051febc9db0)) by @MM25Zamanian
+
 ## [2.2.1](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.2.0...@gecut/lit-helper@2.2.1) (2024-06-26)
 
 **Note:** Version bump only for package @gecut/lit-helper
