@@ -14,11 +14,18 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
 
   protected _$signal?: ContextSignal<T>;
   protected _$render?: (data: T) => unknown;
+  protected _$loading?: () => unknown;
 
-  render(signalContext: ContextSignal<T>, render: (data: T) => unknown = (data) => String(data)): unknown {
-    this.log.methodArgs?.('render', {signalContext, render});
+  render(
+    signalContext: ContextSignal<T>,
+    render: (data: T) => unknown = (data) => data,
+    loading?: () => unknown,
+  ): unknown {
+    signalContext;
+    this.log.methodArgs?.('render', {signalContext});
 
     this._$render = render;
+    this._$loading = loading;
     if (this._$signal !== signalContext) {
       // When the observable changes, unsubscribe to the old one and subscribe to the new one
       this.unsubscribe?.();
@@ -35,6 +42,10 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
   subscribe(signalContext: ContextSignal<T>): void {
     this.log.method?.('subscribe');
 
+    if (this._$loading) {
+      this.setValue(this._$loading());
+    }
+
     this.unsubscribe = signalContext.subscribe(
       (v) => {
         this.setValue(this._$render!(v));
@@ -46,7 +57,7 @@ class GecutContextDirective<T> extends GecutAsyncDirective {
   // When the directive is disconnected from the DOM, unsubscribe to ensure
   // the directive instance can be garbage collected
   override disconnected(): void {
-    this.unsubscribe!();
+    this.unsubscribe?.();
   }
   // If the subtree the directive is in was disconnected and subsequently
   // re-connected, re-subscribe to make the directive operable again
