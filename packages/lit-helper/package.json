@@ -19,6 +19,9 @@
       "types": "./*.d.ts"
     }
   },
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md,css}"
+  ],
   "description": "",
   "keywords": [
     "gecut"
