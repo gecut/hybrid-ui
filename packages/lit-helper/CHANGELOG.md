@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.3.0...@gecut/lit-helper@2.4.0) (2024-07-04)
+
+### Features
+
+* **lit-helper:** state directive ([35fb902](https://github.com/gecut/hybrid-ui/commit/35fb9027a065fd18db7c6f89b01acc1b766275e3)) by @MM25Zamanian
+
 # [2.3.0](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.2.1...@gecut/lit-helper@2.3.0) (2024-06-29)
 
 ### Features
