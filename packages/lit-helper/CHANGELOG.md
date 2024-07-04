@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.4.0...@gecut/lit-helper@2.4.1) (2024-07-04)
+
+### Bug Fixes
+
+* **lit-helper:** files npm ([7091e0e](https://github.com/gecut/hybrid-ui/commit/7091e0e276e4fbe2f014cf7cd44510095e490133)) by @MM25Zamanian
+
 # [2.4.0](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.3.0...@gecut/lit-helper@2.4.0) (2024-07-04)
 
 ### Features
