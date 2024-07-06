@@ -4,17 +4,23 @@ import {directive, type PartInfo} from 'lit-html/directive.js';
 
 import {GecutAsyncDirective} from './async-directive.js';
 
+import type {GecutLogger} from '@gecut/logger';
+
 export class GecutState<T> extends GecutStateBase<T> {
   constructor(name: string, defaultValue?: T) {
     super(name, 'AnimationFrame');
+
+    this.name = name;
 
     if (defaultValue != null) {
       this.value = defaultValue;
     }
   }
 
+  readonly name;
+
   hydrate(render: (data: T) => unknown, loading?: () => unknown) {
-    return __state(this, render, loading);
+    return __state(this, render, loading, this.logger.sub('<gecut-state>'));
   }
 }
 
@@ -29,10 +35,19 @@ class __GecutStateDirective<T> extends GecutAsyncDirective {
   protected _$render?: (data: T) => unknown;
   protected _$loading?: () => unknown;
 
-  render(signalState: GecutState<T>, render: (data: T) => unknown = (data) => data, loading?: () => unknown): unknown {
-    this.log.methodArgs?.('render', {signalState});
+  render(
+    signalState: GecutState<T>,
+    render: (data: T) => unknown = (data) => data,
+    loading?: () => unknown,
+    logger?: GecutLogger,
+  ): unknown {
+    this.log.methodArgs?.('render', {name: signalState.name});
 
-    if (this._$signal && this._$render) return noChange;
+    if (this._$signal != null) return noChange;
+
+    if (logger != null) {
+      this.log = logger;
+    }
 
     this._$render = render;
     this._$loading = loading;
@@ -82,4 +97,5 @@ const __state = directive(__GecutStateDirective) as <T>(
   signalContext: GecutState<T>,
   render?: (data: T) => unknown,
   loading?: () => unknown,
+  logger?: GecutLogger,
 ) => unknown;
