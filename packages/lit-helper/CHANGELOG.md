@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.3](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.4.2...@gecut/lit-helper@2.4.3) (2024-07-06)
+
+### Bug Fixes
+
+* **lit-helper:** logger issues ([1cff8b4](https://github.com/gecut/hybrid-ui/commit/1cff8b482a754d0ea70627e253059b45947977ed)) by @MM25Zamanian
+
 ## [2.4.2](https://github.com/gecut/hybrid-ui/compare/@gecut/lit-helper@2.4.1...@gecut/lit-helper@2.4.2) (2024-07-06)
 
 ### Bug Fixes
