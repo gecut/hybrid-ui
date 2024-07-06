@@ -8,7 +8,7 @@ export class GecutState<T> extends GecutStateBase<T> {
   constructor(name: string, defaultValue?: T) {
     super(name, 'AnimationFrame');
 
-    if (defaultValue) {
+    if (defaultValue != null) {
       this.value = defaultValue;
     }
   }
