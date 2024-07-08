@@ -344,13 +344,13 @@ __metadata:
   linkType: soft
 
 "@gecut/signal@npm:^2.2.2":
-  version: 2.3.3
-  resolution: "@gecut/signal@npm:2.3.3"
+  version: 2.3.4
+  resolution: "@gecut/signal@npm:2.3.4"
   dependencies:
     "@gecut/logger": "npm:^1.4.6"
     "@gecut/types": "npm:^2.2.1"
     "@gecut/utilities": "npm:^5.4.0"
-  checksum: 10c0/048f16d9a5b76e655892596c7c6c4ba5bdb950ff9ceb26cdbf528fef986276f3a9cc93623c5de906173bc9e9b7f70b3dc4fc05507bbff8d06c9f7cff9234e586
+  checksum: 10c0/3e27b889b13cb9c8ee3c9caf95ed1b00392b5418493d5e77cfac0c726c177e2db1b44b6277b78d491c0f1f88db878537632d964714a94f08bce0fe563eb6103e
   languageName: node
   linkType: hard
 
