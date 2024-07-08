@@ -1,86 +1,158 @@
-import {gecutContext} from '@gecut/lit-helper/directives/context.js';
+import {GecutState, mapObject} from '@gecut/lit-helper';
 import {GecutLogger} from '@gecut/logger';
-import {ContextSignal} from '@gecut/signal';
-import {map} from 'lit/directives/map.js';
-import {styleMap} from 'lit/directives/style-map.js';
+import {uid} from '@gecut/utilities/uid.js';
+import {untilEvent, untilNextFrame} from '@gecut/utilities/wait/wait.js';
+import {createRef, type Ref} from 'lit/directives/ref.js';
+import {styleMap, type StyleInfo} from 'lit/directives/style-map.js';
 import {html} from 'lit/html.js';
 
-import {gecutSnackBar, type SnackBarContent} from './snack-bar.js';
+import {gecutSnackBar, type SnackBarContent} from './snack-bar';
 
 export interface SnackBarManagerContent {
-  position?: {
-    top?: string;
-    bottom?: string;
-    left?: string;
-    right?: string;
-  };
+  style?: Readonly<StyleInfo>;
 }
 
 export class SnackBarManager {
   constructor(content: SnackBarManagerContent) {
     this.content = content;
-    this.snackBars = {};
-    this._$updaterContext.value = 'update';
-
+    this.state = new GecutState<Record<string, {content: SnackBarContent; ref: Ref<HTMLDivElement>}>>(
+      'snack-bar-manager',
+    );
     this.html = html`
-      <div class="flex flex-col absolute inset-x-0" style=${styleMap(this.content?.position ?? {})}>
-        ${gecutContext(this._$updaterContext, () =>
-          map(Object.keys(this.snackBars), (k) => gecutSnackBar(this.snackBars[k])),
+      <div style=${styleMap(this.content.style ?? {})}>
+        ${this.state.hydrate((data) =>
+          mapObject(null, data, (snackBar) => gecutSnackBar(snackBar.content, snackBar.ref)),
         )}
       </div>
     `;
   }
 
-  content: SnackBarManagerContent = {};
-  snackBars: Record<string, ContextSignal<SnackBarContent>> = {};
-  html;
+  readonly state: GecutState<Record<string, {content: SnackBarContent; ref: Ref<HTMLDivElement>}>>;
+  readonly html: unknown;
+  readonly content: SnackBarManagerContent;
 
-  protected _$log = new GecutLogger('gecut-snackbar-manager');
-  protected _$updaterContext = new ContextSignal<'update'>('gecut-snackbar-updater', 'AnimationFrame');
+  private readonly logger = new GecutLogger('<snack-bar-manager>');
+  private timers: Record<string, NodeJS.Timeout> = {};
 
   connect(id: string, content: SnackBarContent) {
-    this._$log.methodArgs?.('connect', {id, content});
+    this.logger.methodArgs?.('connect', {id, content});
 
-    const context = new ContextSignal<SnackBarContent>(id, 'AnimationFrame');
-    context.value = {...content, open: false};
+    this.state.value = {
+      ...(this.state.value ??= {}),
 
-    this.snackBars[id] = context;
-    this.update();
+      [id]: {
+        content,
+        ref: createRef(),
+      },
+    };
+
+    return this.__$waitForRender(id);
   }
-  disconnect(id: string) {
-    this._$log.methodArgs?.('disconnect', {id});
 
-    this.close(id);
+  async disconnect(id: string) {
+    this.logger.methodArgs?.('disconnect', {id});
 
-    setTimeout(() => {
-      delete this.snackBars[id];
-      this.update();
-    }, 500);
+    await this.close(id);
+
+    delete this.state.value?.[id];
+    this.state.value = this.state.value ?? {};
+
+    return untilNextFrame();
   }
 
   open(id: string) {
-    this._$log.methodArgs?.('open', {id});
+    this.logger.methodArgs?.('open', {id});
 
-    if (!this.snackBars[id]) return this._$log.warning('open', 'id_not_found', `'${id}' not found`);
+    const state = (this.state.value ??= {})[id];
+    const element = state.ref.value;
 
-    this.snackBars[id].functionalValue((old) => {
-      return {...(old ?? {message: ''}), open: true};
-    });
-    this.update();
+    if (!state) return this.logger.warning('open', 'state_not_exist', `state '${id}' not exist`);
+    if (!element) return this.logger.warning('open', 'element_not_exist', `element of state '${id}' not exist`);
+
+    element.querySelector<HTMLDivElement>('.actions')?.addEventListener(
+      'click',
+      () => {
+        this.close(id);
+      },
+      {once: true},
+    );
+
+    element.classList.remove('close');
+    element.classList.add('open');
   }
+
   close(id: string) {
-    this._$log.methodArgs?.('close', {id});
+    this.logger.methodArgs?.('close', {id});
 
-    if (!this.snackBars[id]) return this._$log.warning('close', 'id_not_found', `'${id}' not found`);
+    const state = (this.state.value ??= {})[id];
+    const element = state.ref.value;
 
-    this.snackBars[id].functionalValue((old) => {
-      return {...(old ?? {message: ''}), open: false};
-    });
-    this.update();
+    if (!state) return this.logger.warning('close', 'state_not_exist', `state '${id}' not exist`);
+    if (!element) return this.logger.warning('close', 'element_not_exist', `element of state '${id}' not exist`);
+
+    element.classList.remove('open');
+    element.classList.add('close');
+
+    clearTimeout(this.timers[id]);
+
+    return untilEvent(element, 'animationend');
   }
 
-  protected update() {
-    this._$log.methodArgs?.('update', {snackBars: this.snackBars});
-    this._$updaterContext.renotify();
+  async notify(content: SnackBarContent, timeout?: number) {
+    const id = 'snack-bar_' + uid();
+
+    await this.connect(id, content);
+
+    this.open(id);
+
+    this.timers[id] = setTimeout(
+      async () => this.disconnect(id),
+      timeout ?? this.__$readTimeCalc(content.message, (content.action?.label?.length ?? 0) > 10 ? 'high' : 'low'),
+    );
+  }
+
+  private __$readTimeCalc(message: string, priority: 'low' | 'medium' | 'high'): number {
+    const wordCount = message.split(' ').length;
+
+    let baseTime = 100;
+
+    switch (priority) {
+      case 'low':
+        baseTime += 100;
+        break;
+      case 'medium':
+        baseTime += 200;
+        break;
+      case 'high':
+        baseTime += 300;
+        break;
+    }
+
+    let readTime = Math.min(4_000 + baseTime * wordCount, 10_000);
+
+    if (wordCount > 20) {
+      readTime += (wordCount - 20) * 10;
+    }
+
+    this.logger.methodFull?.('__$readTimeCalc', {message, priority}, readTime);
+
+    return readTime;
+  }
+  private async __$waitForRender(id: string): Promise<void> {
+    let element;
+
+    this.logger.time?.('waitForRender-' + id);
+
+    while (element == null) {
+      this.logger.methodArgs?.('__$waitForRender', {id});
+
+      await untilNextFrame();
+
+      element = this.state.value?.[id].ref.value;
+    }
+
+    this.logger.timeEnd?.('waitForRender-' + id);
+
+    return;
   }
 }
