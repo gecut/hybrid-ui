@@ -40,9 +40,9 @@
   },
   "dependencies": {
     "@gecut/data-manager": "^1.2.3",
-    "@gecut/logger": "^1.4.4",
+    "@gecut/logger": "^1.4.6",
     "@gecut/mixins": "workspace:^",
-    "@gecut/signal": "^2.2.2",
+    "@gecut/signal": "^2.3.4",
     "@gecut/types": "^2.2.1",
     "@gecut/utilities": "^5.4.0",
     "@material/web": "^1.4.1",
