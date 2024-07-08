@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.5.0...@gecut/styles@2.6.0) (2024-07-08)
+
+### Features
+
+* **styles:** snack-bar ([e0b2b6c](https://github.com/gecut/hybrid-ui/commit/e0b2b6c075e518ff71f94d625fa9d9a9c128ca8c)) by @MM25Zamanian
+
 # [2.5.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.4.0...@gecut/styles@2.5.0) (2024-06-26)
 
 ### Bug Fixes

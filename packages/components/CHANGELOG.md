@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.5.5...@gecut/components@2.6.0) (2024-07-08)
+
+### Features
+
+* **components:** snack-bar ([d9a561e](https://github.com/gecut/hybrid-ui/commit/d9a561e998d3fdfb2923bf6bc96ea0ecc799eb32)) by @MM25Zamanian
+
 ## [2.5.5](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.5.4...@gecut/components@2.5.5) (2024-07-06)
 
 **Note:** Version bump only for package @gecut/components
