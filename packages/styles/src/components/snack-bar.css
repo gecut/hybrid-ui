@@ -38,6 +38,6 @@
       @apply text-inverseOnSurface m-0;
     }
 
-    @apply hidden overflow-hidden transition-all duration-200 items-center bg-inverseSurface elevation-3 rounded ps-4 pe-1;
+    @apply hidden overflow-hidden transition-all duration-200 items-center bg-inverseSurface elevation-3 rounded ps-4 pe-1 *:select-none;
   }
 }
