@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.6.1...@gecut/components@2.7.0) (2024-07-17)
+
+### Features
+
+* **components:** define html type ([d763ae0](https://github.com/gecut/hybrid-ui/commit/d763ae022b4a2ccafb572a8f6475092326145dfb)) by @MM25Zamanian
+
 ## [2.6.1](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.6.0...@gecut/components@2.6.1) (2024-07-08)
 
 **Note:** Version bump only for package @gecut/components
