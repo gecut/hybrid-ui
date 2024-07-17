@@ -35,6 +35,6 @@
     "@gecut/logger": "^1.4.6",
     "@gecut/signal": "^2.3.4",
     "@gecut/types": "^2.2.1",
-    "type-fest": "^4.13.0"
+    "type-fest": "^4.22.0"
   }
 }
