@@ -44,7 +44,7 @@ const buttonsContents: Record<
 render(
   html`
     <main class="p-4" role="main">
-      <div class="flex flex-col gap-4 p-4">
+    <div class="flex flex-col gap-4 p-4">
         ${map(this, buttonTypes, (type) =>
           gecutButton({
             type,
@@ -72,6 +72,36 @@ render(
             },
             label: buttonsContents[type].name,
 
+            ...buttonsContents[type],
+          }),
+        )}
+      </div>
+      <div class="flex gap-4 p-4">
+        ${map(this, buttonTypes, (type) =>
+          gecutButton({
+            type,
+            loader: buttonsContents[type].loaderSVG
+              ? {
+                  svg: buttonsContents[type].loaderSVG!,
+                }
+              : undefined,
+            icon: buttonsContents[type].iconSVG
+              ? {
+                  // eslint-disable-next-line max-len
+                  svg: buttonsContents[type].iconSVG!,
+                }
+              : undefined,
+            events: {
+              click: (event) => {
+                const target = (event.currentTarget || event.target) as HTMLButtonElement | null;
+
+                target?.setAttribute('loading', '');
+
+                setTimeout(() => {
+                  target?.removeAttribute('loading');
+                }, 5120);
+              },
+            },
             ...buttonsContents[type],
           }),
         )}
