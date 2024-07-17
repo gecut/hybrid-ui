@@ -29,6 +29,10 @@
     }
 
     & &-body {
+      .gecut-button-body-label {
+        @apply text-labelLarge empty:hidden;
+      }
+
       @apply flex items-center justify-center h-full w-full gap-2 transition-opacity duration-300 opacity-100;
     }
 

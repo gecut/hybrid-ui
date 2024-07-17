@@ -20,6 +20,8 @@ export interface ButtonContent {
    */
   type: 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
 
+  htmlType?: HTMLButtonElement['type'];
+
   disabled?: boolean;
   loading?: boolean;
   loader?: IconContent;
@@ -74,6 +76,7 @@ export class GecutButtonDirective extends GecutDirective {
       <${tag}
         class=${classMap(this.getRenderClasses())}
         role="button"
+        type=${ifDefined(this.type === 'button' ? this.content.htmlType : undefined)}
         href=${ifDefined(this.content.href)}
         target=${ifDefined(this.content.target)}
         tabindex="${this.content.disabled ? -1 : 0}"
@@ -92,7 +95,7 @@ export class GecutButtonDirective extends GecutDirective {
       <div class="gecut-button-body">
         ${when(this.content.icon?.svg, () => icon(this.content!.icon!))}
 
-        <span class="text-labelLarge">${this.content.label}</span>
+        <span class="gecut-button-body-label">${this.content.label}</span>
 
         ${when(this.content.trailingIcon?.svg, () => icon(this.content!.trailingIcon!))}
       </div>
