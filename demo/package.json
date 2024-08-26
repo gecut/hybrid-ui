@@ -12,6 +12,7 @@
   "devDependencies": {
     "@fontsource/vazirmatn": "^5.0.19",
     "@gecut/components": "workspace:^",
+    "@gecut/i18n": "workspace:^",
     "@gecut/lit-helper": "workspace:^",
     "@gecut/signal": "^2.3.4",
     "@gecut/styles": "workspace:^",
