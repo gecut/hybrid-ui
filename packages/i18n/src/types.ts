@@ -19,7 +19,13 @@ export interface LocaleType {
 
 type __DateTimeRelativeKey = 'year' | 'month' | 'day' | 'hour' | 'minute' | 'second';
 
-export type BaseTranslationsKeys = `one_${__DateTimeRelativeKey}s` | `other_${__DateTimeRelativeKey}s` | 'just_now';
+export type BaseTranslationsKeys =
+  | `one_${__DateTimeRelativeKey}s_ago`
+  | `other_${__DateTimeRelativeKey}s_ago`
+  | `one_${__DateTimeRelativeKey}s`
+  | `other_${__DateTimeRelativeKey}s`
+  | 'and'
+  | 'just_now';
 
 export type DateTimeRelativeKey = `${__DateTimeRelativeKey}s`;
 

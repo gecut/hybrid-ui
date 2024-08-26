@@ -128,9 +128,59 @@ export class GecutI18N implements I18nInterface {
     return this.msg('just_now');
   }
 
+  rtf(_origin: string | Date, _destination: string | Date = new Date()): string {
+    const SECOND = 1000;
+    const MINUTE = 60 * SECOND;
+    const HOUR = 60 * MINUTE;
+    const DAY = 24 * HOUR;
+    const MONTH = 30 * DAY;
+    const YEAR = 365 * DAY;
+
+    const units: Record<DateTimeRelativeKey, number> = {
+      years: YEAR,
+      months: MONTH,
+      days: DAY,
+      hours: HOUR,
+      minutes: MINUTE,
+      seconds: SECOND,
+    };
+
+    const origin = new Date(_origin);
+    const destination = new Date(_destination);
+
+    let elapsed = destination.getTime() - origin.getTime();
+
+    const timeUnits: Record<string, number> = {};
+
+    for (const [unit, amount] of Object.entries(units)) {
+      const count = Math.floor(elapsed / amount);
+      if (count > 0) {
+        timeUnits[unit] = count;
+        elapsed -= count * amount;
+      }
+    }
+
+    const timeStrings: string[] = [];
+
+    for (const [unit, count] of Object.entries(timeUnits)) {
+      const resourceKey = GecutI18N.getResourcesKeyForRelativeTime(count, unit as DateTimeRelativeKey);
+
+      timeStrings.push(this.msg(resourceKey, {'{0}': count.toString()}));
+    }
+
+    if (timeStrings.length === 0) {
+      return this.msg('just_now');
+    }
+
+    return timeStrings.join(' ' + this.msg('and') + ' ');
+  }
+
   private static getResourcesKeyForRelativeTime(count: number, unit: DateTimeRelativeKey): string {
     if (count === 1) {
       return `one_${unit}`;
+    }
+    if (unit === 'seconds') {
+      return 'other_seconds_ago';
     }
     return `other_${unit}`;
   }
