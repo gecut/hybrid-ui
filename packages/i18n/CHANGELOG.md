@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/gecut/hybrid-ui/compare/@gecut/i18n@2.1.1...@gecut/i18n@2.2.0) (2024-08-26)
+
+### Features
+
+* **i18n:** full relative time ([5a1e15a](https://github.com/gecut/hybrid-ui/commit/5a1e15a5bd54679aa90af118ca244fc62366fca6)) by @MM25Zamanian
+
 ## [2.1.1](https://github.com/gecut/hybrid-ui/compare/@gecut/i18n@2.1.0...@gecut/i18n@2.1.1) (2024-07-08)
 
 **Note:** Version bump only for package @gecut/i18n
