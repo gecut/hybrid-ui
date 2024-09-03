@@ -15,6 +15,7 @@ import type {ClassInfo} from 'lit/directives/class-map.js';
 export interface SnackBarContent {
   message: string;
 
+  textMultiLine?: boolean;
   open?: boolean;
   action?: Omit<ButtonContent, 'type'>;
   close?: boolean | Omit<IconButtonContent, 'type'>;
@@ -84,6 +85,7 @@ export class GecutSnackBarDirective extends GecutDirective {
     return {
       ...super.getRenderClasses(),
 
+      'text-multi-line': this.content.textMultiLine ?? false,
       'longer-action': (this.content.action?.label?.length ?? 0) > 10,
       open: this.content.open ?? false,
       close: !(this.content.open ?? false),

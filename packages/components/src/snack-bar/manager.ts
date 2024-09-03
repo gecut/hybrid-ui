@@ -6,7 +6,7 @@ import {createRef, type Ref} from 'lit/directives/ref.js';
 import {styleMap, type StyleInfo} from 'lit/directives/style-map.js';
 import {html} from 'lit/html.js';
 
-import {gecutSnackBar, type SnackBarContent} from './snack-bar';
+import {gecutSnackBar, type SnackBarContent} from './snack-bar.js';
 
 export interface SnackBarManagerContent {
   style?: Readonly<StyleInfo>;
