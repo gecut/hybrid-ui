@@ -7,6 +7,16 @@
       @apply flex opacity-0 max-h-0 mb-0 !py-0 delay-200;
     }
 
+    &.text-multi-line {
+      .gecut-snack-bar-message {
+        @apply line-clamp-3;
+      }
+
+      &.open {
+        @apply max-h-36;
+      }
+    }
+
     &.longer-action {
       .gecut-button.text {
         @apply self-end;
