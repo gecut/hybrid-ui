@@ -27,6 +27,7 @@ for (let index = 0; index < 3; index++) {
       // eslint-disable-next-line max-len
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam maecenas ultricies mi eget mauris pharetra et.',
 
+    textMultiLine: true,
     action: {
       label: 'Save',
     },
@@ -52,7 +53,7 @@ render(
         events: {
           click: () => {
             manager.notify({
-              message: 'Fuck you',
+              message: 'Snackbars shouldn’t interrupt the user’s experience and Usually appear at the bottom of the UI',
               close: true,
             });
           },
