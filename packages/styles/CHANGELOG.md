@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.7.0...@gecut/styles@2.8.0) (2024-09-09)
+
+### Features
+
+* **styles/snack-bar:** define `textMultiLine` ([8182970](https://github.com/gecut/hybrid-ui/commit/8182970a15f35be7ba82338e4e96316564460f42)) by @MM25Zamanian
+
 # [2.7.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.6.0...@gecut/styles@2.7.0) (2024-07-17)
 
 ### Features
