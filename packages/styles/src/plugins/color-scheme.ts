@@ -1,7 +1,7 @@
 import plugin from 'tailwindcss/plugin.js';
 
-import {darkColorTheme} from './dark.color-scheme';
-import {lightColorTheme} from './light.color-scheme';
+import {darkColorTheme} from './dark.color-scheme.js';
+import {lightColorTheme} from './light.color-scheme.js';
 
 import type {Config} from 'tailwindcss';
 
