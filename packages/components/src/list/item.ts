@@ -8,11 +8,11 @@ import {when} from 'lit/directives/when.js';
 import {html, noChange, nothing} from 'lit/html.js';
 import {literal, html as staticHtml} from 'lit/static-html.js';
 
-import {divider, icon, gecutIconButton} from '../components';
-import {gecutEFO} from '../internal/events-handler';
+import {divider, icon, gecutIconButton} from '../components.js';
+import {gecutEFO} from '../internal/events-handler.js';
 
-import type {IconButtonContent, IconContent} from '../components';
-import type {EventsObject} from '../internal/events-handler';
+import type {IconButtonContent, IconContent} from '../components.js';
+import type {EventsObject} from '../internal/events-handler.js';
 import type {RenderResult} from '@gecut/types';
 import type {ClassInfo} from 'lit/directives/class-map.js';
 import type {TemplateResult} from 'lit/html.js';

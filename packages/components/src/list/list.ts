@@ -4,7 +4,7 @@ import {classMap, type ClassInfo} from 'lit/directives/class-map.js';
 import {repeat} from 'lit/directives/repeat.js';
 import {html, noChange} from 'lit/html.js';
 
-import {gecutItem, type ItemContent} from './item';
+import {gecutItem, type ItemContent} from './item.js';
 
 import type {PartInfo} from 'lit/directive.js';
 
