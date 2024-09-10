@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.8.0...@gecut/components@2.8.1) (2024-09-10)
+
+### Bug Fixes
+
+* **components/dialog:** import ext ([c502942](https://github.com/gecut/hybrid-ui/commit/c502942d276420440109b052d6350cb0eece151f)) by @MM25Zamanian
+* **components/list:** import ext ([70c08a2](https://github.com/gecut/hybrid-ui/commit/70c08a234e393584e620a955888532ccfa14e04b)) by @MM25Zamanian
+
 # [2.8.0](https://github.com/gecut/hybrid-ui/compare/@gecut/components@2.7.0...@gecut/components@2.8.0) (2024-09-09)
 
 ### Features

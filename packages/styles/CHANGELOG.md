@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.8.0...@gecut/styles@2.8.1) (2024-09-10)
+
+### Bug Fixes
+
+* **styles:** import ext ([af6f24c](https://github.com/gecut/hybrid-ui/commit/af6f24cccfb0a1f6ea56eca66ef556aeb39b94cf)) by @MM25Zamanian
+
 # [2.8.0](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.7.0...@gecut/styles@2.8.0) (2024-09-09)
 
 ### Features
