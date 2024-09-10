@@ -13,7 +13,7 @@ import {divider} from '../divider/divider.js';
 import {icon} from '../icon/icon.js';
 import {gecutIconButton} from '../icon-button/icon-button.js';
 
-import type {BasicDialog, DialogContent, DialogSignals} from './_type';
+import type {BasicDialog, DialogContent, DialogSignals} from './_type.js';
 
 export class GecutDialogDirective extends GecutDirective {
   constructor(partInfo: PartInfo) {
