@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.2](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.8.1...@gecut/styles@2.8.2) (2024-09-28)
+
+### Bug Fixes
+
+* **styles/components/button:** disabled for links ([5c74c41](https://github.com/gecut/hybrid-ui/commit/5c74c415b34b7b5081458090dc346c7226895310)) by @MM25Zamanian
+
 ## [2.8.1](https://github.com/gecut/hybrid-ui/compare/@gecut/styles@2.8.0...@gecut/styles@2.8.1) (2024-09-10)
 
 ### Bug Fixes
