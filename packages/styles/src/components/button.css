@@ -5,23 +5,23 @@
     }
 
     &.elevated {
-      @apply text-primary bg-surfaceContainerLow elevation-1 state-primary hover:elevation-2 focus:elevation-1 disabled:opacity-35;
+      @apply text-primary bg-surfaceContainerLow elevation-1 state-primary hover:elevation-2 focus:elevation-1 disabled:opacity-35 [&[disabled]]:opacity-35;
     }
 
     &.filled {
-      @apply text-onPrimary bg-primary elevation-0 state-onPrimary hover:elevation-2 focus:elevation-1 disabled:opacity-15;
+      @apply text-onPrimary bg-primary elevation-0 state-onPrimary hover:elevation-2 focus:elevation-1 disabled:opacity-15 [&[disabled]]:opacity-15;
     }
 
     &.filled-tonal {
-      @apply text-onSecondaryContainer bg-secondaryContainer elevation-0 state-onSecondaryContainer hover:elevation-2 focus:elevation-1 disabled:opacity-25;
+      @apply text-onSecondaryContainer bg-secondaryContainer elevation-0 state-onSecondaryContainer hover:elevation-2 focus:elevation-1 disabled:opacity-25 [&[disabled]]:opacity-25;
     }
 
     &.outlined {
-      @apply text-primary bg-transparent border border-outline state-primary disabled:opacity-60;
+      @apply text-primary bg-transparent border border-outline state-primary disabled:opacity-60 [&[disabled]]:opacity-60;
     }
 
     &.text {
-      @apply text-primary bg-transparent state-primary disabled:opacity-60;
+      @apply text-primary bg-transparent state-primary disabled:opacity-60 [&[disabled]]:opacity-60;
     }
 
     & &-loader {
@@ -48,6 +48,6 @@
       @apply cursor-default pointer-events-none;
     }
 
-    @apply relative rounded-full h-10 px-6 cursor-pointer focus-ring disabled:cursor-default disabled:pointer-events-none;
+    @apply relative rounded-full h-10 px-6 cursor-pointer focus-ring disabled:cursor-default disabled:pointer-events-none [&[disabled]]:cursor-default [&[disabled]]:pointer-events-none;
   }
 }
