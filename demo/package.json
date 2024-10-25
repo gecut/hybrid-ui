@@ -14,9 +14,9 @@
     "@gecut/components": "workspace:^",
     "@gecut/i18n": "workspace:^",
     "@gecut/lit-helper": "workspace:^",
-    "@gecut/signal": "^7.0.2",
+    "@gecut/signal": "^7.0.3",
     "@gecut/styles": "workspace:^",
-    "@gecut/types": "^7.0.2",
+    "@gecut/types": "^7.0.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@types/node": "^20.11.30",
@@ -30,6 +30,6 @@
     "vite-tsconfig-paths": "^4.3.2"
   },
   "dependencies": {
-    "@gecut/utilities": "^7.0.2"
+    "@gecut/utilities": "^7.0.3"
   }
 }

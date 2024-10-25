@@ -7,7 +7,7 @@ export async function* mapFilter<T>(
   filter: (item: T) => MaybePromise<boolean>,
   f: (value: T) => RenderResult,
   loading?: RenderResult,
-): AsyncGenerator<RenderResult, RenderResult, RenderResult> {
+): AsyncGenerator<RenderResult, any, RenderResult> {
   if (items == null) {
     return loading;
   }

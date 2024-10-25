@@ -6,7 +6,7 @@ export function* map<T>(
   items: T[] | undefined | null,
   f: (value: T) => RenderResult,
   loading?: RenderResult,
-): Generator<RenderResult, RenderResult, RenderResult> {
+): Generator<RenderResult, any, RenderResult> {
   if (items == null) {
     return loading;
   }

@@ -12,7 +12,7 @@ export async function* mapSearch<T extends UnknownRecord>(
   f: (value: T) => RenderResult,
   notFound?: () => RenderResult,
   loading?: RenderResult,
-): AsyncGenerator<RenderResult, RenderResult, RenderResult> {
+): AsyncGenerator<RenderResult, any, RenderResult> {
   if (items == null) {
     return loading;
   }

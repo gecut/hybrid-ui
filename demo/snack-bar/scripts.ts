@@ -1,5 +1,5 @@
 import {SnackBarManager, gecutButton} from '@gecut/components';
-import {numberUtils} from '@gecut/utilities/data-types/number.js';
+import {randomNumber} from '@gecut/utilities/data-types/number.js';
 import {render, html} from 'lit/html.js';
 
 const manager = new SnackBarManager({
@@ -20,7 +20,7 @@ manager.connect('hello', {
 for (let index = 0; index < 3; index++) {
   manager.notify({
     message: 'Fuck you ' + index,
-    close: numberUtils.random.number(1, 0) > 0,
+    close: randomNumber(1, 0) > 0,
   });
   manager.notify({
     message:

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import {GecutDirective} from '@gecut/lit-helper/directives/directive.js';
-import {numberUtils} from '@gecut/utilities/data-types/number.js';
+import {isNumber} from '@gecut/utilities/data-types/number.js';
 import {directive, type PartInfo} from 'lit/directive.js';
 import {classMap} from 'lit/directives/class-map.js';
 import {ifDefined} from 'lit/directives/if-defined.js';
@@ -193,7 +193,7 @@ export class GecutItemDirective extends GecutDirective {
       case 'string':
         return this.content.trailingSupportingText.value;
       case 'number': {
-        if (!numberUtils.is(this.content.trailingSupportingText.value))
+        if (!isNumber(this.content.trailingSupportingText.value))
           return this.content.trailingSupportingText.value;
 
         const valueAsNumber = Number(this.content.trailingSupportingText.value);

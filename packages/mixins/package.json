@@ -56,10 +56,10 @@
     "directory": "packages/mixins"
   },
   "dependencies": {
-    "@gecut/logger": "^7.0.2",
-    "@gecut/signal": "^7.0.2",
-    "@gecut/types": "^7.0.2",
-    "@gecut/utilities": "^7.0.2",
+    "@gecut/logger": "^7.0.3",
+    "@gecut/signal": "^7.0.3",
+    "@gecut/types": "^7.0.3",
+    "@gecut/utilities": "^7.0.3",
     "lit": "^3.1.3"
   }
 }

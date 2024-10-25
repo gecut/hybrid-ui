@@ -1,4 +1,4 @@
-import type {RenderResult} from '@gecut/types';
+import type { RenderResult } from "@gecut/types";
 
 // eslint-disable-next-line consistent-return
 export function* mapObject<T>(
@@ -6,7 +6,7 @@ export function* mapObject<T>(
   items: Record<string, T> | undefined | null,
   f: (value: T, key: string) => RenderResult,
   loading?: RenderResult,
-): Generator<RenderResult, RenderResult, RenderResult> {
+): Generator<RenderResult, any, RenderResult> {
   if (items == null) {
     return loading;
   }
