@@ -1,6 +1,6 @@
 {
   "name": "@gecut/i18n",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "type": "module",
   "author": {
     "name": "S. MohammadMahdi Zamanian",
@@ -36,5 +36,6 @@
     "@gecut/signal": "^7.0.3",
     "@gecut/types": "^7.0.3",
     "type-fest": "^4.13.0"
-  }
+  },
+  "gitHead": "97708df0274f7cbea59b69d48b2c5aede231737d"
 }

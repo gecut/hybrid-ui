@@ -1,6 +1,6 @@
 {
   "name": "@gecut/styles",
-  "version": "2.8.4",
+  "version": "2.8.5",
   "type": "module",
   "repository": {
     "type": "git",
@@ -39,5 +39,6 @@
   },
   "dependencies": {
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "gitHead": "97708df0274f7cbea59b69d48b2c5aede231737d"
 }
