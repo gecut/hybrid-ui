@@ -262,10 +262,10 @@ __metadata:
   resolution: "@gecut/components@workspace:packages/components"
   dependencies:
     "@gecut/lit-helper": "workspace:^"
-    "@gecut/logger": "npm:^1.4.6"
-    "@gecut/signal": "npm:^2.3.4"
-    "@gecut/types": "npm:^2.2.1"
-    "@gecut/utilities": "npm:^5.4.0"
+    "@gecut/logger": "npm:^7.0.2"
+    "@gecut/signal": "npm:^7.0.2"
+    "@gecut/types": "npm:^7.0.2"
+    "@gecut/utilities": "npm:^7.0.2"
     "@types/node": "npm:^20.11.30"
     lit: "npm:^3.1.3"
   languageName: unknown
@@ -287,9 +287,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gecut/i18n@workspace:packages/i18n"
   dependencies:
-    "@gecut/logger": "npm:^1.4.6"
-    "@gecut/signal": "npm:^2.3.4"
-    "@gecut/types": "npm:^2.2.1"
+    "@gecut/logger": "npm:^7.0.2"
+    "@gecut/signal": "npm:^7.0.2"
+    "@gecut/types": "npm:^7.0.2"
     type-fest: "npm:^4.13.0"
   languageName: unknown
   linkType: soft
@@ -299,11 +299,11 @@ __metadata:
   resolution: "@gecut/lit-helper@workspace:packages/lit-helper"
   dependencies:
     "@gecut/data-manager": "npm:^1.2.3"
-    "@gecut/logger": "npm:^1.4.6"
+    "@gecut/logger": "npm:^7.0.2"
     "@gecut/mixins": "workspace:^"
-    "@gecut/signal": "npm:^2.3.4"
-    "@gecut/types": "npm:^2.2.1"
-    "@gecut/utilities": "npm:^5.4.0"
+    "@gecut/signal": "npm:^7.0.2"
+    "@gecut/types": "npm:^7.0.2"
+    "@gecut/utilities": "npm:^7.0.2"
     "@material/web": "npm:^1.4.1"
     "@vaadin/router": "npm:^1.7.5"
     lit: "npm:^3.1.3"
@@ -322,12 +322,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gecut/logger@npm:^1.4.6":
-  version: 1.4.6
-  resolution: "@gecut/logger@npm:1.4.6"
+"@gecut/logger@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@gecut/logger@npm:7.0.2"
   dependencies:
-    "@gecut/utilities": "npm:^5.4.0"
-  checksum: 10c0/38a50acc37bef62f478cb63b5d8aaf20db5d48712eabcfb8cf5ea124d2d1ccc0109e21245f832c79ce2b81189b89a2237e98ddbaa15d92871fea3f21c068814b
+    "@gecut/utilities": "npm:^7.0.2"
+  checksum: 10c0/22d4126e124d510f504ad513376d6b10825c9a52b065272a98ef968b87ab0542163b5cfef32fe4dac216a388f4ca441106b819d5a6d177e63c57bc35d507f44d
   languageName: node
   linkType: hard
 
@@ -335,22 +335,23 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gecut/mixins@workspace:packages/mixins"
   dependencies:
-    "@gecut/logger": "npm:^1.4.6"
-    "@gecut/signal": "npm:^2.3.4"
-    "@gecut/types": "npm:^2.2.1"
-    "@gecut/utilities": "npm:^5.4.0"
+    "@gecut/logger": "npm:^7.0.2"
+    "@gecut/signal": "npm:^7.0.2"
+    "@gecut/types": "npm:^7.0.2"
+    "@gecut/utilities": "npm:^7.0.2"
     lit: "npm:^3.1.3"
   languageName: unknown
   linkType: soft
 
-"@gecut/signal@npm:^2.3.4":
-  version: 2.3.4
-  resolution: "@gecut/signal@npm:2.3.4"
+"@gecut/signal@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@gecut/signal@npm:7.0.2"
   dependencies:
-    "@gecut/logger": "npm:^1.4.6"
-    "@gecut/types": "npm:^2.2.1"
-    "@gecut/utilities": "npm:^5.4.0"
-  checksum: 10c0/3e27b889b13cb9c8ee3c9caf95ed1b00392b5418493d5e77cfac0c726c177e2db1b44b6277b78d491c0f1f88db878537632d964714a94f08bce0fe563eb6103e
+    "@gecut/logger": "npm:^7.0.2"
+    "@gecut/types": "npm:^7.0.2"
+    "@gecut/utilities": "npm:^7.0.2"
+    ky: "npm:^1.7.2"
+  checksum: 10c0/0387e0fabb627a0acec9599e3ef4cc517e14b9a0e83a0b2314309e1d18cf06e5fffbe6e2770487a15649dc1f714d6d5e4bd71d5b3340206a1615b99f6fed92fb
   languageName: node
   linkType: hard
 
@@ -372,10 +373,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gecut/types@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@gecut/types@npm:2.2.1"
-  checksum: 10c0/11c021fa3749003ebde51f2cb22d19a277db1097a508e2044b73eca3607b1376a44972c88fa446dd6943a5dc502dafc803a319b80905b0ec62aa01c8c3da996e
+"@gecut/types@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@gecut/types@npm:7.0.2"
+  dependencies:
+    "@types/node": "npm:^22.5.4"
+    lit: "npm:^3.2.0"
+    type-fest: "npm:^4.26.1"
+  checksum: 10c0/899a4aa8c1bce59fa1028502e63b469780889d4d6564ef58b6c231b9ceda0f2fb899d722a5ba07859c944c686562e9a6056e057b30c284e218cb439c5a978082
   languageName: node
   linkType: hard
 
@@ -388,13 +393,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gecut/utilities@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "@gecut/utilities@npm:5.4.0"
+"@gecut/utilities@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@gecut/utilities@npm:7.0.2"
   dependencies:
-    "@gecut/types": "npm:^2.2.1"
+    "@gecut/types": "npm:^7.0.2"
     change-case: "npm:^5.4.4"
-  checksum: 10c0/53871a09808924c454a81771bad1c468629d0bf6fac6f02134f62a9fe43c9c1cfa88f69a39d3e1146fc51e501e7780259680bf32b559376979d1807dc5ad6ad2
+  checksum: 10c0/c1a43d337e83944261ecc1fcffae40c68c924aa684cec83d573919de20eb5d6857eebcb37d52fec0e4c9636615ea9c86a4151475f05d397660f67e8aa04029d6
   languageName: node
   linkType: hard
 
@@ -1340,6 +1345,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10c0/867cfaf969c6d8850d8d7304e7ab739898a50ecb1395b61ff2335644f5f48d7a46fbc4a14cee967aed65ec134b61a746edae70d1f32f11321ccf29165e3bc4e6
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.5.4":
+  version: 22.7.9
+  resolution: "@types/node@npm:22.7.9"
+  dependencies:
+    undici-types: "npm:~6.19.2"
+  checksum: 10c0/2d1917702b9d9ede8e4d8151cd8b1af8bc147d543486474ffbe0742e38764ea73105939e6a767addf7a4c39e842e16eae762bff90617d7b7f9ee3fbbb2d23bfa
   languageName: node
   linkType: hard
 
@@ -3356,10 +3370,10 @@ __metadata:
     "@gecut/components": "workspace:^"
     "@gecut/i18n": "workspace:^"
     "@gecut/lit-helper": "workspace:^"
-    "@gecut/signal": "npm:^2.3.4"
+    "@gecut/signal": "npm:^7.0.2"
     "@gecut/styles": "workspace:^"
-    "@gecut/types": "npm:^2.2.1"
-    "@gecut/utilities": "npm:^5.4.0"
+    "@gecut/types": "npm:^7.0.2"
+    "@gecut/utilities": "npm:^7.0.2"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/nesting": "npm:^0.0.0-insiders.565cd3e"
     "@types/node": "npm:^20.11.30"
@@ -4375,6 +4389,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ky@npm:^1.7.2":
+  version: 1.7.2
+  resolution: "ky@npm:1.7.2"
+  checksum: 10c0/ce42c0c5eec839dd13fd14f0b60fb6f56c7c8a0df8e228597f5206b1db2f3608f3a0e477a4c002c838d21b8e65872632ef4655e9eb8508455b3c3b296af40ebc
+  languageName: node
+  linkType: hard
+
 "levn@npm:^0.4.1":
   version: 0.4.1
   resolution: "levn@npm:0.4.1"
@@ -4450,12 +4471,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lit-element@npm:^4.1.0":
+  version: 4.1.1
+  resolution: "lit-element@npm:4.1.1"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
+    "@lit/reactive-element": "npm:^2.0.4"
+    lit-html: "npm:^3.2.0"
+  checksum: 10c0/b3c6c77d60a8239134d7c7e7c002be48414074f5b42f9ad026216749101a4f948266a4db9110a536fb23914044d584dbe4185c87064a4fa98baa4045ba2bbb46
+  languageName: node
+  linkType: hard
+
 "lit-html@npm:^3.1.2":
   version: 3.1.2
   resolution: "lit-html@npm:3.1.2"
   dependencies:
     "@types/trusted-types": "npm:^2.0.2"
   checksum: 10c0/923ef6e0d52aef0cd1f3d6922c7b46e9de7efe0493b205da7f0e5a1d50ab02884cab87425886e2281396ece7745e4b794220bb5e8c4fedbdba47281aeeb489d3
+  languageName: node
+  linkType: hard
+
+"lit-html@npm:^3.2.0":
+  version: 3.2.1
+  resolution: "lit-html@npm:3.2.1"
+  dependencies:
+    "@types/trusted-types": "npm:^2.0.2"
+  checksum: 10c0/31c02df2148bf9a73545570cbe57aae01c4de1d9b44060b6ff13641837d38e39e6b1abcf92e13882cc84f5fee37605ed79602b91ad479728549014462808118e
   languageName: node
   linkType: hard
 
@@ -4478,6 +4519,17 @@ __metadata:
     lit-element: "npm:^4.0.4"
     lit-html: "npm:^3.1.2"
   checksum: 10c0/bd29503bed86e07d94ff3445da4ac11b883bd94d50a2c8a089e990cbd3ce91c06f0e177cce38fbc75ddb35eb6e44f2ee5a1f7b8613478d522eff11438ebb858f
+  languageName: node
+  linkType: hard
+
+"lit@npm:^3.2.0":
+  version: 3.2.1
+  resolution: "lit@npm:3.2.1"
+  dependencies:
+    "@lit/reactive-element": "npm:^2.0.4"
+    lit-element: "npm:^4.1.0"
+    lit-html: "npm:^3.2.0"
+  checksum: 10c0/064a31459fe54ad052c0685d058dd5aef089ddc97a247888ef91a0356dfef60c8cc531e48077bbd2cb4e9f48cb86f0ff0951bb535f1d9f144d2351f253291f66
   languageName: node
   linkType: hard
 
@@ -6789,6 +6841,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^4.26.1":
+  version: 4.26.1
+  resolution: "type-fest@npm:4.26.1"
+  checksum: 10c0/d2719ff8d380befe8a3c61068f37f28d6fa2849fd140c5d2f0f143099e371da6856aad7c97e56b83329d45bfe504afe9fd936a7cff600cc0d46aa9ffb008d6c6
+  languageName: node
+  linkType: hard
+
 "typed-array-buffer@npm:^1.0.2":
   version: 1.0.2
   resolution: "typed-array-buffer@npm:1.0.2"
@@ -6895,6 +6954,13 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 10c0/bb673d7876c2d411b6eb6c560e0c571eef4a01c1c19925175d16e3a30c4c428181fb8d7ae802a261f283e4166a0ac435e2f505743aa9e45d893f9a3df017b501
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.19.2":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: 10c0/078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
   languageName: node
   linkType: hard
 

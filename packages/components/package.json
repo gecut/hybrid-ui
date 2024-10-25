@@ -53,10 +53,10 @@
   ],
   "dependencies": {
     "@gecut/lit-helper": "workspace:^",
-    "@gecut/logger": "^1.4.6",
-    "@gecut/signal": "^2.3.4",
-    "@gecut/types": "^2.2.1",
-    "@gecut/utilities": "^5.4.0",
+    "@gecut/logger": "^7.0.2",
+    "@gecut/signal": "^7.0.2",
+    "@gecut/types": "^7.0.2",
+    "@gecut/utilities": "^7.0.2",
     "@types/node": "^20.11.30",
     "lit": "^3.1.3"
   }
